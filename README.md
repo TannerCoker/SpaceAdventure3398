@@ -1,5 +1,5 @@
 # Space Adventure 3398
-> Here goes your awesome project description!
+> Space Adventure 3398 is an arcade style game. It will feature a main menu with options to: start the game, 
 
 ## Table of contents
 * [General info](#general-info)
