@@ -1,5 +1,5 @@
 # Space Adventure 3398
-> Space Adventure 3398 is an arcade style game. It will feature a main menu with options to: start the game, 
+> Space Adventure 3398 is an arcade style game. It will feature a main menu with options to: start the game, go to a scoreboard which will update and save as it is played and a settings. 
 
 ## Table of contents
 * [General info](#general-info)
