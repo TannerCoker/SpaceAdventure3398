@@ -45,7 +45,12 @@ List of features ready and TODOs for future development
 * Awesome feature 3
 
 To-do list:
-* Wow improvement to be done 1
+Design a UML for overall game.
+Create the game mechanics.
+Create a background (non-thematic)
+Create players/enemies of game
+Create game menu
+
 * Wow improvement to be done 2
 
 ## Status
