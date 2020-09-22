@@ -1,5 +1,4 @@
 # Space Adventure 3398
-# =====================================================================
 > Space Adventure 3398 is an arcade style game is developed by Tanner Coker, Lucas Anesti, Brice Ashburn, Erik Cortez, and Eric Figueroa.
 > It will feature a main menu with options to: start the game, view the scoreboard, go to settings, and to exit the game. 
 > The game will have a space theme and it will be similar to a retro arcade game. The gameplay will consist of the player having basic 
@@ -9,8 +8,6 @@
 > able to tweak some gameplay settings through a settings area which is on the main menu.
 > We're creating this game to further develop our skills as programmers but also it entertaining for anybody to enjoy.
 > The audience for Space Advenuter 3398 can be for everyone or people who just want to play a fun arcade style game. 
-# =====================================================================
-
 
 ## Table of contents
 * [General info](#general-info)
