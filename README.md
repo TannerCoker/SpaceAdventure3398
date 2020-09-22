@@ -24,7 +24,7 @@
 The goal of the project is to make an entertaining game while practicing sound Software Engineering principles in a team.
 
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
+![Example screenshot](./pixil-frame-0.png)
 
 ## Technologies
 Java version 11.0.8, 
