@@ -1,4 +1,4 @@
-# Space Adventure 3398
+# Project Name: Space Adventure 3398
 =======
 > Space Adventure 3398 is an arcade style game is developed by Tanner Coker, Lucas Anesti, Brice Asburn, Erik Cortez, and Eric Figueroa.
 > It will feature a main menu with options to: start the game, view the scoreboard, go to settings, and to exit the game. 
@@ -7,8 +7,8 @@
 > stages and will encounter boss fights and more difficult enemies along their travels. The game will save the top scores of 
 > all players across multiple play sessions which is viewable in the scoreboard. Players can also find some settings and will be 
 > able to tweak some gameplay settings through a settings area which is on the main menu.
-> We're making this game so that we can further develop our skills as programmers but make it entertaining for others to enjoy.
-> The game is for whoever may be interested in playing our arcade, space game. 
+> We're making this game so that we can further develop our skills as programmers but make it entertaining for anybody to enjoy.
+> The game would be for an audience of many or people who just want to play a fun arcade style game. 
 
 ## Table of contents
 * [General info](#general-info)
@@ -27,9 +27,15 @@ The goal of the project is to make an entertaining game while practicing sound S
 ![Example screenshot](./img/screenshot.png)
 
 ## Technologies
-* Tech 1 - version 1.0
-* Tech 2 - version 2.0
-* Tech 3 - version 3.0
+Java version 11.0.8, 
+Git	version 2.17.1, 
+Sourcetree version 4.0.2, 
+Jira, 
+BitBucket.
+
+Here is a list of hypelinks that describe our technolgies that will be used for this project:
+
+https://www.oracle.com/java/technologies/javase-downloads.html#JDK11,
 
 ## Setup
 Describe how to install / setup your local environement / add link to demo version.
@@ -40,24 +46,42 @@ Show examples of usage:
 
 ## Features
 List of features ready and TODOs for future development
-* Awesome feature 1
-* Awesome feature 2
-* Awesome feature 3
+
+
+Features list:
+
+
+Customizable player ship
+
+
+Cheat codes
+
+
+Variety of boss fights
+
 
 To-do list:
-Design a UML for overall game.
-Create the game mechanics.
+
+
+Design a UML for overall game
+
+
+Create the game mechanics
+
+
 Create a background (non-thematic)
+
+
 Create players/enemies of game
+
+
 Create game menu
 
-* Wow improvement to be done 2
-
 ## Status
-Project is: _in progress_.
+Project is: In progess...
 
 ## Inspiration
-Add here credits. Project inspired by..., based on...
+Project inspired by..., based on...
 
 ## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
+Created by Tanner Coker, Lucas Anesti, Brice Asburn, Erik Cortez and Eric Figueroa.
