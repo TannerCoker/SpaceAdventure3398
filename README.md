@@ -25,7 +25,7 @@ The goal of the project is to make an entertaining game while practicing sound S
 Here is a picture of our game logo:
 
 
-![Example screenshot](./pixil-frame-0.png)
+![Example screenshot](./images/pixil-frame-0.png)
 
 
 ## Technologies
