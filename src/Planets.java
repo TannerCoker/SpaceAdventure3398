@@ -1,16 +1,19 @@
-import java.awt.Color;
-import java.awt.Graphics;
-
+import java.awt.*;
+import java.util.*;
 import javax.swing.*;
 
-public class Planets extends JPanel
+public class Planets extends JPanel implements SpaceBodies
 {
-	private int size = 200, posX = 500, posY = 1000;
+	private int size = (int)(Math.random()*2+1), posX = 500, posY = 1000;
 	private int speed = 5;
 
 	public Planets()
 	{
-		
+		this.setOpaque(false);
+		if(size == 2)
+			this.setPreferredSize(new Dimension(300,300));
+		else
+			this.setPreferredSize(new Dimension(150,150));
 	}
 	
 	public Planets(int s)

@@ -17,17 +17,15 @@ public class testRunner
 		//frame.setExtendedState();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		Stars s = new Stars();
-		Planets p = new Planets();
-		p.setOpaque(false);
-		p.setPreferredSize(new Dimension(400,400));
-		
 		Background b = new Background();
-		b.addStars(s);
-		b.addPlanets(p);
+		b.addStars(new Stars());
+		b.addStars(new Stars());
+		b.addPlanets(new Planets());
+		b.addPlanets(new Planets());
 		
 		
 		frame.add(b);
+		
 		
 		
 		//frame.pack();

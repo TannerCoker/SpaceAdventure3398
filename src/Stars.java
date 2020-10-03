@@ -1,14 +1,19 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.*;
 
-public class Stars extends JPanel
+public class Stars extends JPanel implements SpaceBodies
 {
-	private int size = 4, posX = 500, posY = 500;
-	private int speed = 5;
+	private int size = (int)(Math.random()*2+1), posX = 500, posY = 500;
+	private int speed = 600;
 	
 	public Stars()
 	{
-		
+		this.setOpaque(false);
+		if(size == 2)
+			this.setPreferredSize(new Dimension(50,50));
+		else
+			this.setPreferredSize(new Dimension(25,25));
 	}
 	
 	
