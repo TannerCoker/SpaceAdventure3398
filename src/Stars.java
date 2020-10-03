@@ -33,6 +33,6 @@ public class Stars extends JPanel
 	{
         super.paintComponent(g);
         g.setColor(Color.CYAN);
-        g.fillRect(0, 0, getWidth(), getHeight());
+        g.fillRect(0, 0, size, size);
     }
 }

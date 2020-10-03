@@ -19,6 +19,8 @@ public class testRunner
 		
 		Stars s = new Stars();
 		Planets p = new Planets();
+		p.setOpaque(false);
+		p.setPreferredSize(new Dimension(400,400));
 		
 		Background b = new Background();
 		b.addStars(s);

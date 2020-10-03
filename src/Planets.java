@@ -3,7 +3,7 @@ import java.awt.Graphics;
 
 import javax.swing.*;
 
-public class Planets extends JPanel 
+public class Planets extends JPanel
 {
 	private int size = 200, posX = 500, posY = 1000;
 	private int speed = 5;
