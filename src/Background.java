@@ -7,6 +7,7 @@ public class Background extends JPanel
 	private int width = JFrame.MAXIMIZED_HORIZ;
 	private int height = JFrame.MAXIMIZED_VERT;
 	private ArrayList<SpaceBodies> bodies = new ArrayList<SpaceBodies>();
+	private ArrayList<Stars> stars = new ArrayList<Stars>();
 
 	public Background()
 	{
@@ -17,11 +18,20 @@ public class Background extends JPanel
 		//frame.add(s);
 		setLayout(null);
 		frame.setVisible(true);*/
+		
+		for(int i=0;i<50;i++)
+		{
+			Stars s = new Stars();
+			stars.add(s);
+		}
+		
+		UpdateBG ub = new UpdateBG(this);
+		ub.start();
 	}
 	
 	
 	//adds object planet
-	public void addPlanets(Planets p)
+	/*public void addPlanets(Planets p)
 	{
 		p.setLocation(150,500);
 		add(p);
@@ -35,18 +45,23 @@ public class Background extends JPanel
 			s.setLocation(50,50);
 		else
 			s.setLocation(10,10);
-		add(s);
+		//add(s);
 		bodies.add(s);
-	}
+	}*/
 	
+	
+	
+	//should be able to update the space bodies and make them all move
 	public void update()
 	{
-		for(SpaceBodies sb : bodies)
+		for(Stars sb : stars)
 		{
-			sb.move();
+			sb.update();
 		}
+		repaint();
 	}
 	
+	//returns a dimension
 	@Override
 	public Dimension getPreferredSize()
 	{
@@ -60,5 +75,9 @@ public class Background extends JPanel
 		g.setColor(Color.black);
 		g.fillRect(0, 0, getWidth(), getHeight());
 		
+		for(Stars sb : stars)
+		{
+			sb.draw(g);
+		}
 	}
 }

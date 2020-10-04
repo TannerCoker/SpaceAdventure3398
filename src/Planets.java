@@ -21,7 +21,7 @@ public class Planets extends JPanel implements SpaceBodies
 		
 	}
 	
-	public void move()
+	public void update()
 	{
 		posY += speed;
 	}

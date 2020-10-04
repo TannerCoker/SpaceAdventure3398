@@ -1,4 +1,4 @@
 public interface SpaceBodies 
 {
-	public void move();
+	public void update();
 }

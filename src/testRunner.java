@@ -18,12 +18,13 @@ public class testRunner
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		Background b = new Background();
+		/*
 		b.addStars(new Stars());
 		b.addStars(new Stars());
 		b.addPlanets(new Planets());
 		b.addPlanets(new Planets());
 		
-		
+		*/
 		frame.add(b);
 		
 		
