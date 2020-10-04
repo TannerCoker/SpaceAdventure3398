@@ -18,7 +18,7 @@ public class testRunner
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.pack();
 		
-		Background b = new Background();
+		Background b = new Background(frame.getWidth());
 		frame.add(b);
 		
 		

@@ -17,7 +17,7 @@ public class UpdateBG extends Thread
 			
 			try 
 			{
-				Thread.sleep(25);
+				Thread.sleep(20);
 			}
 			catch(Exception e)
 			{

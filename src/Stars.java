@@ -8,21 +8,18 @@ public class Stars extends Rectangle implements SpaceBodies
 	//x,y location. speed. size. background width(in progress)
 	private int posX, posY, spd, size, BgWidth;
 	
-	//attempts at getting the background to return a width have failed. It returns
-	//0, 2, or 136
-	public Stars()//int b)
+	public Stars(int b)
 	{
 		//BgWidth = b;
-		//System.out.println(BgWidth);
-		posX = (int)(Math.random()*1936);//BgWidth);
-		posY = 0;
-		size = (int)(Math.random()*14+1);
-		if(size < 5)
-			spd = (int)(Math.random()*10+30);
-		else if(size < 10)
-			spd = (int)(Math.random()*10+20);
+		posX = (int)(Math.random()*1936);
+		posY = (int)(Math.random()*1500);
+		size = (int)(Math.random()*5+1);
+		if(size < 3)
+			spd = (int)(Math.random()*1+1);
+		else if(size < 5)
+			spd = (int)(Math.random()*1+3);
 		else
-			spd = (int)(Math.random()*10+10);
+			spd = (int)(Math.random()*1+5);
 		
 	}
 	
@@ -31,17 +28,17 @@ public class Stars extends Rectangle implements SpaceBodies
 	@SuppressWarnings("deprecation")
 	public void update()
 	{
-		if(posY >= 2000)
+		if(posY >= 1500)
 		{
 			posX = (int)(Math.random()*1936);//BgWidth);
 			posY = 0;
-			size = (int)(Math.random()*15+5);
+			size = (int)(Math.random()*5+1);
 			if(size < 5)
-				spd = (int)(Math.random()*10+10);
+				spd = (int)(Math.random()*1+1);
 			else if(size < 10)
-				spd = (int)(Math.random()*10+20);
+				spd = (int)(Math.random()*1+3);
 			else
-				spd = (int)(Math.random()*10+30);
+				spd = (int)(Math.random()*1+5);
 		}
 		else
 			posY += spd;
