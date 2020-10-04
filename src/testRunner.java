@@ -20,7 +20,6 @@ public class testRunner
 		
 		Background b = new Background();
 		frame.add(b);
-		//b.setFrameWidth(frame.getWidth());
 		
 		
 		

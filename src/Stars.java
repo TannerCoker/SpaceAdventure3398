@@ -18,11 +18,11 @@ public class Stars extends Rectangle implements SpaceBodies
 		posY = 0;
 		size = (int)(Math.random()*14+1);
 		if(size < 5)
-			spd = (int)(Math.random()*10+10);
+			spd = (int)(Math.random()*10+30);
 		else if(size < 10)
 			spd = (int)(Math.random()*10+20);
 		else
-			spd = (int)(Math.random()*10+30);
+			spd = (int)(Math.random()*10+10);
 		
 	}
 	
