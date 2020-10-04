@@ -1,30 +1,27 @@
 import javax.swing.*; 
 import java.util.*;
 import java.awt.*;
+import java.io.*;
 
 public class Background extends JPanel
 {
 	private int width = JFrame.MAXIMIZED_HORIZ;
 	private int height = JFrame.MAXIMIZED_VERT;
+	private int frameWidth;
 	private ArrayList<SpaceBodies> bodies = new ArrayList<SpaceBodies>();
 	private ArrayList<Stars> stars = new ArrayList<Stars>();
+	
 
 	public Background()
 	{
-		/*JFrame frame = new JFrame("b");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		//frame.setUndecorated(true);
-		//frame.getContentPane().setBackground(Color.black);
-		//frame.add(s);
-		setLayout(null);
-		frame.setVisible(true);*/
-		
-		for(int i=0;i<50;i++)
+	
+		for(int i=0;i<100;i++)
 		{
-			Stars s = new Stars();
+			Stars s = new Stars();//frameWidth);
 			stars.add(s);
 		}
 		
+		//thread to run update
 		UpdateBG ub = new UpdateBG(this);
 		ub.start();
 	}
@@ -49,9 +46,14 @@ public class Background extends JPanel
 		bodies.add(s);
 	}*/
 	
+	public void setFrameWidth(int fw)
+	{
+		frameWidth = fw;
+	}
 	
 	
-	//should be able to update the space bodies and make them all move
+	
+	//updates the stars/spacebodies and causes them to update their position
 	public void update()
 	{
 		for(Stars sb : stars)

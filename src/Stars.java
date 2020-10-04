@@ -4,66 +4,53 @@ import java.util.*;
 
 public class Stars extends Rectangle implements SpaceBodies
 {
-	/*private int size = (int)(Math.random()*2+1), posX = 500, posY = 500;
-	private int speed = 600;
 	
-	public Stars()
+	//x,y location. speed. size. background width(in progress)
+	private int posX, posY, spd, size, BgWidth;
+	
+	//attempts at getting the background to return a width have failed. It returns
+	//0, 2, or 136
+	public Stars()//int b)
 	{
-		this.setOpaque(false);
-		if(size == 2)
-			this.setPreferredSize(new Dimension(50,50));
-		else
-			this.setPreferredSize(new Dimension(25,25));
-	}
-	
-	
-	public Stars(int x, int y, int sp, int si)
-	{
-				
-	}
-	
-	public void update()
-	{
-		//y_coord += speed;
-		posY += speed;
-	}
-	
-	@Override
-    protected void paintComponent(Graphics g) 
-	{
-        super.paintComponent(g);
-        g.setColor(Color.CYAN);
-        g.fillRect(0, 0, size, size);
-    }*/
-	
-	int posX, posY, spd, size;
-	
-	public Stars()
-	{
-		posX = (int)(Math.random()*1600);
+		//BgWidth = b;
+		//System.out.println(BgWidth);
+		posX = (int)(Math.random()*1936);//BgWidth);
 		posY = 0;
-		spd = (int)(Math.random()*40+10);
-		size = (int)(Math.random()*50+25);
+		size = (int)(Math.random()*14+1);
+		if(size < 5)
+			spd = (int)(Math.random()*10+10);
+		else if(size < 10)
+			spd = (int)(Math.random()*10+20);
+		else
+			spd = (int)(Math.random()*10+30);
+		
 	}
 	
+	//checks to see if the star has gone off screen. If so then it recycles it
+	//and moves it back to the top to keep a continuous stream of stars.
 	@SuppressWarnings("deprecation")
 	public void update()
 	{
 		if(posY >= 2000)
 		{
-			posX = (int)(Math.random()*1600);
+			posX = (int)(Math.random()*1936);//BgWidth);
 			posY = 0;
-			spd = (int)(Math.random()*40+10);
-			size = (int)(Math.random()*50+25);
-			//resize(size,size);*/
+			size = (int)(Math.random()*15+5);
+			if(size < 5)
+				spd = (int)(Math.random()*10+10);
+			else if(size < 10)
+				spd = (int)(Math.random()*10+20);
+			else
+				spd = (int)(Math.random()*10+30);
 		}
 		else
 			posY += spd;
 	}
 	
+	//draws the star based on it's location and size
 	public void draw(Graphics g)
 	{
-        g.setColor(Color.CYAN);
+        g.setColor(Color.white);
         g.fillRect(posX, posY, size, size);
 	}
 }

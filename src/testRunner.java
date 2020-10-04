@@ -16,20 +16,15 @@ public class testRunner
 		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		//frame.setExtendedState();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.pack();
 		
 		Background b = new Background();
-		/*
-		b.addStars(new Stars());
-		b.addStars(new Stars());
-		b.addPlanets(new Planets());
-		b.addPlanets(new Planets());
-		
-		*/
 		frame.add(b);
+		//b.setFrameWidth(frame.getWidth());
 		
 		
 		
-		//frame.pack();
+		
 		frame.setVisible(true);
 	}
 	public static void main(String args[])
