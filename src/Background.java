@@ -1,3 +1,11 @@
+/*
+ * Author: Tanner Coker
+ * 
+ * Background is a background that will display a black square on which everything else will
+ * lay on top of. It currently has a UpdateThread that will update the location of all of the 
+ * stars and planets on it.
+ */
+
 import javax.swing.*; 
 import java.util.*;
 import java.awt.*;
@@ -11,18 +19,20 @@ public class Background extends JPanel
 	private ArrayList<SpaceBodies> bodies = new ArrayList<SpaceBodies>();
 	
 
-	public Background(int w)
+	//adds stars and planets to an arraylist of type SpaceBodies
+	//also makes a UpdateThread that will call Update() 
+	public Background()
 	{
 	
 		//changes the amount of stars
 		for(int i=0;i<500;i++)
 		{
-			Stars s = new Stars(w);
+			Stars s = new Stars();
 			bodies.add(s);
 		}
 		
 		//changes the amount of planets
-		for(int i=0;i<4;i++)
+		for(int i=0;i<7;i++)
 		{
 			Planets p = new Planets();
 			bodies.add(p);
@@ -33,12 +43,16 @@ public class Background extends JPanel
 		ub.start();
 	}
 	
-	public void setFrameWidth(int fw)
+	//passes the width of the frame to the stars and planets
+	public void giveFrameWidth(int w)
 	{
-		frameWidth = fw;
+		for(SpaceBodies sb : bodies)
+		{
+			sb.setFrameWidth(w);
+		}
 	}
 	
-	//updates the stars/spacebodies and causes them to update their position
+	//updates the stars and planets and causes them to update their position
 	public void update()
 	{
 		for(SpaceBodies sb : bodies)
@@ -48,13 +62,7 @@ public class Background extends JPanel
 		repaint();
 	}
 	
-	//returns a dimension
-	@Override
-	public Dimension getPreferredSize()
-	{
-		return new Dimension(width,height);
-	}
-	
+	//paints the black background and all of the stars and planets
 	@Override
 	public void paintComponent(Graphics g)
 	{

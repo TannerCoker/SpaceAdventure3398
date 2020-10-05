@@ -1,3 +1,9 @@
+/*
+ * Author: Tanner Coker
+ * 
+ * Class that extends Thread. It is used by background class to call update()
+ */
+
 import javax.swing.*;
 
 public class UpdateBG extends Thread
