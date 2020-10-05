@@ -87,17 +87,21 @@ Project inspired by aracde style games.
 ## Contact
 Created by Tanner Coker, Lucas Anesti, Brice Ashburn, Erik Cortez and Eric Figueroa.
 
-## Sprint 1 Review (Assignment 11)
+# Sprint 1 Review (Assignment 11)
 
-* Lucas Anesti: The Design Patterns that will be used for the game have been finalized and the code for the class design have been implemented. In addition, both unit testing for the individual design patterns and integration testing between the patterns have been completed using JUnit. The following two documents demonstrate the progress made:
+### Lucas Anesti
+The Design Patterns that will be used for the game have been finalized and the code for the class design have been implemented. In addition, both unit testing for the individual design patterns and integration testing between the patterns have been completed using JUnit. The following two documents demonstrate the progress made:
 
 ![Sample UML](./doc/UML/ShipDecorator.jpg)
 
 ![JUnit Test Results](./images/testResult.png)
 
 Currently, the code and the documentation is stored under the DesignPatterns branch. The following links can be used to find:
+
 * Documentation: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/DesignPatterns/doc/UML/
+
 * Source Code: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/DesignPatterns/src/main/java/SpaceAdventure3398/
+
 * Testing Code: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/DesignPatterns/src/test/java/SpaceAdventure3398/
 
 The code shows basic application of some of the design patterns and how to use them in reference to the game. The design patterns will become more relevant as we update the game design to include more features. For the time being, that remain a separate and abstract component of the game design process until the initial game units have been implemented and ready to be combined.
