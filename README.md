@@ -86,3 +86,63 @@ Project inspired by aracde style games.
 
 ## Contact
 Created by Tanner Coker, Lucas Anesti, Brice Ashburn, Erik Cortez and Eric Figueroa.
+
+## Sprint 1 Review (Assignment 11)
+
+* Lucas Anesti: The Design Patterns that will be used for the game have been finalized and the code for the class design have been implemented. In addition, both unit testing for the individual design patterns and integration testing between the patterns have been completed using JUnit. The following two documents demonstrate the progress made:
+
+![Sample UML](./doc/UML/ShipDecorator.jpg)
+
+![JUnit Test Results](./images/testResult.png)
+
+Currently, the code and the documentation is stored under the DesignPatterns branch. The following links can be used to find:
+* Documentation: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/DesignPatterns/doc/UML/
+* Source Code: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/DesignPatterns/src/main/java/SpaceAdventure3398/
+* Testing Code: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/DesignPatterns/src/test/java/SpaceAdventure3398/
+
+The code shows basic application of some of the design patterns and how to use them in reference to the game. The design patterns will become more relevant as we update the game design to include more features. For the time being, that remain a separate and abstract component of the game design process until the initial game units have been implemented and ready to be combined.
+
+Currently, they are not used by the team and not intended to be merged into the Development branch.
+
+To run the code, checkout the 'DesignPatterns' branch, navigate to the directory where the build.xml file is and run the following commands in the specified order: 'ant clean, ant compile, ant jar, ant run'. You should see descriptive output of design patterns and interactions among them.
+
+To run the tests, checkout the 'DesignPatterns' branch, navigate to the main directory, and run the commands 'gradle build' and 'gradle test'. Once the buikld is succesful, the report for the test can be found ubder build/report/tests/test/index.html.
+
+## Status
+
+* Lucas Anesti: almost there.
+
+## Next Steps (Assignment 11)
+
+* Lucas Anesti: The next steps for me would be to incorporate the design patterns into the running code. This will require combingin and removing code, updating or replacing stubs with code created by teammates, rewriting the javadoc documentation, and redesigning unit and integration testing for the patterns using concrete objects. 
+
+
+
+
+## Retrospective (Assignment 11)
+
+### What went well
+
+* Team:
+
+* Lucas Anesti: I was able to find some design patterns that are applicable and useful to our game. We believe that the patterns will help us write more flexible, extensible, and thread safe code. However, limited knowledge of design patterns required me to do extensive research on the justification and the implementation of each pattern. As a result, the time spent on completing the tasks exceeds the projected numbers by a large margin.
+
+* 
+* 
+* 
+* 
+
+
+### What might be Impeding us
+
+* Our schedule conflict is posiibly impeding us from performing better. Many of us work on the weekends, so our meetings are held late during some weekdays. In addition,we do not have much experience with game design and implementation.
+
+### What can we do to improve
+
+* Team: 
+
+* Lucas Anesti: 
+
+
+
+
