@@ -93,7 +93,16 @@ Created by Tanner Coker, Lucas Anesti, Brice Ashburn, Erik Cortez and Eric Figue
 The Background, Stars, and Planets classes have all been added and are working together. Stars and Planets both 
 implement interface "SpaceBodies". The background is a Black screen that has white stars and green planets 
 moving from the top of the screen to the bottom. Stars and planets change their x/y-cood., size, and speed each
-time it is moved back to it's respective y-coord. 
+time it is moved back to it's respective y-coord. Additional classes were made as well that include TestRunner
+which I used to test run the code and "UpdateThread" which is just an extension of Thread and that is used to 
+update the stars and planets on the background.
+
+!.[Background_Demo](./images/background.png)
+
+The java files are currently located in the Development branch since I have merged the background branch into it. It will be in moved to master once other members have finished merging their branches
+to master.
+
+* Source code: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/branch/Development
 
 
 ### Lucas Anesti
