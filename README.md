@@ -89,20 +89,9 @@ Created by Tanner Coker, Lucas Anesti, Brice Ashburn, Erik Cortez and Eric Figue
 
 # Sprint 1 Review (Assignment 11)
 
-### Tanner Coker
-The Background, Stars, and Planets classes have all been added and are working together. Stars and Planets both 
-implement interface "SpaceBodies". The background is a Black screen that has white stars and green planets 
-moving from the top of the screen to the bottom. Stars and planets change their x/y-cood., size, and speed each
-time it is moved back to it's respective y-coord. Additional classes were made as well that include TestRunner
-which I used to test run the code and "UpdateThread" which is just an extension of Thread and that is used to 
-update the stars and planets on the background.
 
-![Background_Demo](./images/background.png)
 
-The java files are currently located in the Development branch since I have merged the background branch into it. It will be in moved to master once other members have finished merging their branches
-to master.
-
-* Source code: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/branch/Development
+### Brice Ashburn
 
 
 ### Lucas Anesti
@@ -128,13 +117,63 @@ To run the code, checkout the 'DesignPatterns' branch, navigate to the directory
 
 To run the tests, checkout the 'DesignPatterns' branch, navigate to the main directory, and run the commands 'gradle build' and 'gradle test'. Once the buikld is succesful, the report for the test can be found ubder build/report/tests/test/index.html.
 
+
+### Tanner Coker
+The Background, Stars, and Planets classes have all been added and are working together. Stars and Planets both 
+implement interface "SpaceBodies". The background is a Black screen that has white stars and green planets 
+moving from the top of the screen to the bottom. Stars and planets change their x/y-cood., size, and speed each
+time it is moved back to it's respective y-coord. Additional classes were made as well that include TestRunner
+which I used to test run the code and "UpdateThread" which is just an extension of Thread and that is used to 
+update the stars and planets on the background.
+
+![Background_Demo](./images/background.png)
+
+The java files are currently located in the Development branch since I have merged the background branch into it. It will be in moved to master once other members have finished merging their branches
+to master.
+
+* Source code: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/branch/Development
+
+
+### Erik Cortez
+
+
+### Eric Figueroa
+
+
+
+
+
+
+
 ## Status
 
-* Lucas Anesti: almost there.
+* Brice Ashburn:
+
+* Lucas Anesti: completed.
+
+* Tanner Coker:
+
+* Erik Cortez: 
+
+* Eric Figueroa:
+
+
+
+
 
 ## Next Steps (Assignment 11)
 
+* Brice Ashburn:
+
 * Lucas Anesti: The next steps for me would be to incorporate the design patterns into the running code. This will require combingin and removing code, updating or replacing stubs with code created by teammates, rewriting the javadoc documentation, and redesigning unit and integration testing for the patterns using concrete objects. 
+
+* Tanner Coker:
+
+* Erik Cortez: 
+
+* Eric Figueroa:
+
+
 
 
 
@@ -143,25 +182,42 @@ To run the tests, checkout the 'DesignPatterns' branch, navigate to the main dir
 
 ### What went well
 
-* Team:
+* Team: We were able to reach an agreement on game design decisions early on. We have produced artifacts for our project, including design documents and functional game components.
+
+* Brice Ashburn:
 
 * Lucas Anesti: I was able to find some design patterns that are applicable and useful to our game. We believe that the patterns will help us write more flexible, extensible, and thread safe code. However, limited knowledge of design patterns required me to do extensive research on the justification and the implementation of each pattern. As a result, the time spent on completing the tasks exceeds the projected numbers by a large margin. Also issued an incorrect merge on git, so had to hunt down scattered code in multiple commits and recreate certain branches.
 
-* 
-* 
-* 
-* 
+* Tanner Coker:
+
+* Erik Cortez: 
+
+* Eric Figueroa:
+
+
+
 
 
 ### What might be Impeding us
 
-* Our schedule conflict is posiibly impeding us from performing better. Many of us work on the weekends, so our meetings are held late during some weekdays. In addition,we do not have much experience with game design and implementation.
+* Our schedule conflict is possibly impeding us from performing better. Many of us work on the weekends, so our meetings are held late during some weekdays. In addition,we do not have much experience with game design and implementation.
+
+
+
 
 ### What can we do to improve
 
-* Team: 
+* Team: We will have to find a better way to communicate as expecting to get things done during real-time meetings is not feasible due to schedule conflicts. 
+
+* Brice Ashburn:
 
 * Lucas Anesti: 
+
+* Tanner Coker:
+
+* Erik Cortez: 
+
+* Eric Figueroa:
 
 
 
