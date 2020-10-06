@@ -153,7 +153,7 @@ class which will allow them to move. The ship class is partially complete with s
 
 * Lucas Anesti: completed.
 
-* Tanner Coker:
+* Tanner Coker: completed.
 
 * Erik Cortez: 
 
@@ -169,7 +169,7 @@ class which will allow them to move. The ship class is partially complete with s
 
 * Lucas Anesti: The next steps for me would be to incorporate the design patterns into the running code. This will require combingin and removing code, updating or replacing stubs with code created by teammates, rewriting the javadoc documentation, and redesigning unit and integration testing for the patterns using concrete objects. 
 
-* Tanner Coker:
+* Tanner Coker: My next step will likely be to add all of the separate moving parts such as enemies and the player to the background.
 
 * Erik Cortez: 
 
@@ -190,7 +190,7 @@ class which will allow them to move. The ship class is partially complete with s
 
 * Lucas Anesti: I was able to find some design patterns that are applicable and useful to our game. We believe that the patterns will help us write more flexible, extensible, and thread safe code. However, limited knowledge of design patterns required me to do extensive research on the justification and the implementation of each pattern. As a result, the time spent on completing the tasks exceeds the projected numbers by a large margin. Also issued an incorrect merge on git, so had to hunt down scattered code in multiple commits and recreate certain branches.
 
-* Tanner Coker:
+* Tanner Coker: I was able to find some sample code that showed a background with moving pieces. I modified my stars and planets class so that I can incorporate some of the ideas that I got by viewing the other project. Originally the classes were extending JPanels and after viewing the other project I had seen that they extended their moving objects from the Rectangles class and so I did that as well with success.
 
 * Erik Cortez: 
 
@@ -215,7 +215,7 @@ class which will allow them to move. The ship class is partially complete with s
 
 * Lucas Anesti: For me ...
 
-* Tanner Coker:
+* Tanner Coker: I need to find more time in my days to work on the code so that I can finish my tasks sooner so that I can provide assistance to other team members when needed.
 
 * Erik Cortez: 
 
