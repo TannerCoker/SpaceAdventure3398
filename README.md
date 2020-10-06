@@ -97,7 +97,7 @@ time it is moved back to it's respective y-coord. Additional classes were made a
 which I used to test run the code and "UpdateThread" which is just an extension of Thread and that is used to 
 update the stars and planets on the background.
 
-!.[Background_Demo](./images/background.png)
+![Background_Demo](./images/background.png)
 
 The java files are currently located in the Development branch since I have merged the background branch into it. It will be in moved to master once other members have finished merging their branches
 to master.
