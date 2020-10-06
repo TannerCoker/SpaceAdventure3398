@@ -135,7 +135,7 @@ to master.
 
 
 ### Erik Cortez
-I've created a few sprites which represent the player and enemies or a boss. The sprites will be used in the ship
+I've created a few sprites in the development branch which represent the player and enemies or a boss. The sprites will be used in the ship
 class which will allow them to move. The ship class is partially complete with some methods but doesn't function yet.
 
 
