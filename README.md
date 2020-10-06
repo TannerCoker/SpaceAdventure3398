@@ -89,6 +89,13 @@ Created by Tanner Coker, Lucas Anesti, Brice Ashburn, Erik Cortez and Eric Figue
 
 # Sprint 1 Review (Assignment 11)
 
+### Tanner Coker
+The Background, Stars, and Planets classes have all been added and are working together. Stars and Planets both 
+implement interface "SpaceBodies". The background is a Black screen that has white stars and green planets 
+moving from the top of the screen to the bottom. Stars and planets change their x/y-cood., size, and speed each
+time it is moved back to it's respective y-coord. 
+
+
 ### Lucas Anesti
 The Design Patterns that will be used for the game have been finalized and the code for the class design have been implemented. In addition, both unit testing for the individual design patterns and integration testing between the patterns have been completed using JUnit. The following two documents demonstrate the progress made:
 
