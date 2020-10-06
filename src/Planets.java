@@ -21,7 +21,7 @@ public class Planets extends Rectangle implements SpaceBodies
 	public Planets()
 	{
 		BgWidth = 1936;
-		posX = (int)(Math.random()*BgWidth);
+		posX = (int)(Math.random()*1936);
 		posY = (int)(Math.random()*2500);
 		size = (int)(Math.random()*10+20);
 		if(size < 23)
@@ -40,7 +40,7 @@ public class Planets extends Rectangle implements SpaceBodies
 	{
 		if(posY >= 2500)
 		{
-			posX = (int)(Math.random()*BgWidth);
+			posX = (int)(Math.random()*1936);
 			posY = (int)(Math.random()*5000+5000)*(-1);
 			size = (int)(Math.random()*10+20);
 			if(size < 23)

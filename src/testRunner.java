@@ -30,7 +30,7 @@ public class testRunner
 		
 		
 		frame.setVisible(true);
-		b.giveFrameWidth(frame.getWidth());
+		//b.giveFrameWidth(frame.getWidth());
 	}
 	public static void main(String args[])
 	{

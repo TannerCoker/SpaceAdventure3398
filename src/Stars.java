@@ -15,13 +15,13 @@ import java.util.*;
 public class Stars extends Rectangle implements SpaceBodies
 {
 	
-	//x,y location. speed. size. background width
+	//x,y location. speed. size. background width(in progress)
 	private int posX, posY, spd, size, BgWidth;
 	
 	public Stars()
 	{
 		BgWidth = 1936;
-		posX = (int)(Math.random()*BgWidth);
+		posX = (int)(Math.random()*1936);
 		posY = (int)(Math.random()*1500);
 		size = (int)(Math.random()*3+1);
 		if(size < 3)
@@ -39,7 +39,7 @@ public class Stars extends Rectangle implements SpaceBodies
 	{
 		if(posY >= 1500)
 		{
-			posX = (int)(Math.random()*BgWidth);
+			posX = (int)(Math.random()*1936);
 			posY = 0;
 			size = (int)(Math.random()*3+1);
 			if(size < 3)
