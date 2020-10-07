@@ -92,7 +92,8 @@ Created by Tanner Coker, Lucas Anesti, Brice Ashburn, Erik Cortez and Eric Figue
 
 
 ### Brice Ashburn
-
+As a team we all have been working on individual classes and implementations for our end goal for the game. I have been able to finish the bullet class as part to implenmented with my groupmates, there was a few blocks as I fairly new to Java and had to watch many videos to learn about these designs. My team have also completing their work as you can see the back done by Tanner is very high quaily and 
+has many aspects to it. As a team we are having to learn SourceTree, BitBucket and Jira on the fly lucky although it still takes up a lot of time it has been interesting to learn. I am still working correcting the hitbox as it has a few bugs still.
 
 ### Lucas Anesti
 The Design Patterns that will be used for the game have been finalized and the code for the class design have been implemented. In addition, both unit testing for the individual design patterns and integration testing between the patterns have been completed using JUnit. The following two documents demonstrate the progress made:
@@ -149,7 +150,7 @@ class which will allow them to move. The ship class is partially complete with s
 
 ## Status
 
-* Brice Ashburn:
+* Brice Ashburn: completed.
 
 * Lucas Anesti: completed.
 
@@ -165,7 +166,8 @@ class which will allow them to move. The ship class is partially complete with s
 
 ## Next Steps (Assignment 11)
 
-* Brice Ashburn:
+* Brice Ashburn:The next step for me is to keep working out the bugs on the hitbox and starting to think about a main menu.
+		As a team our next step should to continue learning SouceTree and Bitbuck/Jira as well to continue working on parts of the project/game.
 
 * Lucas Anesti: The next steps for me would be to incorporate the design patterns into the running code. This will require combingin and removing code, updating or replacing stubs with code created by teammates, rewriting the javadoc documentation, and redesigning unit and integration testing for the patterns using concrete objects. 
 
@@ -186,7 +188,7 @@ class which will allow them to move. The ship class is partially complete with s
 
 * Team: We were able to reach an agreement on game design decisions early on. We have produced artifacts for our project, including design documents and functional game components.
 
-* Brice Ashburn:
+* Brice Ashburn: I was able to find multiple examples online and tutorial videos that really taught me a lot. Our group haas done a great job of communicating almost every day about progress and bugs and meeting times.
 
 * Lucas Anesti: I was able to find some design patterns that are applicable and useful to our game. We believe that the patterns will help us write more flexible, extensible, and thread safe code. However, limited knowledge of design patterns required me to do extensive research on the justification and the implementation of each pattern. As a result, the time spent on completing the tasks exceeds the projected numbers by a large margin. Also issued an incorrect merge on git, so had to hunt down scattered code in multiple commits and recreate certain branches.
 
@@ -211,7 +213,7 @@ class which will allow them to move. The ship class is partially complete with s
 
 * Team: We will have to find a better way to communicate as expecting to get things done during real-time meetings is not feasible due to schedule conflicts. 
 
-* Brice Ashburn:
+* Brice Ashburn: To impove what we can do is find more time to meet although many of us have busy schdules. Personally I need to find more to time to reshearch the design and implimenting within Java and in general.
 
 * Lucas Anesti: For me ...
 
