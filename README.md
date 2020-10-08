@@ -183,7 +183,7 @@ The player and enemy classes have been added but are still having issues. My cla
 
 * Team: We were able to reach an agreement on game design decisions early on. We have produced artifacts for our project, including design documents and functional game components.
 
-* Team: We developed our own game assets instead of using online resources. As a result, we do not have to worry about copyright issues when we make our game available.
+* Team: We developed our own game assets instead of using online assets. As a result, we do not have to worry about copyright issues when we make our game available.
 
 * Team: Games have many components, so it was easy to partition the work among our team members with minimal dependency.
 
