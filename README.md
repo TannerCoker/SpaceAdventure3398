@@ -188,9 +188,11 @@ The player and enemy classes have been added but are still having issues. My cla
 
 * Team: We were able to reach an agreement on game design decisions early on. We have produced artifacts for our project, including design documents and functional game components.
 
+* Team: We developed our own game assets instead of using online resources. As a result, we do not have to worry about copyright issues when we make our game available.
+
 * Brice Ashburn: I was able to find multiple examples online and tutorial videos that really taught me a lot. Our group haas done a great job of communicating almost every day about progress and bugs and meeting times.
 
-* Lucas Anesti: I was able to find some design patterns that are applicable and useful to our game. We believe that the patterns will help us write more flexible, extensible, and thread safe code. However, limited knowledge of design patterns required me to do extensive research on the justification and the implementation of each pattern. As a result, the time spent on completing the tasks exceeds the projected numbers by a large margin. Also issued an incorrect merge on git, so had to hunt down scattered code in multiple commits and recreate certain branches.
+* Lucas Anesti: I was able to find some design patterns that are applicable and useful to our game. We believe that the patterns will help us write more flexible, extensible, and thread safe code. However, limited knowledge of design patterns required me to do extensive research on the justification and the implementation of each pattern. As a result, the time spent on completing the tasks exceeds the projected numbers by a large margin. Also issued an incorrect merge on git, so had to hunt down scattered code in multiple commits to recreate certain branches.
 
 * Tanner Coker: I was able to find some sample code that showed a background with moving pieces. I modified my stars and planets class so that I can incorporate some of the ideas that I got by viewing the other project. Originally the classes were extending JPanels and after viewing the other project I had seen that they extended their moving objects from the Rectangles class and so I did that as well with success.
 
@@ -203,18 +205,22 @@ The player and enemy classes have been added but are still having issues. My cla
 
 ### What might be Impeding us
 
-* Our schedule conflict is possibly impeding us from performing better. Many of us work on the weekends, so our meetings are held late during some weekdays. In addition,we do not have much experience with game design and implementation.
+* Our schedule conflict is possibly impeding us from performing better. Many of us work on the weekends, so our meetings are held late during some weekdays. In addition,we do not have much experience with game design and implementation. Finally, we are not entirely comfortable with Java, but we feel that it is the best language for the task.
 
 
 
 
 ### What can we do to improve
 
-* Team: We will have to find a better way to communicate as expecting to get things done during real-time meetings is not feasible due to schedule conflicts. 
+* Team: We will have to find a better way to communicate as expecting to get things done during real-time online meetings is not feasible due to schedule conflicts. While we have not measured it, we only had very few meeting where every teem member was present. This metric indicates that zoom meetings are not the best form of communication and not ideal to achieve our target productivity. We are currently considering improving our communication through slack. A possible metric for success can be counting the number of responses that a message on slack receives. If too few people,say 2 out of 5, are responding on a regular basis, then we can suspect that the communication is not working. In addition we can look at the response time for possibly improving the timing of the communication in the event that responses are posted by everyone but sporadically.
+
+* Team: In the last sprint, we did not update our code regularly on bitbucket, so many of us were unaware on the progress made by the other team members. In this sprint, we can aim for regular updates. One way to ensure this is to ask each member to commit something every time period, say 3 days. The metric will be to count the number of missing commits, which will tell us if we need to reassign team member for load balancing. Some tasks may be harder than others, so the absence of a commit can indicate that our time estimates for completing tasks were off.
+
+* Team: We did not observe the dependencies between our objectives. Though integrating our parts was not the goal, had we originally designed our sprint with the dependencies in mind, we could have assigned team members more dynamically to complete tasks. This approach may possibly help us accomplish more in future sprints as integrating our parts is one of our future goals. For the next sprint, we intend to use the Gantt chart feature available in Jira, and measure the succes of our sprint design both by trying to minimize our task dependencies, and trying to commit to the deadlines of each task as to not delay future tasks. Our metric will be based on actual completion time compared to the deadline set in the Gantt chart.
 
 * Brice Ashburn: To impove what we can do is find more time to meet although many of us have busy schdules. Personally I need to find more to time to reshearch the design and implimenting within Java and in general.
 
-* Lucas Anesti: For me ...
+* Lucas Anesti: I spent too much time on this sprint researching and learning design patterns, which did not leave much time for coding. I spent my entire time overcoming a block, so I did not feel as productive for the project as I could have been. In future sprints, I intend to partition my time more evenly. If i find myself facing a block I will see if anyone in my team has expertise to help me resolve the issue. In addition,during the last sprint, I set my tasks in such a way that it was hard to show progress. For example, I had three tasks that were running simultaneously, "implement stubs", "write documentation", and "run tests" for all the design patterns. If I had instead grouped the tasks by individual design pattern and not by task group, it would have been easier to both show progress and observe udpates in the project. As a metric, I will observe the burndown charts and see how evenly my task completions follow the ideal line. In the last sprint, if i had drawn a personal burndown chart, most of my tasks would remain under the line until the last day in the project, where they actually meet the the goal. In this sprint, I will divide the work among the tasks so that the line can be approximated upon task completion.
 
 * Tanner Coker: I need to find more time in my days to work on the code so that I can finish my tasks sooner so that I can provide assistance to other team members when needed.
 
