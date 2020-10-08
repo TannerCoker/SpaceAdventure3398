@@ -125,12 +125,12 @@ implement interface "SpaceBodies". The background is a Black screen that has whi
 moving from the top of the screen to the bottom. Stars and planets change their x/y-cood., size, and speed each
 time it is moved back to it's respective y-coord. Additional classes were made as well that include TestRunner
 which I used to test run the code and "UpdateThread" which is just an extension of Thread and that is used to 
-update the stars and planets on the background.
+update the stars and planets on the background. Background will be used to as the main panel that all of the other
+objects such as enemies, players, main menu, etc.. will be displayed on. 
 
 ![Background_Demo](./images/background.png)
 
-The java files are currently located in the Development branch since I have merged the background branch into it. It will be in moved to master once other members have finished merging their branches
-to master.
+The java files are currently located in the Development branch since I have merged the background branch into it. 
 
 * Source code: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/branch/Development
 
@@ -193,7 +193,7 @@ The player and enemy classes have been added but are still having issues. My cla
 
 * Lucas Anesti: I was able to find some design patterns that are applicable and useful to our game. We believe that the patterns will help us write more flexible, extensible, and thread safe code. However, limited knowledge of design patterns required me to do extensive research on the justification and the implementation of each pattern. As a result, the time spent on completing the tasks exceeds the projected numbers by a large margin. Also issued an incorrect merge on git, so had to hunt down scattered code in multiple commits to recreate certain branches.
 
-* Tanner Coker: I was able to find some sample code that showed a background with moving pieces. I modified my stars and planets class so that I can incorporate some of the ideas that I got by viewing the other project. Originally the classes were extending JPanels and after viewing the other project I had seen that they extended their moving objects from the Rectangles class and so I did that as well with success.
+* Tanner Coker: I was able to find some sample code that showed a background with moving pieces. I modified my stars and planets class so that I can incorporate some of the ideas that I got by viewing the other project. Originally the classes were extending JPanels and after viewing the other project I had seen that they extended their moving objects from the Rectangles class and so I did that as well with success. However, I did not have a lot of free time to work on the project due to work and other classes so I was very rushed towards the end. Additionally, the java graphics proved more difficult in the beggining than what I thought it would be.
 
 * Erik Cortez: I learned to understand how design patterns work so that I can incorporate them better into my class. I also learned how Bitbucket and Sourcetree help to better organize work. I also learned a bit about designing sprites.
 
@@ -224,7 +224,7 @@ The player and enemy classes have been added but are still having issues. My cla
 
 * Lucas Anesti: I spent too much time on this sprint researching and learning design patterns, which did not leave much time for coding. I spent my entire time overcoming a block, so I did not feel as productive for the project as I could have been. In future sprints, I intend to partition my time more evenly. If i find myself facing a block I will see if anyone in my team has expertise to help me resolve the issue. In addition,during the last sprint, I set my tasks in such a way that it was hard to show progress. For example, I had three tasks that were running simultaneously, "implement stubs", "write documentation", and "run tests" for all the design patterns. If I had instead grouped the tasks by individual design pattern and not by task group, it would have been easier to both show progress and observe udpates in the project. As a metric, I will observe the burndown charts and see how evenly my task completions follow the ideal line. In the last sprint, if i had drawn a personal burndown chart, most of my tasks would remain under the line until the last day in the project, where they actually meet the the goal. In this sprint, I will divide the work among the tasks so that the line can be approximated upon task completion.
 
-* Tanner Coker: I need to find more time in my days to work on the code so that I can finish my tasks sooner so that I can provide assistance to other team members when needed.
+* Tanner Coker: I need to find more time in my days to work on the code so that I can finish my tasks sooner so that I can provide assistance to other team members when needed as some are not very familiar with Java.
 
 * Erik Cortez: I felt like I spent more time than I should have learning how to solve my code problems in the wrong places, and didn't spend enough time learning how Sourcetree and Bitbucket work. I could have also spent more time understanding concepts before trying to use them. It would also help to ask more questions so that I can get the help that I need. As a team, I believe we could organize group time ahead of time to make deadlines less hectic.
 
