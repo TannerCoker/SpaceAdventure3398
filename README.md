@@ -184,11 +184,15 @@ class which will allow them to move. The ship class is partially complete with s
 
 ## Retrospective (Assignment 11)
 
-### What went well
+### What went well (or not)
 
 * Team: We were able to reach an agreement on game design decisions early on. We have produced artifacts for our project, including design documents and functional game components.
 
 * Team: We developed our own game assets instead of using online resources. As a result, we do not have to worry about copyright issues when we make our game available.
+
+* Team: Games have many components, so it was easy to partition the work among our team members with minimal dependency.
+
+* Team: (Not so well) We do not understand git very well and the git workflow very clearly. We had a few commit and merge conflicts. 
 
 * Brice Ashburn: I was able to find multiple examples online and tutorial videos that really taught me a lot. Our group haas done a great job of communicating almost every day about progress and bugs and meeting times.
 
