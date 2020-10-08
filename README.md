@@ -141,7 +141,7 @@ class which will allow them to move. The ship class is partially complete with s
 
 
 ### Eric Figueroa
-
+The player and enemy classes have been added but are still having issues. My classes should create the player and enemy but keeps crashing. Should permit movement from left to right of the screen for players and flying abilities at top of screen for enemies. The players and enemy movement/tactics differ from one another also depending on level. Code does not run yet. Still new to developing in java, especially a game with graphics and images.
 
 
 
@@ -158,7 +158,7 @@ class which will allow them to move. The ship class is partially complete with s
 
 * Erik Cortez: 
 
-* Eric Figueroa:
+* Eric Figueroa: completed.
 
 
 
@@ -175,7 +175,7 @@ class which will allow them to move. The ship class is partially complete with s
 
 * Erik Cortez: 
 
-* Eric Figueroa:
+* Eric Figueroa: The next steps for me would be to get the errors to stop occurring and start combining into other sections of Space Adventures code. This will require further communication with team about how to incorporate each other’s code and possible rewriting and redesigning if needed with testing to ensure that it works smoothly after combining.
 
 
 
@@ -196,8 +196,7 @@ class which will allow them to move. The ship class is partially complete with s
 
 * Erik Cortez: 
 
-* Eric Figueroa:
-
+* Eric Figueroa: As a team, things that went well were helping and guiding one another when we would encounter problems on source tree. We are currently still adjusting to new environments.
 
 
 
@@ -221,7 +220,7 @@ class which will allow them to move. The ship class is partially complete with s
 
 * Erik Cortez: 
 
-* Eric Figueroa:
+* Eric Figueroa: As a team, for improvement I suggest we could schedule more zoom meetings to discuss project rather than over message. We can also work on updating tasks on Jira to have our burnout reports to be more accurate.  As an individual, for improvement I recommend doing more research on java and look up YouTube videos to learn more about developing games.
 
 
 
