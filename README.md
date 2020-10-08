@@ -36,7 +36,7 @@ Here is a picture of our game logo:
 * BitBucket (https://bitbucket.org/product)
 
 ## Setup
-* Follow the hyperlinks listed above to set up your local enviorment needed.
+* Follow the hyperlinks listed above to set up your local environment needed.
 
 ## Code Examples
 
@@ -82,7 +82,7 @@ Project is:
 * In progess...
 
 ## Inspiration
-Project inspired by aracde style games.
+Project inspired by arcade style games.
 
 ## Contact
 Created by Tanner Coker, Lucas Anesti, Brice Ashburn, Erik Cortez and Eric Figueroa.
@@ -137,7 +137,7 @@ to master.
 
 ### Erik Cortez
 I've created a few sprites in the development branch which represent the player and enemies or a boss. The sprites will be used in the ship
-class which will allow them to move. The ship class is partially complete with some methods but doesn't function yet.
+class which control how the player and enemy ships move. The ship class is partially complete with some methods but doesn't function yet.
 
 
 ### Eric Figueroa
@@ -154,7 +154,7 @@ The player and enemy classes have been added but are still having issues. My cla
 
 * Tanner Coker: completed.
 
-* Erik Cortez: 
+* Erik Cortez: completed.
 
 * Eric Figueroa: completed.
 
@@ -171,7 +171,7 @@ The player and enemy classes have been added but are still having issues. My cla
 
 * Tanner Coker: My next step will likely be to add all of the separate moving parts such as enemies and the player to the background.
 
-* Erik Cortez: 
+* Erik Cortez: I plan to work on adding design patterns to the ship class to get it working well, and to add ship sprites as needed. I will also learn how to better understand Sourcetree and Bitbucket.
 
 * Eric Figueroa: The next steps for me would be to get the errors to stop occurring and start combining into other sections of Space Adventures code. This will require further communication with team about how to incorporate each other’s code and possible rewriting and redesigning if needed with testing to ensure that it works smoothly after combining.
 
@@ -195,7 +195,7 @@ The player and enemy classes have been added but are still having issues. My cla
 
 * Tanner Coker: I was able to find some sample code that showed a background with moving pieces. I modified my stars and planets class so that I can incorporate some of the ideas that I got by viewing the other project. Originally the classes were extending JPanels and after viewing the other project I had seen that they extended their moving objects from the Rectangles class and so I did that as well with success.
 
-* Erik Cortez: 
+* Erik Cortez: I learned to understand how design patterns work so that I can incorporate them better into my class. I also learned how Bitbucket and Sourcetree help to better organize work. I also learned a bit about designing sprites.
 
 * Eric Figueroa: Things that went well were helping and guiding one another when we would encounter problems on source tree. We are currently still adjusting to new environments.
 
@@ -226,7 +226,7 @@ The player and enemy classes have been added but are still having issues. My cla
 
 * Tanner Coker: I need to find more time in my days to work on the code so that I can finish my tasks sooner so that I can provide assistance to other team members when needed.
 
-* Erik Cortez: 
+* Erik Cortez: I felt like I spent more time than I should have learning how to solve my code problems in the wrong places, and didn't spend enough time learning how Sourcetree and Bitbucket work. I could have also spent more time understanding concepts before trying to use them. It would also help to ask more questions so that I can get the help that I need. As a team, I believe we could organize group time ahead of time to make deadlines less hectic.
 
 * Eric Figueroa: As a team, for improvement I suggest we could schedule more zoom meetings to discuss project rather than over message. As an individual, for improvement I recommend doing more research on java and look up YouTube videos to learn more about developing games.
 
