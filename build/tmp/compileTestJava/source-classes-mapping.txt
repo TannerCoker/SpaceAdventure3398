@@ -1,0 +1,6 @@
+SpaceAdventure3398/testShipDecorator.java
+ SpaceAdventure3398.testShipDecorator
+SpaceAdventure3398/testMovementType.java
+ SpaceAdventure3398.testMovementType
+SpaceAdventure3398/integrationTests.java
+ SpaceAdventure3398.integrationTests
