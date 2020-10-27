@@ -4,6 +4,7 @@ Author: Tanner Coker
 This is a class that displays that main menu for the game SpaceAdventure 3398
 */
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 import java.util.*;
 import java.io.*;
@@ -36,7 +37,15 @@ public class MainMenu extends JPanel
     settingsButton.setPicture(settings);
     aboutButton.setPicture(about);
     exitButton.setPicture(exit);
+
+    JButton testPlay = new JButton(play);
+    testPlay.setOpaque(false);
+    testPlay.setContentAreaFilled(false);
+    testPlay.setBorder(BorderFactory.createEmptyBorder());
+
+    this.add(testPlay);
   }
+
 
   public void paintComponent(Graphics g)
 	{
@@ -48,5 +57,6 @@ public class MainMenu extends JPanel
     settingsButton.draw(g,this);
     aboutButton.draw(g,this);
     exitButton.draw(g,this);
+
 	}
 }
