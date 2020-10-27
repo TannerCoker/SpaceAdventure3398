@@ -43,11 +43,12 @@ public class Scoreboard
 	public static void main(String[] args)
 	{
 		Scoreboard s = new Scoreboard();
-		System.out.println( s.show() );
-		s.updateCurrentScore(12345);
-		s.save("other");
+		System.out.println( s.getScores() );
+		s.updateCurrentScore(17);
+		s.save("Player_1");
 
 		Scoreboard k = new Scoreboard();
+		System.out.println( k.getScores() );
 	}
 
 	/**
@@ -92,6 +93,12 @@ public class Scoreboard
 	{
 		currentScore = currentScore + points;
 		if (currentScore < 0) currentScore = 0;
+		//TODO check for overflow
+	}
+
+	public int getCurrentScore()
+	{
+		return currentScore;
 	}
 
 	public void save(String name)
@@ -121,13 +128,16 @@ public class Scoreboard
 		}
 	}	
 
-	public String show()
+	public String getScores()
 	{
-		String list = "Scores\n--------\n";
+		String list = String.format("%6s", "Score") + "\t" + String.format("%10s","Name") + "\n";
+		list += "------" + "\t" + "----------" + "\n";
 		for(ScoreLine s : topScores)
 		{
-			list += s.score + "   " + s.name + "\n";
+			list += String.format("%6s", s.score) + "\t";
+			list += String.format("%10s", s.name) + "\n";
 		}
+
 		return list;
 	}
 }
