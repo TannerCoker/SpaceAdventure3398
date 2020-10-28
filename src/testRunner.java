@@ -30,7 +30,6 @@ public class testRunner
 
 		MainMenu menu = new MainMenu();
 		frame.add(menu);
-		//MenuButtons mb = new MenuButtons(200,500);
 
 		frame.setVisible(true);
 		//b.giveFrameWidth(frame.getWidth());
