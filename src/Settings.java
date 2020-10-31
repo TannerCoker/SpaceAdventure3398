@@ -1,3 +1,9 @@
+/*
+  Author: Tanner Coker
+
+  This class will display the settings panel and it's various settings.
+*/
+
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
@@ -12,12 +18,13 @@ public class Settings extends JPanel implements ActionListener
   int width = screenSize.width;
   int height = screenSize.height;
   private BufferedImage background;
-  private ScreenManager manager;
-  private JButton back;
+  private ScreenManager manager;//screen manager
+  private JButton back;//back button
 
   public Settings(ScreenManager manager)
   {
     this.manager = manager;
+    //tries to get the static background image
     try
     {
       background = ImageIO.read(new File("../images/background2.png"));
@@ -31,6 +38,7 @@ public class Settings extends JPanel implements ActionListener
     setButton();
   }
 
+  //sets the back button
   private void setButton()
   {
     back = new JButton();
@@ -40,11 +48,13 @@ public class Settings extends JPanel implements ActionListener
     this.add(back);
   }
 
+  //makes the back button return to the menu
   @Override
   public void actionPerformed(ActionEvent e)
   {
     manager.showMenu();
   }
+
 
   @Override
   public void paintComponent(Graphics g)

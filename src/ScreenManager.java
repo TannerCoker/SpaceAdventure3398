@@ -1,18 +1,18 @@
+/*
+  Author: Tanner Coker
+
+  This class will manage which screen is currently being displayed for the game.
+*/
+
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import javax.swing.*;
 import javax.imageio.ImageIO;
 import java.util.*;
-import java.io.*;
 
 public class ScreenManager
 {
-  public ScreenManager()
-	{
-		runPanels();
-	}
-
   JFrame frame = new JFrame();
   JPanel container = new JPanel();
   MainMenu menu = new MainMenu(this);
@@ -23,6 +23,13 @@ public class ScreenManager
   CardLayout cl = new CardLayout();
 
 
+  public ScreenManager()
+	{
+		runPanels();
+	}
+
+  //this adds the various panels to the screen manager so that it can switch between them easily.
+  //it also sets the frame for the game.
 	private void runPanels()
 	{
     container.setLayout(cl);
@@ -40,45 +47,34 @@ public class ScreenManager
 		frame.setVisible(true);
 	}
 
-  public void showPlay()
-  {
-    cl.show(container, "2");
-  }
-
+  //switches to the main menu screen
   public void showMenu()
   {
     cl.show(container, "1");
   }
 
+  //swtiches to the gameplay panel
+  public void showPlay()
+  {
+    cl.show(container, "2");
+  }
+
+  //switches to the scoreboard
   public void showScoreB()
   {
     cl.show(container, "3");
   }
 
+  //switches to the settings panel
   public void showSettings()
   {
     cl.show(container, "4");
   }
 
+  //switches to the about panel
   public void showAbout()
   {
     cl.show(container, "5");
   }
-
-
-
-
-  /*private MainMenu menu;
-  private PlayRunner pRun;
-
-  public ScreenManager()
-  {
-    menu = new MainMenu(this);
-    pRun = new PlayRunner(this);
-    menu.setVisible(true);
-    repaint();
-    //pRun.setVisible(false);
-  }*/
-
 
 }

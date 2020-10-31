@@ -1,3 +1,9 @@
+/*
+  Author: Tanner Coker
+
+  This class will display the about panel of the game. It will show details of the game such as who made it.
+*/
+
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
@@ -13,11 +19,12 @@ public class About extends JPanel implements ActionListener
   int height = screenSize.height;
   private BufferedImage background;
   private ScreenManager manager;
-  private JButton back;
+  private JButton back;//back button
 
   public About(ScreenManager manager)
   {
     this.manager = manager;
+    //tries to get the background image
     try
     {
       background = ImageIO.read(new File("../images/background2.png"));
@@ -30,6 +37,7 @@ public class About extends JPanel implements ActionListener
     setButton();
   }
 
+  //makes the back button
   private void setButton()
   {
     back = new JButton();
@@ -39,6 +47,7 @@ public class About extends JPanel implements ActionListener
     this.add(back);
   }
 
+  //makes the back button return to the menu
   @Override
   public void actionPerformed(ActionEvent e)
   {

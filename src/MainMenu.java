@@ -16,17 +16,17 @@ public class MainMenu extends JPanel implements ActionListener
   Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
   int width = screenSize.width;
   int height = screenSize.height;
-  private BufferedImage title, background;
-  private ImageIcon play, score, settings, about, exit;
-  private JButton playButton, scoreButton, settingsButton, aboutButton, exitButton;
+  private BufferedImage title, background;//title image and static background image
+  private ImageIcon play, score, settings, about, exit;//image icons for the buttons
+  private JButton playButton, scoreButton, settingsButton, aboutButton, exitButton;//menu buttons that change screens
   //JButton[] buttons = {playButton,scoreButton,settingsButton,aboutButton,exitButton};
-  private ScreenManager manager;
+  private ScreenManager manager;//this is who manages the the menu
 
   public MainMenu(ScreenManager manager)
   {
     this.manager = manager;
 
-    //assigns the buffered image for title picture
+    //assigns the buffered image for title picture and background
     try
     {
       title = ImageIO.read(new File("../images/Title.png"));
@@ -62,9 +62,9 @@ public class MainMenu extends JPanel implements ActionListener
   //also sets the bounds for the buttons.
   private void makeButtons()
   {
-    //offset is used to space the buttons out by height.
     //JButton[] buttons = {playButton,scoreButton,settingsButton,aboutButton,exitButton};
     //ImageIcon[] pngs = {play,score,settings,about,exit};
+    //offset is used to space the buttons out by height.
     int offset = 0;
     playButton = new JButton(play);
     playButton.setBounds(width/2-play.getIconWidth()/2,height/2,play.getIconWidth(),play.getIconHeight());
@@ -118,7 +118,8 @@ public class MainMenu extends JPanel implements ActionListener
     }*/
   }
 
-  //action listener to run commands based on button press
+  //action listener that changes which screen is being displayed upon the press of the
+  //repective button except for the exit button which will close the game
   @Override
   public void actionPerformed(ActionEvent e)
   {
@@ -140,11 +141,12 @@ public class MainMenu extends JPanel implements ActionListener
     }
     else if(e.getSource() == exitButton)
     {
-      System.exit(0);
+      System.exit(0);//quits the program
     }
   }
 
-
+  //draws the main menu
+  @Override
   public void paintComponent(Graphics g)
 	{
 		super.paintComponent(g);

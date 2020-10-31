@@ -1,3 +1,9 @@
+/*
+  Author: Tanner Coker
+
+  This class is intended to display the current contents of the scoreboard for the game
+*/
+
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
@@ -12,12 +18,13 @@ public class ScoreBoardDisplay extends JPanel implements ActionListener
   int width = screenSize.width;
   int height = screenSize.height;
   private BufferedImage background;
-  private JButton back;
-  private ScreenManager manager;
+  private JButton back;//back button to return to menu
+  private ScreenManager manager;//screen manager
 
   public ScoreBoardDisplay(ScreenManager manager)
   {
     this.manager = manager;
+    //gets static background image
     try
     {
       background = ImageIO.read(new File("../images/background2.png"));
@@ -30,6 +37,7 @@ public class ScoreBoardDisplay extends JPanel implements ActionListener
     setButton();
   }
 
+  //sets the backbutton to return to the menu
   private void setButton()
   {
     back = new JButton();
@@ -39,6 +47,7 @@ public class ScoreBoardDisplay extends JPanel implements ActionListener
     this.add(back);
   }
 
+  //makes the back button got back to the menu
   @Override
   public void actionPerformed(ActionEvent e)
   {
