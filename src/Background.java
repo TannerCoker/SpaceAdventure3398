@@ -39,8 +39,7 @@ public class Background extends JPanel
 		}
 
 		//thread to run update
-		UpdateBG ub = new UpdateBG(this);
-		ub.start();
+		
 	}
 
 	//passes the width of the frame to the stars and planets

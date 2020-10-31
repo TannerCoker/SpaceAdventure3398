@@ -12,31 +12,34 @@ public class PlayRunner extends JPanel implements ActionListener
   int width = screenSize.width;
   int height = screenSize.height;
   private BufferedImage background;
-  JButton back;
+  private JButton back;
 
-  //private MainMenu Menu;
   private ScreenManager manager;
+      Background b = new Background();
   public PlayRunner(ScreenManager manager)
   {
     this.manager = manager;
-    try
-    {
-      background = ImageIO.read(new File("../images/background2.png"));
-    }
-    catch(Exception e)
-    {
-      System.out.println("background image not pulled");
-    }
+    this.setLayout(null);
+
+    this.add(b);
     setButton();
+    UpdateBG ub = new UpdateBG(this);
+		ub.start();
   }
 
   private void setButton()
   {
     back = new JButton();
-    back.setBounds(30,40,50,30);
+    back.setBounds(30,40,80,30);
     back.setText("Back");
     back.addActionListener(this);
     this.add(back);
+  }
+
+  public void update()
+  {
+    b.update();
+    repaint();
   }
 
   @Override
@@ -48,16 +51,13 @@ public class PlayRunner extends JPanel implements ActionListener
   @Override
   public void paintComponent(Graphics g)
   {
-    try
-    {
-      g.drawImage(background,0,0,width,height,this);
-    }
-    catch(Exception e)
-    {
-      g.setColor(Color.black);
-      g.fillRect(0,0,width,height);
-    }
+    g.setColor(Color.black);
+    g.fillRect(0,0,width,height);
+    b.paintComponent(g);
+    /*
+    g.setColor(Color.black);
+    g.fillRect(0,0,width,height);
     g. setColor(Color.cyan);
-    g.fillRect(500,500,200,100);
+    g.fillRect(500,500,200,100);*/
   }
 }

@@ -16,7 +16,9 @@ public class ScreenManager
   JPanel container = new JPanel();
   MainMenu menu = new MainMenu(this);
   PlayRunner pRun = new PlayRunner(this);
+  
   CardLayout cl = new CardLayout();
+
 
 	private void TestComponents()
 	{

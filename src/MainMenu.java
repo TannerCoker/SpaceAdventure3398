@@ -17,8 +17,8 @@ public class MainMenu extends JPanel implements ActionListener
   int width = screenSize.width;
   int height = screenSize.height;
   private BufferedImage title, background;
-  ImageIcon play, score, settings, about, exit;
-  JButton playButton, scoreButton, settingsButton, aboutButton, exitButton;
+  private ImageIcon play, score, settings, about, exit;
+  private JButton playButton, scoreButton, settingsButton, aboutButton, exitButton;
   //JButton[] buttons = {playButton,scoreButton,settingsButton,aboutButton,exitButton};
   //private PlayRunner playRunner;
   private ScoreBoardDisplay boardDisplay;
