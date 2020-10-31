@@ -12,7 +12,7 @@ import java.awt.*;
 public class testRunner
 {
 
-	public testRunner()
+	/*public testRunner()
 	{
 		TestComponents();
 	}
@@ -28,12 +28,13 @@ public class testRunner
 		//Background b = new Background();
 		//frame.add(b);
 
-		MainMenu menu = new MainMenu();
+		//MainMenu menu = new MainMenu();
+		ScreenManager menu = new ScreenManager();
 		frame.add(menu);
 
 		frame.setVisible(true);
 		//b.giveFrameWidth(frame.getWidth());
-	}
+	}*/
 	public static void main(String args[])
 	{
 
@@ -42,7 +43,7 @@ public class testRunner
 			@Override
 			public void run()
 			{
-				new testRunner();
+				new ScreenManager();
 			}
 		});
 	}

@@ -19,10 +19,18 @@ public class MainMenu extends JPanel implements ActionListener
   private BufferedImage title, background;
   ImageIcon play, score, settings, about, exit;
   JButton playButton, scoreButton, settingsButton, aboutButton, exitButton;
+  //JButton[] buttons = {playButton,scoreButton,settingsButton,aboutButton,exitButton};
+  //private PlayRunner playRunner;
+  private ScoreBoardDisplay boardDisplay;
+  private Settings settingScreen;
+  private About aboutScreen;
 
-  public MainMenu()
+  private ScreenManager manager;
+
+  public MainMenu(ScreenManager manager)
   {
     //assigns the buffered image for title picture
+    this.manager = manager;
     try
     {
       title = ImageIO.read(new File("../images/Title.png"));
@@ -32,14 +40,17 @@ public class MainMenu extends JPanel implements ActionListener
     {
       System.out.println("title image not pulled");
     }
+
     //assigns the pics for the buttons to use
     play = new ImageIcon("../images/possible_play_button.png");
     score = new ImageIcon("../images/Scoreboard.png");
     settings = new ImageIcon("../images/Settings.png");
     about = new ImageIcon("../images/About.png");
     exit = new ImageIcon("../images/Exit.png");
+
     //sets no layout for the mainmenu
     this.setLayout(null);
+
     //calls the method that will make all of the buttons and set their locations
     makeButtons();
 
@@ -49,6 +60,11 @@ public class MainMenu extends JPanel implements ActionListener
     this.add(settingsButton);
     this.add(aboutButton);
     this.add(exitButton);
+
+    //playRunner = new PlayRunner(this);
+    boardDisplay = new ScoreBoardDisplay(this);
+    settingScreen = new Settings(this);
+    aboutScreen = new About(this);
   }
 
   //makes the buttons and sets them to be transparent except for the png on them.
@@ -56,6 +72,8 @@ public class MainMenu extends JPanel implements ActionListener
   private void makeButtons()
   {
     //offset is used to space the buttons out by height.
+    //JButton[] buttons = {playButton,scoreButton,settingsButton,aboutButton,exitButton};
+    //ImageIcon[] pngs = {play,score,settings,about,exit};
     int offset = 0;
     playButton = new JButton(play);
     playButton.setBounds(width/2-play.getIconWidth()/2,height/2,play.getIconWidth(),play.getIconHeight());
@@ -95,6 +113,18 @@ public class MainMenu extends JPanel implements ActionListener
     exitButton.setContentAreaFilled(false);
     exitButton.setBorder(BorderFactory.createEmptyBorder());
     exitButton.addActionListener(this);
+
+    /*int counter = 0;
+    for(JButton b : buttons)
+    {
+      b.setBounds(width/2-pngs[counter].getIconWidth()/2,height/2+offset,pngs[counter].getIconWidth(),pngs[counter].getIconHeight());
+      b.setOpaque(false);
+      b.setContentAreaFilled(false);
+      b.setBorder(BorderFactory.createEmptyBorder());
+      b.addActionListener(this);
+      offset += (pngs[counter].getIconHeight() + 10);
+      counter++;
+    }*/
   }
 
   //action listener to run commands based on button press
@@ -103,11 +133,11 @@ public class MainMenu extends JPanel implements ActionListener
   {
     if(e.getSource() == playButton)
     {
-      System.out.println("play");
+      manager.showPlay();
     }
     else if(e.getSource() == scoreButton)
     {
-      System.out.println("score");
+
     }
     else if(e.getSource() == settingsButton)
     {
@@ -123,13 +153,25 @@ public class MainMenu extends JPanel implements ActionListener
     }
   }
 
+  public void hideAndShow()
+  {
+
+  }
+
   public void paintComponent(Graphics g)
 	{
 		super.paintComponent(g);
-		//g.setColor(Color.black);
-		//g.fillRect(0, 0, getWidth(), getHeight());
-    g.drawImage(background,0,0,width,height,this);
-    g.drawImage(title,width/2-title.getWidth()/2,150,this);
+    try
+    {
+      g.drawImage(background,0,0,width,height,this);
+    }
+    catch(Exception e)
+    {
+      g.setColor(Color.black);
+      g.fillRect(0,0,width,height);
+    }
+
+    g.drawImage(title,width/2-title.getWidth()/2,100,this);
 
 	}
 }
