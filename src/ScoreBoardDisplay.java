@@ -12,10 +12,12 @@ public class ScoreBoardDisplay extends JPanel implements ActionListener
   int width = screenSize.width;
   int height = screenSize.height;
   private BufferedImage background;
-  JButton back;
+  private JButton back;
+  private ScreenManager manager;
 
-  public ScoreBoardDisplay(MainMenu Menu)
+  public ScoreBoardDisplay(ScreenManager manager)
   {
+    this.manager = manager;
     try
     {
       background = ImageIO.read(new File("../images/background2.png"));
@@ -24,20 +26,23 @@ public class ScoreBoardDisplay extends JPanel implements ActionListener
     {
       System.out.println("background image not pulled");
     }
+    this.setLayout(null);
     setButton();
   }
 
   private void setButton()
   {
     back = new JButton();
-    back.setBounds(30,40,50,30);
+    back.setBounds(30,40,80,30);
     back.setText("Back");
+    back.addActionListener(this);
+    this.add(back);
   }
 
   @Override
   public void actionPerformed(ActionEvent e)
   {
-    
+    manager.showMenu();
   }
 
   @Override

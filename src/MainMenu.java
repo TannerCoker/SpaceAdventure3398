@@ -20,17 +20,13 @@ public class MainMenu extends JPanel implements ActionListener
   private ImageIcon play, score, settings, about, exit;
   private JButton playButton, scoreButton, settingsButton, aboutButton, exitButton;
   //JButton[] buttons = {playButton,scoreButton,settingsButton,aboutButton,exitButton};
-  //private PlayRunner playRunner;
-  private ScoreBoardDisplay boardDisplay;
-  private Settings settingScreen;
-  private About aboutScreen;
-
   private ScreenManager manager;
 
   public MainMenu(ScreenManager manager)
   {
-    //assigns the buffered image for title picture
     this.manager = manager;
+
+    //assigns the buffered image for title picture
     try
     {
       title = ImageIO.read(new File("../images/Title.png"));
@@ -60,11 +56,6 @@ public class MainMenu extends JPanel implements ActionListener
     this.add(settingsButton);
     this.add(aboutButton);
     this.add(exitButton);
-
-    //playRunner = new PlayRunner(this);
-    boardDisplay = new ScoreBoardDisplay(this);
-    settingScreen = new Settings(this);
-    aboutScreen = new About(this);
   }
 
   //makes the buttons and sets them to be transparent except for the png on them.
@@ -137,26 +128,22 @@ public class MainMenu extends JPanel implements ActionListener
     }
     else if(e.getSource() == scoreButton)
     {
-
+      manager.showScoreB();
     }
     else if(e.getSource() == settingsButton)
     {
-      System.out.println("settings");
+      manager.showSettings();
     }
     else if(e.getSource() == aboutButton)
     {
-      System.out.println("about");
+      manager.showAbout();
     }
     else if(e.getSource() == exitButton)
     {
-      System.out.println("exit");
+      System.exit(0);
     }
   }
 
-  public void hideAndShow()
-  {
-
-  }
 
   public void paintComponent(Graphics g)
 	{

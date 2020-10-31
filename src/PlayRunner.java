@@ -15,7 +15,8 @@ public class PlayRunner extends JPanel implements ActionListener
   private JButton back;
 
   private ScreenManager manager;
-      Background b = new Background();
+  Background b = new Background();
+
   public PlayRunner(ScreenManager manager)
   {
     this.manager = manager;
