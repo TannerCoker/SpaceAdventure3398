@@ -57,6 +57,7 @@ public class ScreenManager
   public void showPlay()
   {
     cl.show(container, "2");
+    pRun.startPlay();
   }
 
   //switches to the scoreboard
