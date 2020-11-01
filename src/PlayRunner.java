@@ -17,6 +17,7 @@ public class PlayRunner extends JPanel implements ActionListener
   int width = screenSize.width;
   int height = screenSize.height;
   private JButton back;//back button to return to the menu
+  ImageIcon backPic;
 
   private ScreenManager manager;
   Background background = new Background();
@@ -24,6 +25,7 @@ public class PlayRunner extends JPanel implements ActionListener
   public PlayRunner(ScreenManager manager)
   {
     this.manager = manager;
+    backPic = new ImageIcon("../images/Back.png");
     this.setLayout(null);
 
     this.add(background);//adds the animated background to game panel
@@ -37,9 +39,11 @@ public class PlayRunner extends JPanel implements ActionListener
   //makes the back button
   private void setButton()
   {
-    back = new JButton();
+    back = new JButton(backPic);
     back.setBounds(30,40,80,30);
-    back.setText("Back");
+    back.setOpaque(false);
+    back.setContentAreaFilled(false);
+    back.setBorder(BorderFactory.createEmptyBorder());
     back.addActionListener(this);
     this.add(back);
   }
@@ -55,7 +59,7 @@ public class PlayRunner extends JPanel implements ActionListener
   @Override
   public void actionPerformed(ActionEvent e)
   {
-    ub.stop();
+    //ub.stop();
     manager.showMenu();
   }
 

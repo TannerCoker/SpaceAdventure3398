@@ -17,17 +17,21 @@ public class ScoreBoardDisplay extends JPanel implements ActionListener
   Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
   int width = screenSize.width;
   int height = screenSize.height;
-  private BufferedImage background;
+  private BufferedImage background, panelTitle;
   private JButton back;//back button to return to menu
   private ScreenManager manager;//screen manager
+  ImageIcon backPic;
 
   public ScoreBoardDisplay(ScreenManager manager)
   {
     this.manager = manager;
+    backPic = new ImageIcon("../images/Back.png");
+
     //gets static background image
     try
     {
-      background = ImageIO.read(new File("../images/background2.png"));
+      background = ImageIO.read(new File("../images/stillBackground.png"));
+      panelTitle = ImageIO.read(new File("../images/Score_Board_Panel.png"));
     }
     catch(Exception e)
     {
@@ -40,9 +44,11 @@ public class ScoreBoardDisplay extends JPanel implements ActionListener
   //sets the backbutton to return to the menu
   private void setButton()
   {
-    back = new JButton();
+    back = new JButton(backPic);
     back.setBounds(30,40,80,30);
-    back.setText("Back");
+    back.setOpaque(false);
+    back.setContentAreaFilled(false);
+    back.setBorder(BorderFactory.createEmptyBorder());
     back.addActionListener(this);
     this.add(back);
   }
@@ -66,8 +72,14 @@ public class ScoreBoardDisplay extends JPanel implements ActionListener
       g.setColor(Color.black);
       g.fillRect(0,0,width,height);
     }
-    g. setColor(Color.green);
-    g.fillRect(500,500,200,100);
+    try
+    {
+      g.drawImage(panelTitle,width/2-panelTitle.getWidth()/2,10,this);
+    }
+    catch(Exception e)
+    {
+      g.drawString("ScoreBoard",width/2,10);
+    }
   }
 
 }
