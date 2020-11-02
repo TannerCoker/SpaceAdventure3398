@@ -1,4 +1,4 @@
-//package SpaceAdventure3398;
+package SpaceAdventure3398;
 
 import java.io.IOException;
 import java.util.Collections;
