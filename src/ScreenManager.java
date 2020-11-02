@@ -36,6 +36,7 @@ public class ScreenManager
     container.add(menu, "1");
     container.add(pRun, "2");
     container.add(sDisp, "3");
+	sDisp.setScoreboard(new Scoreboard() );
     container.add(setDisp, "4");
     container.add(abDisp, "5");
     cl.show(container, "1");

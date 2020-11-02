@@ -1,7 +1,7 @@
-17	Player
-17	Player_1
-0	------
-0	------
+177	Player
+140	PlayerX
+98	Someone
+7	Newbie
 0	------
 0	------
 0	------

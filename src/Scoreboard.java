@@ -130,11 +130,11 @@ public class Scoreboard
 
 	public String getScores()
 	{
-		String list = String.format("%6s", "Score") + "\t" + String.format("%10s","Name") + "\n";
-		list += "------" + "\t" + "----------" + "\n";
+		String list = String.format("%9s", "Score  ") + String.format("%6s", " ") + String.format("%10s","Name  ") + "\n";
+		list +=  String.format("%9s", "---------") + String.format("%6s", " ") + String.format("%10s", "----------") + "\n";
 		for(ScoreLine s : topScores)
 		{
-			list += String.format("%6s", s.score) + "\t";
+			list += String.format("%9s", s.score) + String.format("%6s", " ");
 			list += String.format("%10s", s.name) + "\n";
 		}
 

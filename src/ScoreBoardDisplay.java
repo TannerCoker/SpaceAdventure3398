@@ -12,6 +12,9 @@ import javax.imageio.ImageIO;
 import java.util.*;
 import java.io.*;
 
+import java.awt.GradientPaint;
+import java.awt.Color;
+
 public class ScoreBoardDisplay extends JPanel implements ActionListener
 {
   Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -21,10 +24,12 @@ public class ScoreBoardDisplay extends JPanel implements ActionListener
   private JButton back;//back button to return to menu
   private ScreenManager manager;//screen manager
   ImageIcon backPic;
+  private Scoreboard scoreboard;
 
   public ScoreBoardDisplay(ScreenManager manager)
   {
     this.manager = manager;
+	this.
     backPic = new ImageIcon("../images/Back.png");
 
     //gets static background image
@@ -60,6 +65,11 @@ public class ScoreBoardDisplay extends JPanel implements ActionListener
     manager.showMenu();
   }
 
+  void setScoreboard(Scoreboard s)
+  {
+    this.scoreboard	 = s;
+  }
+
   @Override
   public void paintComponent(Graphics g)
   {
@@ -75,11 +85,37 @@ public class ScoreBoardDisplay extends JPanel implements ActionListener
     try
     {
       g.drawImage(panelTitle,width/2-panelTitle.getWidth()/2,10,this);
+
+	  /* Display the top scores  */
+	  String[] lines = scoreboard.getScores().split("\n");
+
+	  // TODO: determine the x and y coordinates dynamically
+	  // Determine the width of a line in order to center the score display
+	  int stringWidth = g.getFontMetrics().stringWidth(lines[0]);
+	  int x = 460; // width/2 - stringWidth/2; 
+	  int y = 200;
+
+      g.setFont(new Font( "Courier", Font.BOLD, 30 ));
+	  g.setColor( new Color(51, 150, 255) );	
+
+	  // The drawString method does not process \n well, so split it
+	  // into lines and output the lines at 30 pixel intervals
+      int lineNum = 0;
+	  int offset = 30;
+	  for(String line : lines)
+	  { 
+      	g.drawString(line, x, y + lineNum*offset );
+		++lineNum;
+	  }
     }
     catch(Exception e)
     {
       g.drawString("ScoreBoard",width/2,10);
     }
+
   }
 
 }
+
+
+
