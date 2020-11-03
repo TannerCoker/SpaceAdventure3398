@@ -68,9 +68,9 @@ public class Scoreboard
 			while (readFile.hasNextLine() && n < numberOfScores ) 
 			{
 				String text = readFile.nextLine();
-				String[] tokens = text.split("\\s+");
-				if(tokens.length > 0)
+				if(text.length() > 0)
 				{
+					String[] tokens = text.split("\\s+");
 					topScores.add( new ScoreLine( Integer.parseInt(tokens[0]), tokens[1]) );
 					++n;
 				}
@@ -129,15 +129,17 @@ public class Scoreboard
 	public void save(String name)
 	{
 		Collections.sort(topScores); // sort the list just in case.
-        long lowestScore = topScores.get(topScores.size() - 1).score; 
-		if (currentScore > lowestScore)
+		if(topScores.size() > 0)
 		{
-			// replace last item and sort list
-			topScores.remove( topScores.size() - 1 );
-			topScores.add( new ScoreLine(currentScore, name) );
-			Collections.sort(topScores);
+        	long lowestScore = topScores.get(topScores.size() - 1).score; 
+			if (currentScore > lowestScore)
+			{
+				// replace last item and sort list
+				topScores.remove( topScores.size() - 1 );
+				topScores.add( new ScoreLine(currentScore, name) );
+				Collections.sort(topScores);
+			}
 		}
-		
 		try
 		{
 			//Save the contents of the file to a temp file.
