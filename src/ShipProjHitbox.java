@@ -1,4 +1,8 @@
 import java.awt.Image;
+import Enemy.Enemy;
+import Player.Player;
+import Bullet.Bullet;
+import Ship.Ship;
 
 public class projToShipCol extends Sprite {
 
