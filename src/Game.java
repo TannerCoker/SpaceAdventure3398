@@ -19,7 +19,7 @@ import javax.swing.JFrame;
 public class Game extends Canvas implements Runnable {
 
 	private static final long serialVersionUID = 1L;
-	public static final int WIDTH = 640;
+	public static final int WIDTH = 725;
 	public static final int HEIGHT = WIDTH / 15 * 12;
 	public static final int SCALE = 2;
 	public static final String TITLE = "Space Adventures 3398 Player/Enemy";
@@ -40,13 +40,13 @@ public class Game extends Canvas implements Runnable {
 		}catch (IOException e) {
 			e.printStackTrace();
 		}
-		p = new Player (200, 200, this);
+		p = new Player (500, 500, this);
 		try {
 			spriteEnemys = loader.loadImage("ship1.png");
 		}catch (IOException e) {
 			e.printStackTrace();
 		}
-		e = new Enemy (200, 200, this);
+		e = new Enemy (100, 100, this);
 
 	}
 	private synchronized void start() {
@@ -95,7 +95,7 @@ public class Game extends Canvas implements Runnable {
 			
 			if(System.currentTimeMillis() - timer > 1000) {
 				timer += 1000;
-				// System.out.println(updates + "TIcks, Fps " + frames);
+				// System.out.println(updates + "Ticks, Fps " + frames);
 				updates = 0;
 				frames = 0;
 			}
@@ -113,9 +113,7 @@ public class Game extends Canvas implements Runnable {
 			return;
 		}
 		Graphics g = bs.getDrawGraphics();
-		//////
 		g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
-		//////
 		
 		p.render(g);
 		e.render(g);

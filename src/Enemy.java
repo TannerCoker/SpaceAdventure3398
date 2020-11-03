@@ -1,8 +1,3 @@
-/*
- * Eric Figueroa
- * Enemy.java is the enemies of space-adventure-3398
- *
- */
 package maingame;
 
 
@@ -24,7 +19,7 @@ public class Enemy {
 	}
 	
 	public void tick() {
-		y--;
+		x++;
 	}
 	public void render(Graphics g) {
 		g.drawImage(enemy, (int)x, (int)y, null);

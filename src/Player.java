@@ -1,8 +1,3 @@
-/*
- * Eric Figueroa
- * Player.java is the player of space-adventure-3398
- *
- */
 package maingame;
 
 
@@ -20,7 +15,7 @@ public class Player {
 		this.y = y;
 		
 		SpritePlayers ss = new SpritePlayers(game.getSpritePlayers());
-		player = ss.grabImage(1, 1, 600, 600);
+		player = ss.grabImage(1, 1, 400, 400);
 	}
 	
 	public void tick() {
