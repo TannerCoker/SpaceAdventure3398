@@ -66,6 +66,27 @@ public class About extends JPanel implements ActionListener
     try
     {
       g.drawImage(background,0,0,width,height,this);
+
+      g.setFont(new Font( "Courier", Font.BOLD, 30 ));
+	  g.setColor( new Color(51, 150, 255) );
+
+	  int x = 260; // width/2 - stringWidth/2; 
+	  int y = 200;
+
+      g.drawString("Purpose:", x, y );	
+      g.drawString(" This game is written for a class project in the ", x, y + 30 );	
+      g.drawString(" CS 3398 Software Engineering class at Texas State", x, y + 60 );
+      g.drawString(" University during Fall 2020.", x, y + 90 );		
+      g.drawString("", x, y + 120 );	
+
+	  y = 400;
+      g.drawString("Authors:", x, y );	
+      g.drawString(" - Lucas Anesti", x, y + 30);	
+      g.drawString(" - Brice Ashburn", x, y + 60);	
+      g.drawString(" - Tanner Coker", x, y + 90);	
+      g.drawString(" - Erik Cortez", x, y + 120);	
+      g.drawString(" - Eric Figueroa", x, y + 150);	
+
     }
     catch(Exception e)
     {
