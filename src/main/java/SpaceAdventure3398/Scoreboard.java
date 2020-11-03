@@ -45,7 +45,7 @@ public class Scoreboard
 	{
 		Scoreboard s = new Scoreboard();
 		System.out.println( s.getScores() );
-		s.updateCurrentScore(8);
+		s.updateCurrentScore(200);
 		s.save("Player2");
 
 		Scoreboard k = new Scoreboard();
@@ -140,6 +140,7 @@ public class Scoreboard
 				Collections.sort(topScores);
 			}
 		}
+
 		try
 		{
 			//Save the contents of the file to a temp file.
