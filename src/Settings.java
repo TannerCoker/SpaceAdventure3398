@@ -24,9 +24,8 @@ public class Settings extends JPanel implements ActionListener
   ImageIcon backPic;
 
   private JSlider diff; //difficulty setting
-  JComboBox resolution;
+  JComboBox resolution; 
   Checkbox fullscreen;
-  private JButton setting1; //back button
 
   public Settings(ScreenManager manager)
   {
@@ -46,7 +45,7 @@ public class Settings extends JPanel implements ActionListener
     this.setLayout(null);
 
     setButton();
-    setSliders();
+    setElements();
   }
 
   //sets the back button
@@ -59,17 +58,9 @@ public class Settings extends JPanel implements ActionListener
     back.setBorder(BorderFactory.createEmptyBorder());
     back.addActionListener(this);
     this.add(back);
-
-    setting1 = new JButton();
-    setting1.setBounds(230,250,80,30);
-    //setting1.setOpaque(false);
-    //setting1.setContentAreaFilled(false);
-    setting1.setBorder(BorderFactory.createEmptyBorder());
-    setting1.addActionListener(this);
-    //this.add(setting1);
   }
 
-  private void setSliders()
+  private void setElements()
   {
 	diff = new JSlider(JSlider.HORIZONTAL, 0, 20, 1);
 	diff.setFont(new Font( "Courier", Font.BOLD, 15 ));
@@ -126,6 +117,7 @@ public class Settings extends JPanel implements ActionListener
     resolution.setBorder( null );
 	//resolution.addActionListener(this); // TODO add proper listener
 	this.add(resolution);	
+
 
     fullscreen = new Checkbox();
     fullscreen.setBounds(500,380,18,20);
