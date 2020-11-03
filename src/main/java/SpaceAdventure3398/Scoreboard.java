@@ -45,8 +45,8 @@ public class Scoreboard
 	{
 		Scoreboard s = new Scoreboard();
 		System.out.println( s.getScores() );
-		s.updateCurrentScore(17);
-		s.save("Player_1");
+		s.updateCurrentScore(8);
+		s.save("Player2");
 
 		Scoreboard k = new Scoreboard();
 		System.out.println( k.getScores() );
