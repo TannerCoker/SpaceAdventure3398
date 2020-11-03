@@ -66,7 +66,15 @@ public class About extends JPanel implements ActionListener
     try
     {
       g.drawImage(background,0,0,width,height,this);
-
+    }
+    catch(Exception e)
+    {
+      g.setColor(Color.black);
+      g.fillRect(0,0,width,height);
+    }
+    try
+    {
+      g.drawImage(panelTitle,width/2-panelTitle.getWidth()/2,10,this);
       g.setFont(new Font( "Courier", Font.BOLD, 30 ));
 	  g.setColor( new Color(51, 150, 255) );
 
@@ -87,15 +95,6 @@ public class About extends JPanel implements ActionListener
       g.drawString(" - Erik Cortez", x, y + 120);	
       g.drawString(" - Eric Figueroa", x, y + 150);	
 
-    }
-    catch(Exception e)
-    {
-      g.setColor(Color.black);
-      g.fillRect(0,0,width,height);
-    }
-    try
-    {
-      g.drawImage(panelTitle,width/2-panelTitle.getWidth()/2,10,this);
     }
     catch(Exception e)
     {
