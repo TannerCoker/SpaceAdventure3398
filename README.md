@@ -256,9 +256,55 @@ The Scoreboard class that keeps track of the current player's score has been cre
 
 Currently, the code and the documentation is stored under the Development branch. The following links can be used to find:
 
-* Source Code: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/DesignPatterns/src/main/java/SpaceAdventure3398/
+* Source Code for the class: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/Development/src/Scoreboard.java
 
-* Testing Results: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/DesignPatterns/src/test/java/SpaceAdventure3398/
+* Source Code for the tests: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/Development/src/test/java/SpaceAdventure3398/testScoreboard.java
+
+* Source Code for integration into Main Menu: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/Development/src/ScoreBoardDisplay.java
+
+
+For the last source code reference, changes were made to source code made by Tanner Coker's menu interface to display the scores and other menu options. 
+
+
+
+
+## Status (Assignment 16)
+
+* Lucas Anesti: completed.
+
+
+
+## Next Steps (Assignment 16)
+
+* Lucas Anesti: Some of the menu features implemented are Component objects in Java but their listeners are currently non-functional. For example, under Settings, the difficulty slides does not affect the game in any way, as gameplay has not yet been implemented. The next step will be to complete these features and integrate them with gameplay. In addition, the Scoreboard class is complete but needs to interface with the Background class once gameplay is implemented. Work on improving CircleCi integration.
+
+
+
+
+### What went well (Assignment 16)
+
+* Lucas Anesti: The implementation of the menu interface by Tanner Coker made it very easy to interface with the code and add the necessary options. The development of the Scoreboard class was relatively straightforward. CircleCi is currently throwing errors on assertions that are accepted locally by gradle.
+ 
+
+
+### What might be Impeding us (Assignment 16)
+
+* For this sprint, midterms and earlier deadlines for projects in other classes prevented many team members from focusing on code development early on. As a result, many of the features were implemented late in the sprint. 
+
+
+### What can we do to improve
+
+* Lucas Anesti: Currently, my limited knowledge of CircleCi and its environments are preventing me from resolving the continuous integration errors generated every time a member commits. A more thorough look into gradle and CircleCi
+
+* Team: To avoid the same time management issues in the next sprint that may be caused by school workload, we need to discuss our schedules and mark any deadlines for each member that may be impede progress and delay dependencies.
+
+
+
+
+
+
+
+
 
 
 
