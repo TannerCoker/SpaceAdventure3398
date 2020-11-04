@@ -137,11 +137,21 @@ The java files are currently located in the Development branch since I have merg
 
 ### Erik Cortez
 I've created a few sprites in the development branch which represent the player and enemies or a boss. The sprites will be used in the ship
+<<<<<<< HEAD
 class which control how the player and enemy ships move. The ship class is partially complete with some methods but doesn't function yet.
 
 
 ### Eric Figueroa
 The player and enemy classes have been added but are still having issues. My classes should create the player and enemy but keeps crashing. Should permit movement from left to right of the screen for players and flying abilities at top of screen for enemies. The players and enemy movement/tactics differ from one another also depending on level. Still new to developing in java, especially a game with graphics and images.
+=======
+class which will control how the player and enemy ships move. The ship class is partially complete with some methods but doesn't completely function yet.
+
+
+### Eric Figueroa
+The player and enemy classes have been added but are still having issues. My classes should create the player and enemy but keeps crashing. Should permit movement from left to right of the screen for players and flying abilities at top of screen for enemies. The players and enemy movement/tactics differ from one another also depending on level. Code does not run yet. Still new to developing in java, especially a game with graphics and images.
+
+
+>>>>>>> cb2e98863a35adcbe83081657114f62a24fafd7b
 
 
 
@@ -171,7 +181,15 @@ The player and enemy classes have been added but are still having issues. My cla
 
 * Tanner Coker: My next step will likely be to add all of the separate moving parts such as enemies and the player to the background.
 
+<<<<<<< HEAD
 * Erik Cortez: I plan to work on adding design patterns to the ship class to get it working well, and to add ship sprites as needed. I will also learn how to better understand Sourcetree and Bitbucket.
+=======
+* Erik Cortez: I plan to work on adding design patterns to the ship class to get it working well, and to add ship sprites as needed. I will also learn to understand Sourcetree and Bitbucket better.
+
+* Eric Figueroa: The next steps for me would be to get the errors to stop occurring and start combining into other sections of Space Adventures code. This will require further communication with team about how to incorporate each other’s code and possible rewriting and redesigning if needed with testing to ensure that it works smoothly after combining.
+
+
+>>>>>>> cb2e98863a35adcbe83081657114f62a24fafd7b
 
 * Eric Figueroa: The next steps for me would be to get the errors to stop occurring and start combining into other sections of Space Adventures code. This will require further communication with team about how to incorporate each other’s code and possible rewriting and redesigning if needed with testing to ensure that it works smoothly after combining.
 
@@ -199,8 +217,13 @@ The player and enemy classes have been added but are still having issues. My cla
 
 * Eric Figueroa: Things that went well were helping and guiding one another when we would encounter problems on source tree. We are currently still adjusting to new environments.
 
+<<<<<<< HEAD
 
+=======
+* Erik Cortez: I learned to understand how design patterns work so that I can incorporate them better into my class. I also learned how Bitbucket and Sourcetree help to better organize work. I also learned a bit about designing sprites
+>>>>>>> cb2e98863a35adcbe83081657114f62a24fafd7b
 
+* Eric Figueroa: As a team, things that went well were helping and guiding one another when we would encounter problems on source tree. We are currently still adjusting to new environments.
 
 
 
@@ -228,7 +251,11 @@ The player and enemy classes have been added but are still having issues. My cla
 
 * Erik Cortez: I felt like I spent more time than I should have learning how to solve my code problems in the wrong places, and didn't spend enough time learning how Sourcetree and Bitbucket work. I could have also spent more time understanding concepts before trying to use them. It would also help to ask more questions so that I can get the help that I need. As a team, I believe we could organize group time ahead of time to make deadlines less hectic.
 
+<<<<<<< HEAD
 * Eric Figueroa: As a team, for improvement I suggest we could schedule more zoom meetings to discuss project rather than over message. As an individual, for improvement I recommend doing more research on java and look up YouTube videos to learn more about developing games.
+=======
+* Eric Figueroa: As a team, for improvement I suggest we could schedule more zoom meetings to discuss project rather than over message. We can also work on updating tasks on Jira to have our burnout reports to be more accurate.  As an individual, for improvement I recommend doing more research on java and look up YouTube videos to learn more about developing games.
+>>>>>>> cb2e98863a35adcbe83081657114f62a24fafd7b
 
 
 
