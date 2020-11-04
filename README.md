@@ -246,6 +246,16 @@ The player and enemy classes have been added but are still having issues. My cla
 
 # Sprint 2 Review (Assignment 16)
 
+To run the code on command line and launch the main menu of the game:
+
+* Checkout the Development branch.
+
+* Navigate to the /src directory.
+
+* Compile the code using the command: javac *.java
+
+* Run the code using the command: java GameRunner
+
 
 ### Lucas Anesti
 The Scoreboard class that keeps track of the current player's score has been created and tested. In addition, the top ten scores maintained by the Scoreboard class are saved into a file and can be displayed in the Main Menu under the Scores button. Unit testing on the class is also complete. 
