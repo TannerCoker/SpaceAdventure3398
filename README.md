@@ -87,6 +87,14 @@ Project inspired by arcade style games.
 ## Contact
 Created by Tanner Coker, Lucas Anesti, Brice Ashburn, Erik Cortez and Eric Figueroa.
 
+
+
+
+
+
+
+
+
 # Sprint 1 Review (Assignment 11)
 
 
@@ -256,6 +264,84 @@ The player and enemy classes have been added but are still having issues. My cla
 =======
 * Eric Figueroa: As a team, for improvement I suggest we could schedule more zoom meetings to discuss project rather than over message. We can also work on updating tasks on Jira to have our burnout reports to be more accurate.  As an individual, for improvement I recommend doing more research on java and look up YouTube videos to learn more about developing games.
 >>>>>>> cb2e98863a35adcbe83081657114f62a24fafd7b
+
+
+
+
+
+
+
+# Sprint 2 Review (Assignment 16)
+
+To run the code on command line and launch the main menu of the game:
+
+* Checkout the Development branch.
+
+* Navigate to the /src directory.
+
+* Compile the code using the command: javac *.java
+
+* Run the code using the command: java GameRunner
+
+
+### Lucas Anesti
+The Scoreboard class that keeps track of the current player's score has been created and tested. In addition, the top ten scores maintained by the Scoreboard class are saved into a file and can be displayed in the Main Menu under the Scores button. Unit testing on the class is also complete. 
+
+![Scores in Menu](./images/MenuScoreboard.png)
+
+![Test Results](./images/testResultScoreboard.png)
+
+Currently, the code and the documentation is stored under the Development branch. The following links can be used to find:
+
+* Source Code for the class: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/Development/src/Scoreboard.java
+
+* Source Code for the tests: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/Development/src/test/java/SpaceAdventure3398/testScoreboard.java
+
+* Source Code for integration into Main Menu: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/Development/src/ScoreBoardDisplay.java
+
+
+For the last source code reference, changes were made to source code made by Tanner Coker's menu interface to display the scores and other menu options. 
+
+
+
+
+## Status (Assignment 16)
+
+* Lucas Anesti: completed.
+
+
+
+## Next Steps (Assignment 16)
+
+* Lucas Anesti: Some of the menu features implemented are Component objects in Java but their listeners are currently non-functional. For example, under Settings, the difficulty slides does not affect the game in any way, as gameplay has not yet been implemented. The next step will be to complete these features and integrate them with gameplay. In addition, the Scoreboard class is complete but needs to interface with the Background class once gameplay is implemented. Work on improving CircleCi integration.
+
+
+
+
+### What went well (Assignment 16)
+
+* Lucas Anesti: The implementation of the menu interface by Tanner Coker made it very easy to interface with the code and add the necessary options. The development of the Scoreboard class was relatively straightforward. CircleCi is currently throwing errors on assertions that are accepted locally by gradle.
+ 
+
+
+### What might be Impeding us (Assignment 16)
+
+* For this sprint, midterms and earlier deadlines for projects in other classes prevented many team members from focusing on code development early on. As a result, many of the features were implemented late in the sprint. 
+
+
+### What can we do to improve
+
+* Lucas Anesti: Currently, my limited knowledge of CircleCi and its environments are preventing me from resolving the continuous integration errors generated every time a member commits. A more thorough look into gradle and CircleCi
+
+* Team: To avoid the same time management issues in the next sprint that may be caused by school workload, we need to discuss our schedules and mark any deadlines for each member that may impede progress and delay dependencies.
+
+
+
+
+
+
+
+
 
 
 
