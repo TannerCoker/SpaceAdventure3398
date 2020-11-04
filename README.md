@@ -244,7 +244,7 @@ The player and enemy classes have been added but are still having issues. My cla
 
 
 
-# Sprint 1 Review (Assignment 16)
+# Sprint 2 Review (Assignment 16)
 
 
 ### Lucas Anesti
