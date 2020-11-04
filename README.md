@@ -87,6 +87,14 @@ Project inspired by arcade style games.
 ## Contact
 Created by Tanner Coker, Lucas Anesti, Brice Ashburn, Erik Cortez and Eric Figueroa.
 
+
+
+
+
+
+
+
+
 # Sprint 1 Review (Assignment 11)
 
 
@@ -229,6 +237,28 @@ The player and enemy classes have been added but are still having issues. My cla
 * Erik Cortez: I felt like I spent more time than I should have learning how to solve my code problems in the wrong places, and didn't spend enough time learning how Sourcetree and Bitbucket work. I could have also spent more time understanding concepts before trying to use them. It would also help to ask more questions so that I can get the help that I need. As a team, I believe we could organize group time ahead of time to make deadlines less hectic.
 
 * Eric Figueroa: As a team, for improvement I suggest we could schedule more zoom meetings to discuss project rather than over message. As an individual, for improvement I recommend doing more research on java and look up YouTube videos to learn more about developing games.
+
+
+
+
+
+
+
+# Sprint 1 Review (Assignment 16)
+
+
+### Lucas Anesti
+The Scoreboard class that keeps track of the current player's score has been created and tested. In addition, the top ten scores maintained by the Scoreboard class are saved into a file and can be displayed in the Main Menu under the Scores button. Unit testing on the class is also complete. 
+
+![Scores in Menu](./images/MenuScoreboard.png)
+
+![Test Results](./images/testResultScoreboard.png)
+
+Currently, the code and the documentation is stored under the Development branch. The following links can be used to find:
+
+* Source Code: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/DesignPatterns/src/main/java/SpaceAdventure3398/
+
+* Testing Results: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/DesignPatterns/src/test/java/SpaceAdventure3398/
 
 
 
