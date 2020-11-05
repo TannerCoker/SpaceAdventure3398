@@ -305,7 +305,7 @@ For the last source code reference, changes were made to source code made by Tan
 
 
 ### Brice Ashburn
-The Bullet/Projectile class is uploaded unded the Development branch, although is class is needed by many other classes I have yet to upload those as they are no finished yet.
+The Bullet class is uploaded under my own branch, along with many other classes needed for the game, the project does run on my machine, as of now only the background shows up as I have been stuck on a error for a while trying to get the player to show up in the JFrame. Which is line 22 in the Player.java class.
 
 ## Status (Assignment 16)
 
