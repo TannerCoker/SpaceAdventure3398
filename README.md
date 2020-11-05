@@ -365,7 +365,7 @@ The code for each class is found under the Development branch and can be found u
 * Brice Ashburn: To improve we need to figure how to have code run on all of our systems as we all have diffrent types. Personally I need to learn more Java and more on testing.
 * Erik Cortez: I definitely need to learn more Java which will help connect the classes together. It's also important to have the game running soon so that the rest of the work comes more easily.
 * Eric Figueroa: Currently, still learning how to use CircleCi for test cases as it is preventing me to create good test cases. Need to look more into that. Researching more in Java would help me improve.
-* Tanner Coker: I need to spend more time in the beginning of the sprint when it comes to researching methods for accomplishing my tasks for the sprint. Since I am generally busy I may start research a few days after the sprint starts which may push me back some.
+* Tanner Coker: I need to spend more time in the beginning of the sprint when it comes to researching methods for accomplishing my tasks for the sprint. Since I am generally busy I may start research a few days after the sprint starts which may push me back some. In sprint 3 I am going to try and start working on my tasks immediately so that I can assit in other areas of the project.
 * Team: To avoid the same time management issues in the next sprint that may be caused by school workload, we need to discuss our schedules and mark any deadlines for each member that may impede progress and delay dependencies.
 
 
