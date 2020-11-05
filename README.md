@@ -301,9 +301,9 @@ Here are links under Development branch to the Game.java and .png images in bitb
 
 * https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/Development/src/SpaceAdv3398/src/maingame/Game.java
 
-* https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/master/ship0(100).png
+* https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/master/images/ship0(100).png
 
-* https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/master/ship1(100).png
+* https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/master/images/ship1(100).png
 
 ### Brice Ashburn
 The Bullet class is uploaded under my own branch, along with many other classes needed for the game, the project does run on my machine, as of now only the background shows up as I have been stuck on a error for a while trying to get the player to show up in the JFrame. Which is line 22 in the Player.java class.
