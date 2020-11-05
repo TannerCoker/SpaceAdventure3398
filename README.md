@@ -318,7 +318,8 @@ Code for classes: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/s
 ### Tanner Coker
 The GameRunner has been added and that is what is initially ran to start the game. It will show the main menu on startup which will have buttons to go to the play, scoreboard, settings, or about panels. There is also an exit button which will quit the game. Each of the non-menu display panels will feature a back button that will return you to the main menu. Once the play panel is left it will stop the game from running. The game panel right now only shows our moving background that was completed in sprint 1.
 
-!.[MainMenu](./images/MainMenu_image.jpg)
+![MainMenu](./images/MainMenu_image.jpg)
+
 * The files are currently under the Development branch in the src/ directory
 * compile the code and run GameRunner to see interact with the Main Menu and the various panels.
 
