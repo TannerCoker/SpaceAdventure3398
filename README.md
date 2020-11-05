@@ -279,20 +279,30 @@ Currently, the code and the documentation is stored under the Development branch
 For the last source code reference, changes were made to source code made by Tanner Coker's menu interface to display the scores and other menu options. 
 
 ### Eric Figueroa
-The Player/Enemy class are the main characters in the game and are updated to function properly to window screen now. The enemy is at the top of the screen hovering throughout the game and the player is at the bottom of the screen moving from left to right with key input arrow commands. The distinct .png images are what we have created to use for identifying the enemy and player in game.
+The Player/Enemy class are the main characters in the game and are updated to function properly to window screen now. The enemy is at the top of the screen hovering throughout the game and the player is at the bottom of the screen moving from left to right with key input arrow commands. The .png images are what we created to use for identifying the enemy and player in game.
 ![Player/Enemy](./images/PlayerEnemyScreen.png)
 
 To run the player/enemy code on command line and launch player/enemy to screen:
+
 * Checkout the Development branch.
+
 * Navigate to the /src directory.
+
 * cd to SpaceAdv3398 folder
+
 * Navigate to the /src directory.
+
 * Compile the code using the command: javac maingame/Game.java
+
 * Run the code using the command: java maingame.Game
 
+
 Here are links under Development branch to the Game.java and .png images in bitbucket used to create player and enemy class:
+
 * https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/Development/src/SpaceAdv3398/src/maingame/Game.java
+
 * https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/master/ship0(100).png
+
 * https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/master/ship1(100).png
 
 ### Brice Ashburn
