@@ -315,12 +315,28 @@ There are two classes which will be used to detect collision, the ShipProjHitbox
 
 Code for classes: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/master/src/
 
+### Tanner Coker
+The GameRunner has been added and that is what is initially ran to start the game. It will show the main menu on startup which will have buttons to go to the play, scoreboard, settings, or about panels. There is also an exit button which will quit the game. Each of the non-menu display panels will feature a back button that will return you to the main menu. Once the play panel is left it will stop the game from running. The game panel right now only shows our moving background that was completed in sprint 1.
+
+!.[MainMenu](./images/MainMenu_image.jpg)
+* The files are currently under the Development branch in the src/ directory
+* compile the code and run GameRunner to see interact with the Main Menu and the various panels.
+
+The code for each class is found under the Development branch and can be found under it's respective name. Here are links to 3 of them:
+
+* Code for the GameRunenr: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/Development/src/GameRunner.java
+
+* Code for the MainMenu class: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/Development/src/MainMenu.java
+
+* Code for the PlayRunner: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/Development/src/PlayRunner.java
+
 ## Status (Assignment 16)
 
 * Lucas Anesti: completed.
 * Brice Ashburn: in-progress.
 * Erik Cortez: in-progress.
 * Eric Figueroa: completed.
+* Tanner Coker: completed.
 
 ## Next Steps (Assignment 16)
 
@@ -328,6 +344,7 @@ Code for classes: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/s
 * Brice Ashburn: The next is to figure out what other classes the Bullet class will depend on and start to work on those classes to get runnable code to show.
 * Erik Cortez: The next step is to make sure that collisions work on ships and projectiles in game during a running session. Most importantly, we need to show that the game itself runs.
 * Eric Figueroa: The next step will be to decrease the size of player/enemy on window screen. Also to incorporate the player and enemy to the background class of the game along with along with adding bullets to both classes. Create more aliens for gameplay. Create test cases.
+* Tanner Coker: My next step isn't decided yet but I may be working on making the level design so that way there will be stages that the player progresses through. 
 
 ### What went well (Assignment 16)
 
@@ -335,6 +352,7 @@ Code for classes: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/s
 * Brice Ashburn: Wht went well is that I was able to learn about game mechanics, JFrames in Java,and the game engine, I also was able to get some running code but not exactly what I need.
 * Erik Cortez: Being able to connect the ships and projectiles to rectangles makes it easy to detect collision since the intersect code is already supplied and can detect the object intersection.
 * Eric Figueroa: Being able to have a stable player and enemy to print to a window screen was much improvement as I’m learning more coding in Java. Sprites for player/enemy created along with key movement of the player to move from left to right.
+* Tanner Coker: Once I figured out how to easily switch between two of the JPanels, switching between the other 3 became very easy as it was the same process. Also, I discovered that I could place a .png file on/in a JButton but make the rest of the button invisible which allowed me to get the functionality of the button but also allowed me to decorate the menu and panels.
 
 ### What might be Impeding us (Assignment 16)
 
@@ -346,6 +364,7 @@ Code for classes: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/s
 * Brice Ashburn: To improve we need to figure how to have code run on all of our systems as we all have diffrent types. Personally I need to learn more Java and more on testing.
 * Erik Cortez: I definitely need to learn more Java which will help connect the classes together. It's also important to have the game running soon so that the rest of the work comes more easily.
 * Eric Figueroa: Currently, still learning how to use CircleCi for test cases as it is preventing me to create good test cases. Need to look more into that. Researching more in Java would help me improve.
+* Tanner Coker: I need to spend more time in the beginning of the sprint when it comes to researching methods for accomplishing my tasks for the sprint. Since I am generally busy I may start research a few days after the sprint starts which may push me back some.
 * Team: To avoid the same time management issues in the next sprint that may be caused by school workload, we need to discuss our schedules and mark any deadlines for each member that may impede progress and delay dependencies.
 
 
