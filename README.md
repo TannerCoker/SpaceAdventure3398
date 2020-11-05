@@ -304,34 +304,36 @@ For the last source code reference, changes were made to source code made by Tan
 
 
 
+### Brice Ashburn
+The Bullet/Projectile class is uploaded unded the Development branch, although is class is needed by many other classes I have yet to upload those as they are no finished yet.
 
 ## Status (Assignment 16)
 
 * Lucas Anesti: completed.
-
+* Brice Ashburn: in-progress.
 
 
 ## Next Steps (Assignment 16)
 
 * Lucas Anesti: Some of the menu features implemented are Component objects in Java but their listeners are currently non-functional. For example, under Settings, the difficulty slides does not affect the game in any way, as gameplay has not yet been implemented. The next step will be to complete these features and integrate them with gameplay. In addition, the Scoreboard class is complete but needs to interface with the Background class once gameplay is implemented. Work on improving CircleCi integration.
-
+* Brice Ashburn: The next is to figure out what other classes the Bullet class will depend on and start to work on those classes to get runnable code to show.
 
 
 
 ### What went well (Assignment 16)
 
 * Lucas Anesti: The implementation of the menu interface by Tanner Coker made it very easy to interface with the code and add the necessary options. The development of the Scoreboard class was relatively straightforward. CircleCi is currently throwing errors on assertions that are accepted locally by gradle.
- 
+* Brice Ashburn: Wht went well is that I was able to learn about game mechanics, JFrames in Java,and the game engine, I also was able to get some running code but not exactly what I need.
 
 
 ### What might be Impeding us (Assignment 16)
 
 * For this sprint, midterms and earlier deadlines for projects in other classes prevented many team members from focusing on code development early on. As a result, many of the features were implemented late in the sprint. 
 
-
 ### What can we do to improve
 
 * Lucas Anesti: Currently, my limited knowledge of CircleCi and its environments are preventing me from resolving the continuous integration errors generated every time a member commits. A more thorough look into gradle and CircleCi
+* Brice Ashburn: To improve we need to figure how to have code run on all of our systems as we all have diffrent types. Personally I need to learn more Java and more on testing.
 
 * Team: To avoid the same time management issues in the next sprint that may be caused by school workload, we need to discuss our schedules and mark any deadlines for each member that may impede progress and delay dependencies.
 
