@@ -1,5 +1,10 @@
 /* 
  * Eric Figueroa
+<<<<<<< HEAD
+ * BufferedImageLoader.java is the class needed to upload images created 
+ * to the screen properly for Space Adventures 3398
+ */
+=======
  * BufferedImageLoader.java is the class needed to upload image files for
  * player and enemy to screen and background.
  */
@@ -20,3 +25,4 @@ public class BufferedImageLoader {
 	}
 
 }
+>>>>>>> 6f9788813b151a3e2b8454ac951ed628a3cd0347

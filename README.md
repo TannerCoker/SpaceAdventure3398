@@ -87,6 +87,14 @@ Project inspired by arcade style games.
 ## Contact
 Created by Tanner Coker, Lucas Anesti, Brice Ashburn, Erik Cortez and Eric Figueroa.
 
+
+
+
+
+
+
+
+
 # Sprint 1 Review (Assignment 11)
 
 
@@ -125,18 +133,25 @@ implement interface "SpaceBodies". The background is a Black screen that has whi
 moving from the top of the screen to the bottom. Stars and planets change their x/y-cood., size, and speed each
 time it is moved back to it's respective y-coord. Additional classes were made as well that include TestRunner
 which I used to test run the code and "UpdateThread" which is just an extension of Thread and that is used to 
-update the stars and planets on the background.
+update the stars and planets on the background. Background will be used to as the main panel that all of the other
+objects such as enemies, players, main menu, etc.. will be displayed on. 
 
 ![Background_Demo](./images/background.png)
 
-The java files are currently located in the Development branch since I have merged the background branch into it. It will be in moved to master once other members have finished merging their branches
-to master.
+The java files are currently located in the Development branch since I have merged the background branch into it. 
 
 * Source code: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/branch/Development
 
 
 ### Erik Cortez
 I've created a few sprites in the development branch which represent the player and enemies or a boss. The sprites will be used in the ship
+<<<<<<< HEAD
+class which control how the player and enemy ships move. The ship class is partially complete with some methods but doesn't function yet.
+
+
+### Eric Figueroa
+The player and enemy classes have been added but are still having issues. My classes should create the player and enemy but keeps crashing. Should permit movement from left to right of the screen for players and flying abilities at top of screen for enemies. The players and enemy movement/tactics differ from one another also depending on level. Still new to developing in java, especially a game with graphics and images.
+=======
 class which will control how the player and enemy ships move. The ship class is partially complete with some methods but doesn't completely function yet.
 
 
@@ -144,6 +159,7 @@ class which will control how the player and enemy ships move. The ship class is 
 The player and enemy classes have been added but are still having issues. My classes should create the player and enemy but keeps crashing. Should permit movement from left to right of the screen for players and flying abilities at top of screen for enemies. The players and enemy movement/tactics differ from one another also depending on level. Code does not run yet. Still new to developing in java, especially a game with graphics and images.
 
 
+>>>>>>> cb2e98863a35adcbe83081657114f62a24fafd7b
 
 
 
@@ -173,30 +189,47 @@ The player and enemy classes have been added but are still having issues. My cla
 
 * Tanner Coker: My next step will likely be to add all of the separate moving parts such as enemies and the player to the background.
 
+<<<<<<< HEAD
+* Erik Cortez: I plan to work on adding design patterns to the ship class to get it working well, and to add ship sprites as needed. I will also learn how to better understand Sourcetree and Bitbucket.
+=======
 * Erik Cortez: I plan to work on adding design patterns to the ship class to get it working well, and to add ship sprites as needed. I will also learn to understand Sourcetree and Bitbucket better.
 
 * Eric Figueroa: The next steps for me would be to get the errors to stop occurring and start combining into other sections of Space Adventures code. This will require further communication with team about how to incorporate each other’s code and possible rewriting and redesigning if needed with testing to ensure that it works smoothly after combining.
 
 
+>>>>>>> cb2e98863a35adcbe83081657114f62a24fafd7b
 
+* Eric Figueroa: The next steps for me would be to get the errors to stop occurring and start combining into other sections of Space Adventures code. This will require further communication with team about how to incorporate each other’s code and possible rewriting and redesigning if needed with testing to ensure that it works smoothly after combining.
 
 
 
 ## Retrospective (Assignment 11)
 
-### What went well
+### What went well (or not)
 
 * Team: We were able to reach an agreement on game design decisions early on. We have produced artifacts for our project, including design documents and functional game components.
 
-* Team: We developed our own game assets instead of using online resources. As a result, we do not have to worry about copyright issues when we make our game available.
+* Team: We developed our own game assets instead of using online assets. As a result, we do not have to worry about copyright issues when we make our game available.
+
+* Team: Games have many components, so it was easy to partition the work among our team members with minimal dependency.
+
+* Team: (Not so well) We do not understand git very well and the git workflow very clearly. We had a few commit and merge conflicts. 
 
 * Brice Ashburn: I was able to find multiple examples online and tutorial videos that really taught me a lot. Our group haas done a great job of communicating almost every day about progress and bugs and meeting times.
 
 * Lucas Anesti: I was able to find some design patterns that are applicable and useful to our game. We believe that the patterns will help us write more flexible, extensible, and thread safe code. However, limited knowledge of design patterns required me to do extensive research on the justification and the implementation of each pattern. As a result, the time spent on completing the tasks exceeds the projected numbers by a large margin. Also issued an incorrect merge on git, so had to hunt down scattered code in multiple commits to recreate certain branches.
 
-* Tanner Coker: I was able to find some sample code that showed a background with moving pieces. I modified my stars and planets class so that I can incorporate some of the ideas that I got by viewing the other project. Originally the classes were extending JPanels and after viewing the other project I had seen that they extended their moving objects from the Rectangles class and so I did that as well with success.
+* Tanner Coker: I was able to find some sample code that showed a background with moving pieces. I modified my stars and planets class so that I can incorporate some of the ideas that I got by viewing the other project. Originally the classes were extending JPanels and after viewing the other project I had seen that they extended their moving objects from the Rectangles class and so I did that as well with success. However, I did not have a lot of free time to work on the project due to work and other classes so I was very rushed towards the end. Additionally, the java graphics proved more difficult in the beggining than what I thought it would be.
 
+* Erik Cortez: I learned to understand how design patterns work so that I can incorporate them better into my class. I also learned how Bitbucket and Sourcetree help to better organize work. I also learned a bit about designing sprites.
+
+* Eric Figueroa: Things that went well were helping and guiding one another when we would encounter problems on source tree. We are currently still adjusting to new environments.
+
+<<<<<<< HEAD
+
+=======
 * Erik Cortez: I learned to understand how design patterns work so that I can incorporate them better into my class. I also learned how Bitbucket and Sourcetree help to better organize work. I also learned a bit about designing sprites
+>>>>>>> cb2e98863a35adcbe83081657114f62a24fafd7b
 
 * Eric Figueroa: As a team, things that went well were helping and guiding one another when we would encounter problems on source tree. We are currently still adjusting to new environments.
 
@@ -222,11 +255,95 @@ The player and enemy classes have been added but are still having issues. My cla
 
 * Lucas Anesti: I spent too much time on this sprint researching and learning design patterns, which did not leave much time for coding. I spent my entire time overcoming a block, so I did not feel as productive for the project as I could have been. In future sprints, I intend to partition my time more evenly. If i find myself facing a block I will see if anyone in my team has expertise to help me resolve the issue. In addition,during the last sprint, I set my tasks in such a way that it was hard to show progress. For example, I had three tasks that were running simultaneously, "implement stubs", "write documentation", and "run tests" for all the design patterns. If I had instead grouped the tasks by individual design pattern and not by task group, it would have been easier to both show progress and observe udpates in the project. As a metric, I will observe the burndown charts and see how evenly my task completions follow the ideal line. In the last sprint, if i had drawn a personal burndown chart, most of my tasks would remain under the line until the last day in the project, where they actually meet the the goal. In this sprint, I will divide the work among the tasks so that the line can be approximated upon task completion.
 
-* Tanner Coker: I need to find more time in my days to work on the code so that I can finish my tasks sooner so that I can provide assistance to other team members when needed.
+* Tanner Coker: I need to find more time in my days to work on the code so that I can finish my tasks sooner so that I can provide assistance to other team members when needed as some are not very familiar with Java.
 
 * Erik Cortez: I felt like I spent more time than I should have learning how to solve my code problems in the wrong places, and didn't spend enough time learning how Sourcetree and Bitbucket work. I could have also spent more time understanding concepts before trying to use them. It would also help to ask more questions so that I can get the help that I need. As a team, I believe we could organize group time ahead of time to make deadlines less hectic.
 
+<<<<<<< HEAD
+* Eric Figueroa: As a team, for improvement I suggest we could schedule more zoom meetings to discuss project rather than over message. As an individual, for improvement I recommend doing more research on java and look up YouTube videos to learn more about developing games.
+=======
 * Eric Figueroa: As a team, for improvement I suggest we could schedule more zoom meetings to discuss project rather than over message. We can also work on updating tasks on Jira to have our burnout reports to be more accurate.  As an individual, for improvement I recommend doing more research on java and look up YouTube videos to learn more about developing games.
+>>>>>>> cb2e98863a35adcbe83081657114f62a24fafd7b
+
+
+
+
+
+
+
+# Sprint 2 Review (Assignment 16)
+
+To run the code on command line and launch the main menu of the game:
+
+* Checkout the Development branch.
+
+* Navigate to the /src directory.
+
+* Compile the code using the command: javac *.java
+
+* Run the code using the command: java GameRunner
+
+
+### Lucas Anesti
+The Scoreboard class that keeps track of the current player's score has been created and tested. In addition, the top ten scores maintained by the Scoreboard class are saved into a file and can be displayed in the Main Menu under the Scores button. Unit testing on the class is also complete. 
+
+![Scores in Menu](./images/MenuScoreboard.png)
+
+![Test Results](./images/testResultScoreboard.png)
+
+Currently, the code and the documentation is stored under the Development branch. The following links can be used to find:
+
+* Source Code for the class: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/Development/src/Scoreboard.java
+
+* Source Code for the tests: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/Development/src/test/java/SpaceAdventure3398/testScoreboard.java
+
+* Source Code for integration into Main Menu: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/Development/src/ScoreBoardDisplay.java
+
+
+For the last source code reference, changes were made to source code made by Tanner Coker's menu interface to display the scores and other menu options. 
+
+
+
+### Brice Ashburn
+The Bullet/Projectile class is uploaded unded the Development branch, although is class is needed by many other classes I have yet to upload those as they are no finished yet.
+
+## Status (Assignment 16)
+
+* Lucas Anesti: completed.
+* Brice Ashburn: in-progress.
+
+
+## Next Steps (Assignment 16)
+
+* Lucas Anesti: Some of the menu features implemented are Component objects in Java but their listeners are currently non-functional. For example, under Settings, the difficulty slides does not affect the game in any way, as gameplay has not yet been implemented. The next step will be to complete these features and integrate them with gameplay. In addition, the Scoreboard class is complete but needs to interface with the Background class once gameplay is implemented. Work on improving CircleCi integration.
+* Brice Ashburn: The next is to figure out what other classes the Bullet class will depend on and start to work on those classes to get runnable code to show.
+
+
+
+### What went well (Assignment 16)
+
+* Lucas Anesti: The implementation of the menu interface by Tanner Coker made it very easy to interface with the code and add the necessary options. The development of the Scoreboard class was relatively straightforward. CircleCi is currently throwing errors on assertions that are accepted locally by gradle.
+* Brice Ashburn: Wht went well is that I was able to learn about game mechanics, JFrames in Java,and the game engine, I also was able to get some running code but not exactly what I need.
+
+
+### What might be Impeding us (Assignment 16)
+
+* For this sprint, midterms and earlier deadlines for projects in other classes prevented many team members from focusing on code development early on. As a result, many of the features were implemented late in the sprint. 
+
+### What can we do to improve
+
+* Lucas Anesti: Currently, my limited knowledge of CircleCi and its environments are preventing me from resolving the continuous integration errors generated every time a member commits. A more thorough look into gradle and CircleCi
+* Brice Ashburn: To improve we need to figure how to have code run on all of our systems as we all have diffrent types. Personally I need to learn more Java and more on testing.
+
+* Team: To avoid the same time management issues in the next sprint that may be caused by school workload, we need to discuss our schedules and mark any deadlines for each member that may impede progress and delay dependencies.
+
+
+
+
+
+
+
+
 
 
 

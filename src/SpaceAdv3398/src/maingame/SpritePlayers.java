@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-/* 
- * Eric Figueroa
- * SpritePlayers.java is the sprite class needed to create players for Space
- * Adventure 3398
- */ 
-=======
-/*
- * Eric Figueroa
- * SpritePlayers.java is the class needed to help create players
- *
- */
 package maingame;
 
 import java.awt.image.BufferedImage;
@@ -28,4 +16,3 @@ public class SpritePlayers {
 	}
 
 }
->>>>>>> 6f9788813b151a3e2b8454ac951ed628a3cd0347
