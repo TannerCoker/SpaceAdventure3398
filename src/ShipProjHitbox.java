@@ -1,10 +1,10 @@
-import java.awt.Image;
+/*import java.awt.Image;
 import Enemy.Enemy;
 import Player.Player;
 import Bullet.Bullet;
-import Ship.Ship;
+import Ship.Ship;*/
 
-public class projToShipCol extends Sprite {
+/*public class projToShipCol extends Sprite {
 
 
 	private Game game;
@@ -25,4 +25,4 @@ public class projToShipCol extends Sprite {
 		}
 	}
 	}
-}
+}*/
