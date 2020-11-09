@@ -30,13 +30,13 @@ public class Settings extends JPanel implements ActionListener
   public Settings(ScreenManager manager)
   {
     this.manager = manager;
-    backPic = new ImageIcon("../images/Back.png");
+    backPic = new ImageIcon("src/main/java/SpaceAdventure3398/images/Back.png");
 
     //tries to get the buffered images
     try
     {
-      background = ImageIO.read(new File("../images/stillBackground.png"));
-      panelTitle = ImageIO.read(new File("../images/Settings_title.png"));
+      background = ImageIO.read(new File("src/main/java/SpaceAdventure3398/images/stillBackground.png"));
+      panelTitle = ImageIO.read(new File("src/main/java/SpaceAdventure3398/images/Settings_title.png"));
     }
     catch(Exception e)
     {
