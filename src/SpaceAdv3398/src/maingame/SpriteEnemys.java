@@ -1,13 +1,3 @@
-/*
- * Eric Figueroa
-<<<<<<< HEAD
- * SpriteEnemys.java is the class needed to create enemys for Space
- * Adventures 3398
- */
-=======
- * SpriteEnemys.java is the class needed to create enemy players. 
- *
- */
 package maingame;
 
 import java.awt.image.BufferedImage;
@@ -26,4 +16,3 @@ public class SpriteEnemys {
 	}
 
 }
->>>>>>> 6f9788813b151a3e2b8454ac951ed628a3cd0347

@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-/*
- * Eric Figueroa
- * Enemy.java is the enemies of Space Adventures 3398
- *
- */
-=======
 package maingame;
 
 
@@ -33,4 +26,3 @@ public class Enemy {
 	}
 
 }
->>>>>>> 6f9788813b151a3e2b8454ac951ed628a3cd0347
