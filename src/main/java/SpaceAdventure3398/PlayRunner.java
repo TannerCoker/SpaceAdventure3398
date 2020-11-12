@@ -25,7 +25,7 @@ public class PlayRunner extends JPanel implements ActionListener
   public PlayRunner(ScreenManager manager)
   {
     this.manager = manager;
-    backPic = new ImageIcon("../images/Back.png");
+    backPic = new ImageIcon("src/main/java/SpaceAdventure3398/images/Back.png");
     this.setLayout(null);
 
     this.add(background);//adds the animated background to game panel

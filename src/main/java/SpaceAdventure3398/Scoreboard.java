@@ -1,4 +1,4 @@
-package SpaceAdventure3398;
+
 
 import java.io.IOException;
 import java.util.Collections;
@@ -20,7 +20,7 @@ public class Scoreboard
 
 	static String fileSep = System.getProperty("file.separator");
 	// FOr now, the file that stores the top scores is stored in the main directory
-	private static String filePath = ".." + fileSep + "topScores.txt";
+	private static String filePath = "." + fileSep + "topScores.txt";
 
 
 	private class ScoreLine implements Comparable<ScoreLine>
@@ -41,25 +41,14 @@ public class Scoreboard
 		}
 	}
 
-	public static void main(String[] args)
-	{
-		Scoreboard s = new Scoreboard();
-		System.out.println( s.getScores() );
-		s.updateCurrentScore(200);
-		s.save("Player2");
-
-		Scoreboard k = new Scoreboard();
-		System.out.println( k.getScores() );
-	}
-
 	/**
 	 * The Scoreboard class uses a local file that keeps the top k scores 
 	 * for all the players. k = 10 by default. A new session begins with a score of 0.
+	 * @pre  newFile must be a full valid path including the proper file separators.
 	 */
 	public Scoreboard()
 	{
 		currentScore = 0;
-
 		int n = 0;
 		topScores = new ArrayList<ScoreLine>();
 		try

@@ -10,6 +10,7 @@ package maingame;
 import java.awt.Canvas;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -19,8 +20,8 @@ import javax.swing.JFrame;
 public class Game extends Canvas implements Runnable {
 
 	private static final long serialVersionUID = 1L;
-	public static final int WIDTH = 725;
-	public static final int HEIGHT = WIDTH / 15 * 12;
+	public static final int WIDTH = 600;
+	public static final int HEIGHT = WIDTH / 13 * 9;
 	public static final int SCALE = 2;
 	public static final String TITLE = "Space Adventures 3398 Player/Enemy";
 	
@@ -34,12 +35,15 @@ public class Game extends Canvas implements Runnable {
 	private Enemy e;
 	
 	public void init() {
+		requestFocus();
 		BufferedImageLoader loader = new BufferedImageLoader();
 		try {
 			spritePlayers = loader.loadImage("ship0.png");
 		}catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		addKeyListener(new KeyMovement(this));
 		p = new Player (500, 500, this);
 		try {
 			spriteEnemys = loader.loadImage("ship1.png");
@@ -119,6 +123,38 @@ public class Game extends Canvas implements Runnable {
 		e.render(g);
 		g.dispose();
 		bs.show();
+	}
+	public void keyPressed(KeyEvent e) {
+		int key = e.getKeyCode();
+		
+		if(key == KeyEvent.VK_RIGHT) {
+			p.setVelX(5);
+		}	
+		else if (key == KeyEvent.VK_LEFT) {
+			p.setVelX(-5);
+		}	
+		else if (key == KeyEvent.VK_DOWN) {
+			p.setVelY(5);
+		}
+		else if (key == KeyEvent.VK_UP) {
+			p.setVelY(-5);
+		}
+	}
+	public void keyReleased(KeyEvent e) {
+		int key = e.getKeyCode();
+		
+		if(key == KeyEvent.VK_RIGHT) {
+			p.setVelX(0);
+		}	
+		else if (key == KeyEvent.VK_LEFT) {
+			p.setVelX(0);
+		}	
+		else if (key == KeyEvent.VK_DOWN) {
+			p.setVelY(0);
+		}
+		else if (key == KeyEvent.VK_UP) {
+			p.setVelY(0);
+		}
 	}
 	public static void main(String args[]) {
 		Game game = new Game();
