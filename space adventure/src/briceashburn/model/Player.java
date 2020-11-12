@@ -1,12 +1,10 @@
-package briceashburn.objects;
+package briceashburn.model;
 
 import javax.swing.ImageIcon;
 
+import briceashburn.constants.Constants;
 import briceashburn.images.Image;
 import briceashburn.images.ImageFactory;
-
-import briceashburn3.Constants;
-
 
 public class Player extends Sprite
 {
@@ -15,9 +13,8 @@ public class Player extends Sprite
 		initialize();
 	}
 	
-	private void initialize()
+	private void initialize() 
 	{
-		
 		ImageIcon imageIcon = ImageFactory.createImage(Image.PLAYER);
 		setImage(imageIcon.getImage());
 		
@@ -26,13 +23,11 @@ public class Player extends Sprite
 		
 		setX(start_x);
 		setY(start_y);
-	
 	}
 
 	@Override
 	public void move()
 	{
 		
-	} 
-	
+	}
 }

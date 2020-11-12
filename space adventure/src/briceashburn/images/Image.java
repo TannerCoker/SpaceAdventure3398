@@ -1,6 +1,7 @@
 package briceashburn.images;
 
-public enum Image
-{
-	PLAYER, BACKGROUND, LASER, ENEMY1;
+public enum Image {
+
+	PLAYER, LASER, ENEMY1, BACKGROUND; //defines images
+	
 }

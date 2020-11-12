@@ -1,9 +1,9 @@
 package briceashburn.ui;
 
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class GameLoop implements ActionListener 
+public class GameLoop implements ActionListener  
 {
 	private GamePanel gamePanel;
 	
@@ -13,8 +13,9 @@ public class GameLoop implements ActionListener
 	}
 	
 	@Override
-	public void actionPerformed(ActionEvent arg0)
+	public void actionPerformed(ActionEvent arg0) 
 	{
-		this.gamePanel.doOneLoop();
+		this.gamePanel.doOneLoop(); 
 	}
+
 }
