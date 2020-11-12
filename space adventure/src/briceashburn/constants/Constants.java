@@ -16,6 +16,9 @@ public class Constants
 	//speed of application
 	public static final int GAME_SPEED = 10;
 	
+	//speed of laser
+	public static final int LASER_HORIZONTAL_TRANSLATION = 100;
+	
 	
 	//spaceship size
 	public static final int PLAYER_WIDTH = 30;
