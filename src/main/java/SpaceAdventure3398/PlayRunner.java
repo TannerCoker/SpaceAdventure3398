@@ -7,33 +7,80 @@
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
+import java.awt.event.KeyEvent;
 import javax.swing.*;
 import javax.imageio.ImageIO;
 import java.util.*;
 
-public class PlayRunner extends JPanel implements ActionListener
+import java.awt.Canvas;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.event.KeyEvent;
+import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+
+public class PlayRunner extends JPanel implements ActionListener, KeyListener
 {
   Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
   int width = screenSize.width;
   int height = screenSize.height;
   private JButton back;//back button to return to the menu
-  ImageIcon backPic;
+  ImageIcon backPic, playerPic, alienPic;
   private volatile boolean running;
   private ScreenManager manager;
   Background background = new Background();
 
+  Player ship;
+  Alien a1;
+
+  Action leftAction;
+
   public PlayRunner(ScreenManager manager)
   {
     this.manager = manager;
-    backPic = new ImageIcon("src/main/java/SpaceAdventure3398/images/Back.png");
+    backPic = new ImageIcon("./src/main/java/SpaceAdventure3398/images/Back.png");
+    playerPic = new ImageIcon("./src/main/java/SpaceAdventure3398/images/PlayerShip.png");
+    alienPic = new ImageIcon("./src/main/java/SpaceAdventure3398/images/EnemyShip.png");
+
     this.setLayout(null);
 
     this.add(background);//adds the animated background to game panel
     setButton();//adds the back button
 
+    ship = new Player(width/2, height/2);
+    ship.setPicture(playerPic);
+	//requestFocus();
+	//addKeyListener(new KeyMovement(this));
+
+    this.addKeyListener(this);
+    this.setFocusable(true);
+	this.requestFocus(); 
+    this.requestFocusInWindow();
+
+    /*leftAction = new LeftAction();
+    this.getInputMap().put(KeyStroke.getKeyStroke("W"), "leftA");
+    this.getActionMap().put("leftA", leftAction);*/
+
+
+    a1 = new Alien(width/2, 100);
+    a1.setPicture(alienPic);
+
     running = false;
     UpdateBG ub = new UpdateBG(this);
     ub.start();
+
+
+
+  }
+
+  public class LeftAction extends AbstractAction
+  {
+    @Override
+    public void actionPerformed(ActionEvent e)
+    {
+      ship.setSpeed(-5);
+    }
   }
 
   //makes the back button
@@ -60,17 +107,99 @@ public class PlayRunner extends JPanel implements ActionListener
     if(running)
     {
       background.update();
+      a1.update();
+
+      if(ship.bullet.intersects(a1))
+			{
+				a1.kill();
+        System.out.println("Alien dead");
+			}
+			if(a1.intersects(ship))
+			{
+				ship.kill();
+        System.out.println("Ship dead");
+			}
+			if(a1.bullet.intersects(ship))
+			{
+				ship.kill();
+        System.out.println("Ship dead");
+			}
+
+      ship.update();
       repaint();
     }
   }
 
   //goes back to the menu screen
-  @Override
+ // @Override
   public void actionPerformed(ActionEvent e)
   {
     running = false;
     manager.showMenu();
   }
+
+
+	public void keyPressed(KeyEvent e) {
+		int key = e.getKeyCode();
+System.out.println("pressed right");
+		
+		if(key == KeyEvent.VK_RIGHT) {
+			ship.setSpeed(5);  
+		}	
+		else if (key == KeyEvent.VK_LEFT) {
+			ship.setSpeed(-5);
+		}	
+		/*else if (key == KeyEvent.VK_DOWN) {
+			ship.setVelY(5);
+		}
+		else if (key == KeyEvent.VK_UP) {
+			ship.setVelY(-5);
+		}*/
+	}
+	public void keyReleased(KeyEvent e) {
+		int key = e.getKeyCode();
+		
+		if(key == KeyEvent.VK_RIGHT) {
+			ship.setSpeed(0);
+		}	
+		else if (key == KeyEvent.VK_LEFT) {
+			ship.setSpeed(0);
+		}	
+		/*else if (key == KeyEvent.VK_DOWN) {
+			ship.setVelY(0);
+		}
+		else if (key == KeyEvent.VK_UP) {
+			ship.setVelY(0);
+		}*/
+	}
+
+	public void keyTyped(KeyEvent k)
+	{
+	}
+
+
+/*
+  //@Override
+  public void keyPressed(KeyEvent k)
+  {
+    char c = k.getKeyChar();
+
+    if(k.getKeyCode() == KeyEvent.VK_RIGHT)
+      {ship.setSpeed(5); System.out.println("right");}
+    if(k.getKeyCode() == KeyEvent.VK_LEFT)
+      {ship.setSpeed(-5); System.out.println("left");}
+    if(c == ' ')
+      {ship.shoot(); System.out.println("shoot");}
+  }
+
+  //@Override
+  public void keyReleased(KeyEvent k)
+  {
+    if(k.getKeyCode() == KeyEvent.VK_LEFT &&  k.getKeyCode() == KeyEvent.VK_RIGHT)
+      ship.setSpeed(0);
+  }
+*/
+
 
   //paints the components
   @Override
@@ -79,5 +208,14 @@ public class PlayRunner extends JPanel implements ActionListener
     g.setColor(Color.black);
     g.fillRect(0,0,width,height);
     background.paintComponent(g);
+    a1.draw(g,this);
+    a1.bullet.draw(g,this);
+    ship.draw(g,this);
+    ship.bullet.draw(g,this);
+
   }
 }
+
+
+
+
