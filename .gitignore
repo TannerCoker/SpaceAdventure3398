@@ -49,8 +49,6 @@ Thumbs.db
 *.wmv
 
 .gradle
-
-.gradle
-build
+/build/
 
 
