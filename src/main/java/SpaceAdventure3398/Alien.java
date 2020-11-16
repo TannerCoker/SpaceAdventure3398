@@ -71,7 +71,7 @@ public class Alien extends Rectangle
 
 		locX += ( speedX * direction );
 
-		rand = dice.nextInt(2);
+		rand = dice.nextInt(25);
 
 		if(alive)
 		{
@@ -84,7 +84,7 @@ public class Alien extends Rectangle
 			if(shot)
 			{
 				bullet.update();
-				if(bullet.getY() >= 900)
+				if(bullet.getYCoord() >= height-10)
 				{
 					bullet.setLoc(0,-5);
 	  				shot = false;
