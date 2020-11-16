@@ -51,6 +51,11 @@ public class Player extends Rectangle
   {
     speed = s;
   }
+	
+  public void setX(int x)
+  {
+  	locX = x;
+  }
 
   public void draw(Graphics g, Component c)
   {

@@ -20,7 +20,28 @@ import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
-public class PlayRunner extends JPanel implements ActionListener, KeyListener
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.EventQueue;
+import java.awt.Graphics2D;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.AbstractAction;
+import javax.swing.ActionMap;
+import javax.swing.InputMap;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.KeyStroke;
+import javax.swing.Timer;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
+import java.util.ArrayList;
+
+
+
+public class PlayRunner extends JPanel implements ActionListener
 {
   Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
   int width = screenSize.width;
@@ -31,10 +52,19 @@ public class PlayRunner extends JPanel implements ActionListener, KeyListener
   private ScreenManager manager;
   Background background = new Background();
 
-  Player ship;
-  Alien a1;
+  Player playerShip;
+  Alien alienShip;
+  ArrayList<Alien> aliens = new ArrayList<Alien>();
+  
 
   Action leftAction;
+
+  // variables used to move and maintain player ship position
+  private int xDelta = 0;
+  private int keyPressCount = 0;
+  private Timer repaintTimer;
+  private int xPos = 0;
+  private int radius = 10;
 
   public PlayRunner(ScreenManager manager)
   {
@@ -48,40 +78,84 @@ public class PlayRunner extends JPanel implements ActionListener, KeyListener
     this.add(background);//adds the animated background to game panel
     setButton();//adds the back button
 
-    ship = new Player(width/2, height/2);
-    ship.setPicture(playerPic);
-	//requestFocus();
-	//addKeyListener(new KeyMovement(this));
-
-    this.addKeyListener(this);
-    this.setFocusable(true);
-	this.requestFocus(); 
-    this.requestFocusInWindow();
-
-    /*leftAction = new LeftAction();
-    this.getInputMap().put(KeyStroke.getKeyStroke("W"), "leftA");
-    this.getActionMap().put("leftA", leftAction);*/
+    playerShip = new Player(width/2, (int)(height*0.80) );
+    playerShip.setPicture(playerPic);
 
 
-    a1 = new Alien(width/2, 100);
-    a1.setPicture(alienPic);
+	/*************************************************************************/
+	/* Solution suggested by MadProgrammer on stackoverflow at:
+	/*    https://stackoverflow.com/questions/15192610/java-object-movement
+	/*************************************************************************/
+	// Used to move and maintain ship position
+	InputMap im = getInputMap(WHEN_IN_FOCUSED_WINDOW);
+	ActionMap am = getActionMap();
+    im.put(KeyStroke.getKeyStroke(KeyEvent.VK_LEFT, 0, false), "pressed.left");
+    im.put(KeyStroke.getKeyStroke(KeyEvent.VK_RIGHT, 0, false), "pressed.right");
+    im.put(KeyStroke.getKeyStroke(KeyEvent.VK_LEFT, 0, true), "released.left");
+    im.put(KeyStroke.getKeyStroke(KeyEvent.VK_RIGHT, 0, true), "released.right");
+
+    am.put("pressed.left", new MoveAction(-15, true));
+    am.put("pressed.right", new MoveAction(15, true));
+    am.put("released.left", new MoveAction(0, false));
+    am.put("released.right", new MoveAction(0, false));
+
+    repaintTimer = new Timer(40, new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            xPos += xDelta;
+            if (xPos < 0) {
+                xPos = 0;
+            } else if (xPos + radius > getWidth()) {
+                xPos = getWidth() - radius;
+            }
+            repaint();
+        }
+    });
+    repaintTimer.setInitialDelay(0);
+    repaintTimer.setRepeats(true);
+    repaintTimer.setCoalesce(true);
+	/***************************************************************/
+
+	// Place 5 enemies on the screen at regular intervals
+	// TODO: placing too many enemies at regular intervals will draw
+	// enemies off screen. Draw them closer to each other if many enemies
+	// are present using screen measurements.
+	for(int i = 0; i < 5; i++)
+	{
+		int y = (int)( i*( width * 0.1 ) );
+    	alienShip = new Alien( y, 100 );
+    	alienShip.setPicture(alienPic);
+		aliens.add(alienShip);
+	}
 
     running = false;
     UpdateBG ub = new UpdateBG(this);
     ub.start();
-
-
-
   }
 
-  public class LeftAction extends AbstractAction
-  {
-    @Override
-    public void actionPerformed(ActionEvent e)
-    {
-      ship.setSpeed(-5);
-    }
-  }
+	public class MoveAction extends AbstractAction {
+
+		private int direction;
+		private boolean keyDown;
+
+		public MoveAction(int direction, boolean down) {
+		    this.direction = direction;
+		    keyDown = down;
+		}
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+		    xDelta = direction;
+		    if (keyDown) {
+		        if (!repaintTimer.isRunning()) {
+		            repaintTimer.start();
+		        }
+		    } else {
+		        repaintTimer.stop();
+		    }
+		}
+	}
+
 
   //makes the back button
   private void setButton()
@@ -101,31 +175,60 @@ public class PlayRunner extends JPanel implements ActionListener, KeyListener
     running = true;
   }
 
-  //updates all of the gameplay parts
+  //updates all of the gameplay parts   
   public void update()
   {
     if(running)
     {
       background.update();
-      a1.update();
 
-      if(ship.bullet.intersects(a1))
+		// check to see if any one of the ships have reached the
+		// end of the screen on the left or right
+		boolean reverse = false;
+		for(Alien alienShip : aliens)
+		{
+			if(alienShip.reachedScreenBounds() ) 
 			{
-				a1.kill();
+				reverse = true;
+				break;
+			}	
+		}
+
+		// if at least one ship has reached the end of the screen, reverse the direction
+		// of all the ships to make them move in synch.
+		if(reverse)
+		{
+			for(Alien alienShip : aliens)
+			{
+				alienShip.reverseDirection();
+			}
+		}
+
+		// Use this check only if the aliens array is resized after enemies die
+		// if(aliens[0].reachedScreenBounds() || aliens[aliens.size()-1].reachedScreenBounds() )
+
+		for(Alien alienShip : aliens)
+		{
+			alienShip.update();
+		}
+
+      if(playerShip.bullet.intersects(alienShip))
+			{
+				alienShip.kill();
         System.out.println("Alien dead");
 			}
-			if(a1.intersects(ship))
+			if(alienShip.intersects(playerShip))
 			{
-				ship.kill();
+				playerShip.kill();
         System.out.println("Ship dead");
 			}
-			if(a1.bullet.intersects(ship))
+			if(alienShip.bullet.intersects(playerShip))
 			{
-				ship.kill();
+				playerShip.kill();
         System.out.println("Ship dead");
 			}
 
-      ship.update();
+      playerShip.update();
       repaint();
     }
   }
@@ -139,83 +242,35 @@ public class PlayRunner extends JPanel implements ActionListener, KeyListener
   }
 
 
-	public void keyPressed(KeyEvent e) {
-		int key = e.getKeyCode();
-System.out.println("pressed right");
-		
-		if(key == KeyEvent.VK_RIGHT) {
-			ship.setSpeed(5);  
-		}	
-		else if (key == KeyEvent.VK_LEFT) {
-			ship.setSpeed(-5);
-		}	
-		/*else if (key == KeyEvent.VK_DOWN) {
-			ship.setVelY(5);
+	@Override
+	public Dimension getPreferredSize() {
+		return new Dimension(200, 200);
+	}
+
+	@Override
+	protected void paintComponent(Graphics g) {
+		super.paintComponent(g);
+
+		g.setColor(Color.black);
+		g.fillRect(0,0,width,height);
+		background.paintComponent(g);
+		for(Alien alienShip : aliens)
+		{
+			alienShip.draw(g,this);
+			alienShip.bullet.draw(g,this);
 		}
-		else if (key == KeyEvent.VK_UP) {
-			ship.setVelY(-5);
-		}*/
-	}
-	public void keyReleased(KeyEvent e) {
-		int key = e.getKeyCode();
-		
-		if(key == KeyEvent.VK_RIGHT) {
-			ship.setSpeed(0);
-		}	
-		else if (key == KeyEvent.VK_LEFT) {
-			ship.setSpeed(0);
-		}	
-		/*else if (key == KeyEvent.VK_DOWN) {
-			ship.setVelY(0);
-		}
-		else if (key == KeyEvent.VK_UP) {
-			ship.setVelY(0);
-		}*/
+
+		playerShip.setX(xPos);
+		playerShip.draw(g,this);
+		playerShip.bullet.draw(g,this);
+
+		Graphics2D g2d = (Graphics2D) g.create();
+		//g2d.setColor(Color.BLACK);
+		//g2d.drawOval(xPos, 0, radius, radius);
+		g2d.dispose();
 	}
 
-	public void keyTyped(KeyEvent k)
-	{
-	}
-
-
-/*
-  //@Override
-  public void keyPressed(KeyEvent k)
-  {
-    char c = k.getKeyChar();
-
-    if(k.getKeyCode() == KeyEvent.VK_RIGHT)
-      {ship.setSpeed(5); System.out.println("right");}
-    if(k.getKeyCode() == KeyEvent.VK_LEFT)
-      {ship.setSpeed(-5); System.out.println("left");}
-    if(c == ' ')
-      {ship.shoot(); System.out.println("shoot");}
-  }
-
-  //@Override
-  public void keyReleased(KeyEvent k)
-  {
-    if(k.getKeyCode() == KeyEvent.VK_LEFT &&  k.getKeyCode() == KeyEvent.VK_RIGHT)
-      ship.setSpeed(0);
-  }
-*/
-
-
-  //paints the components
-  @Override
-  public void paintComponent(Graphics g)
-  {
-    g.setColor(Color.black);
-    g.fillRect(0,0,width,height);
-    background.paintComponent(g);
-    a1.draw(g,this);
-    a1.bullet.draw(g,this);
-    ship.draw(g,this);
-    ship.bullet.draw(g,this);
-
-  }
 }
-
 
 
 

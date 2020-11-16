@@ -16,9 +16,11 @@ public class Alien extends Rectangle
   Random dice;
   Projectile bullet;
 
+  int direction = 1;
+
   public Alien(int x, int y)
   {
-    locX = x;
+    locX = x + 5; // start each ship with a slight offset to the right
     locY = y;
     speedX = 3;
     alive = true;
@@ -40,45 +42,60 @@ public class Alien extends Rectangle
 			alive = false;
 	}
 
-  public void update()
+	// check if the ship has reached end of screen left or right
+	boolean reachedScreenBounds()
 	{
-		if(counter%2 != 1)
-    {
-      locX += speedX;
-      if(locX > width-100)
-        counter ++;
-    }
-    else
-    {
-      locX -= speedX;
-      if(locX < 0)
-        counter ++;
-    }
-
-    rand = dice.nextInt(2);
-
-    if(alive)
-    {
-      if(rand == 0 && !shot)
-      {
-        bullet.setLoc(locX+25,locY+5);
-        shot = true;
-      }
-
-      if(shot)
-      {
-        bullet.update();
-        if(bullet.getY() >= 900)
-        {
-          bullet.setLoc(0,-5);
-          shot = false;
-        }
-      }
-    }
-    else
-      bullet.setLoc(0,-15);
-
+		return (locX > width || locX < 0);  
 	}
+
+
+	void reverseDirection()
+	{
+		direction *= -1;
+	}
+ 
+	public void update()  
+	{
+		/*if(counter%2 != 1)
+		{ 
+			locX += speedX;
+			if(locX > width-100)
+			counter ++;
+		}
+		else
+		{
+			locX -= speedX;
+			if(locX < 0)
+			counter ++;
+		}*/
+
+		locX += ( speedX * direction );
+
+		rand = dice.nextInt(2);
+
+		if(alive)
+		{
+			if(rand == 0 && !shot)
+			{
+				bullet.setLoc(locX+25,locY+5);
+				shot = true;
+			}
+
+			if(shot)
+			{
+				bullet.update();
+				if(bullet.getY() >= 900)
+				{
+					bullet.setLoc(0,-5);
+	  				shot = false;
+				}
+			}
+		}
+		else
+			bullet.setLoc(0,-15);
+	}
+
+
 
   public void draw(Graphics g, Component c)
 	{
