@@ -116,13 +116,15 @@ public class PlayRunner extends JPanel implements ActionListener
     repaintTimer.setCoalesce(true);
 	/***************************************************************/
 
+	// TODO: Move to EnemyManager
 	// Place 5 enemies on the screen at regular intervals
 	// TODO: placing too many enemies at regular intervals will draw
 	// enemies off screen. Draw them closer to each other if many enemies
 	// are present using screen measurements.
 	for(int i = 0; i < 5; i++)
 	{
-		int y = (int)( i*( width * 0.1 ) );
+		//segment = (width / numOfEnemies) * 0.5
+		int y = (int)( i*( width * 0.1 ) ); 
     	alienShip = new Alien( y, 100 );
     	alienShip.setPicture(alienPic);
 		aliens.add(alienShip);
@@ -182,6 +184,7 @@ public class PlayRunner extends JPanel implements ActionListener
     {
       background.update();
 
+		// TODO: move next 3 blocks to EnemyManager
 		// check to see if any one of the ships have reached the
 		// end of the screen on the left or right
 		boolean reverse = false;
@@ -211,6 +214,8 @@ public class PlayRunner extends JPanel implements ActionListener
 		{
 			alienShip.update();
 		}
+
+
 
       if(playerShip.bullet.intersects(alienShip))
 			{
@@ -254,6 +259,8 @@ public class PlayRunner extends JPanel implements ActionListener
 		g.setColor(Color.black);
 		g.fillRect(0,0,width,height);
 		background.paintComponent(g);
+
+		// TODO: EnemyManager
 		for(Alien alienShip : aliens)
 		{
 			alienShip.draw(g,this);
