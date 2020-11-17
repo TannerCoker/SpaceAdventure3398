@@ -51,13 +51,25 @@ public class Player extends Rectangle
   {
     speed = s;
   }
+<<<<<<< HEAD
+=======
+	
+  public void setX(int x)
+  {
+  	locX = x;
+  }
+>>>>>>> 6297f4be926e313420dfa85e31b855048050b504
 
   public void draw(Graphics g, Component c)
   {
     if(alive)
     {
       if(picture != null)
+<<<<<<< HEAD
         g.drawImage(picture.getImage(),locX,locY,100,100,c);
+=======
+        g.drawImage(picture.getImage(),locX,locY,50,50,c);
+>>>>>>> 6297f4be926e313420dfa85e31b855048050b504
       else
       {
         g.setColor(Color.blue);
