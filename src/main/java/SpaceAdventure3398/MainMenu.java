@@ -29,8 +29,8 @@ public class MainMenu extends JPanel implements ActionListener
     //assigns the buffered image for title picture and background
     try
     {
-      title = ImageIO.read(new File("../images/Title.png"));
-      background = ImageIO.read(new File("../images/stillBackground.png"));
+      title = ImageIO.read(new File("src/main/java/SpaceAdventure3398/images/Title.png"));
+      background = ImageIO.read(new File("src/main/java/SpaceAdventure3398/images/stillBackground.png"));
     }
     catch(Exception e)
     {
@@ -38,11 +38,11 @@ public class MainMenu extends JPanel implements ActionListener
     }
 
     //assigns the pics for the buttons to use
-    play = new ImageIcon("../images/Play.png");
-    score = new ImageIcon("../images/Scoreboard.png");
-    settings = new ImageIcon("../images/Settings.png");
-    about = new ImageIcon("../images/About.png");
-    exit = new ImageIcon("../images/Exit.png");
+    play = new ImageIcon("src/main/java/SpaceAdventure3398/images/Play.png");
+    score = new ImageIcon("src/main/java/SpaceAdventure3398/images/Scoreboard.png");
+    settings = new ImageIcon("src/main/java/SpaceAdventure3398/images/Settings.png");
+    about = new ImageIcon("src/main/java/SpaceAdventure3398/images/About.png");
+    exit = new ImageIcon("src/main/java/SpaceAdventure3398/images/Exit.png");
 
     //sets no layout for the mainmenu
     this.setLayout(null);

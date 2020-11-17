@@ -33,7 +33,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClassName = 'space.adventure.App'
+    mainClassName = 'GameRunner' // 'space.adventure.App'
 }
 
 test {

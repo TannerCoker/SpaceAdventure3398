@@ -1,4 +1,4 @@
-package maingame;
+//package maingame;
 
 
 import java.awt.Graphics;

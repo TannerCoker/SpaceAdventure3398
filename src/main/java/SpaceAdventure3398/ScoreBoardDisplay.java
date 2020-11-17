@@ -30,13 +30,13 @@ public class ScoreBoardDisplay extends JPanel implements ActionListener
   {
     this.manager = manager;
 	this.
-    backPic = new ImageIcon("../images/Back.png");
+    backPic = new ImageIcon("src/main/java/SpaceAdventure3398/images/Back.png");
 
     //gets static background image
     try
     {
-      background = ImageIO.read(new File("../images/stillBackground.png"));
-      panelTitle = ImageIO.read(new File("../images/Score_Board_Panel.png"));
+      background = ImageIO.read(new File("src/main/java/SpaceAdventure3398/images/stillBackground.png"));
+      panelTitle = ImageIO.read(new File("src/main/java/SpaceAdventure3398/images/Score_Board_Panel.png"));
     }
     catch(Exception e)
     {

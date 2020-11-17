@@ -145,22 +145,11 @@ The java files are currently located in the Development branch since I have merg
 
 ### Erik Cortez
 I've created a few sprites in the development branch which represent the player and enemies or a boss. The sprites will be used in the ship
-<<<<<<< HEAD
-class which control how the player and enemy ships move. The ship class is partially complete with some methods but doesn't function yet.
-
-
-### Eric Figueroa
-The player and enemy classes have been added but are still having issues. My classes should create the player and enemy but keeps crashing. Should permit movement from left to right of the screen for players and flying abilities at top of screen for enemies. The players and enemy movement/tactics differ from one another also depending on level. Still new to developing in java, especially a game with graphics and images.
-=======
 class which will control how the player and enemy ships move. The ship class is partially complete with some methods but doesn't completely function yet.
 
 
 ### Eric Figueroa
 The player and enemy classes have been added but are still having issues. My classes should create the player and enemy but keeps crashing. Should permit movement from left to right of the screen for players and flying abilities at top of screen for enemies. The players and enemy movement/tactics differ from one another also depending on level. Code does not run yet. Still new to developing in java, especially a game with graphics and images.
-
-
->>>>>>> cb2e98863a35adcbe83081657114f62a24fafd7b
-
 
 
 
@@ -189,17 +178,11 @@ The player and enemy classes have been added but are still having issues. My cla
 
 * Tanner Coker: My next step will likely be to add all of the separate moving parts such as enemies and the player to the background.
 
-<<<<<<< HEAD
 * Erik Cortez: I plan to work on adding design patterns to the ship class to get it working well, and to add ship sprites as needed. I will also learn how to better understand Sourcetree and Bitbucket.
-=======
-* Erik Cortez: I plan to work on adding design patterns to the ship class to get it working well, and to add ship sprites as needed. I will also learn to understand Sourcetree and Bitbucket better.
+
 
 * Eric Figueroa: The next steps for me would be to get the errors to stop occurring and start combining into other sections of Space Adventures code. This will require further communication with team about how to incorporate each other’s code and possible rewriting and redesigning if needed with testing to ensure that it works smoothly after combining.
 
-
->>>>>>> cb2e98863a35adcbe83081657114f62a24fafd7b
-
-* Eric Figueroa: The next steps for me would be to get the errors to stop occurring and start combining into other sections of Space Adventures code. This will require further communication with team about how to incorporate each other’s code and possible rewriting and redesigning if needed with testing to ensure that it works smoothly after combining.
 
 
 
@@ -225,11 +208,7 @@ The player and enemy classes have been added but are still having issues. My cla
 
 * Eric Figueroa: Things that went well were helping and guiding one another when we would encounter problems on source tree. We are currently still adjusting to new environments.
 
-<<<<<<< HEAD
-
-=======
 * Erik Cortez: I learned to understand how design patterns work so that I can incorporate them better into my class. I also learned how Bitbucket and Sourcetree help to better organize work. I also learned a bit about designing sprites
->>>>>>> cb2e98863a35adcbe83081657114f62a24fafd7b
 
 * Eric Figueroa: As a team, things that went well were helping and guiding one another when we would encounter problems on source tree. We are currently still adjusting to new environments.
 
@@ -259,11 +238,8 @@ The player and enemy classes have been added but are still having issues. My cla
 
 * Erik Cortez: I felt like I spent more time than I should have learning how to solve my code problems in the wrong places, and didn't spend enough time learning how Sourcetree and Bitbucket work. I could have also spent more time understanding concepts before trying to use them. It would also help to ask more questions so that I can get the help that I need. As a team, I believe we could organize group time ahead of time to make deadlines less hectic.
 
-<<<<<<< HEAD
-* Eric Figueroa: As a team, for improvement I suggest we could schedule more zoom meetings to discuss project rather than over message. As an individual, for improvement I recommend doing more research on java and look up YouTube videos to learn more about developing games.
-=======
 * Eric Figueroa: As a team, for improvement I suggest we could schedule more zoom meetings to discuss project rather than over message. We can also work on updating tasks on Jira to have our burnout reports to be more accurate.  As an individual, for improvement I recommend doing more research on java and look up YouTube videos to learn more about developing games.
->>>>>>> cb2e98863a35adcbe83081657114f62a24fafd7b
+
 
 
 
@@ -302,29 +278,82 @@ Currently, the code and the documentation is stored under the Development branch
 
 For the last source code reference, changes were made to source code made by Tanner Coker's menu interface to display the scores and other menu options. 
 
+### Eric Figueroa
+The Player/Enemy class are the main characters in the game and are updated to function properly to window screen now. The enemy is at the top of the screen hovering throughout the game and the player is at the bottom of the screen moving from left to right with key input arrow commands. The .png images are what we created to use for identifying the enemy and player in game.
+![Player/Enemy](./images/PlayerEnemyScreen.png)
 
+To run the player/enemy code on command line and launch player/enemy to screen:
+
+* Checkout the Development branch.
+
+* Navigate to the /src directory.
+
+* cd to SpaceAdv3398 folder
+
+* Navigate to the /src directory.
+
+* Compile the code using the command: javac maingame/Game.java
+
+* Run the code using the command: java maingame.Game
+
+
+Here are links under Development branch to the Game.java and .png images in bitbucket used to create player and enemy class:
+
+* https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/Development/src/SpaceAdv3398/src/maingame/Game.java
+
+* https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/master/images/ship0(100).png
+
+* https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/master/images/ship1(100).png
 
 ### Brice Ashburn
-The Bullet/Projectile class is uploaded unded the Development branch, although is class is needed by many other classes I have yet to upload those as they are no finished yet.
+The Bullet class is uploaded under my own branch, along with many other classes needed for the game, the project does run on my machine, as of now only the background shows up as I have been stuck on a error for a while trying to get the player to show up in the JFrame. Which is line 22 in the Player.java class.
+
+Can be found here: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/Brice's_Branch/space%20adventure/src/
+
+### Erik Cortez
+There are two classes which will be used to detect collision, the ShipProjHitbox and ShipToShipCol (names pending). The classes will give the sprites a rectangle hitbox, which will react to the rectangle hitbox of another ship or a projectile. After a ship is hit, it will either take damage or be eliminated. The laser will disappear after collision.
+
+Code for classes: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/master/src/
+
+### Tanner Coker
+The GameRunner has been added and that is what is initially ran to start the game. It will show the main menu on startup which will have buttons to go to the play, scoreboard, settings, or about panels. There is also an exit button which will quit the game. Each of the non-menu display panels will feature a back button that will return you to the main menu. Once the play panel is left it will stop the game from running. The game panel right now only shows our moving background that was completed in sprint 1.
+
+![MainMenu](./images/MainMenu_image.jpg)
+
+* The files are currently under the Development branch in the src/ directory
+* compile the code and run GameRunner to see interact with the Main Menu and the various panels.
+
+The code for each class is found under the Development branch and can be found under it's respective name. Here are links to 3 of them:
+
+* Code for the GameRunenr: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/Development/src/GameRunner.java
+
+* Code for the MainMenu class: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/Development/src/MainMenu.java
+
+* Code for the PlayRunner: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/Development/src/PlayRunner.java
 
 ## Status (Assignment 16)
 
 * Lucas Anesti: completed.
 * Brice Ashburn: in-progress.
-
+* Erik Cortez: in-progress.
+* Eric Figueroa: completed.
+* Tanner Coker: completed.
 
 ## Next Steps (Assignment 16)
 
 * Lucas Anesti: Some of the menu features implemented are Component objects in Java but their listeners are currently non-functional. For example, under Settings, the difficulty slides does not affect the game in any way, as gameplay has not yet been implemented. The next step will be to complete these features and integrate them with gameplay. In addition, the Scoreboard class is complete but needs to interface with the Background class once gameplay is implemented. Work on improving CircleCi integration.
 * Brice Ashburn: The next is to figure out what other classes the Bullet class will depend on and start to work on those classes to get runnable code to show.
-
-
+* Erik Cortez: The next step is to make sure that collisions work on ships and projectiles in game during a running session. Most importantly, we need to show that the game itself runs.
+* Eric Figueroa: The next step will be to decrease the size of player/enemy on window screen. Also to incorporate the player and enemy to the background class of the game along with along with adding bullets to both classes. Create more aliens for gameplay. Create test cases.
+* Tanner Coker: My next step isn't decided yet but I may be working on making the level design so that way there will be stages that the player progresses through. 
 
 ### What went well (Assignment 16)
 
 * Lucas Anesti: The implementation of the menu interface by Tanner Coker made it very easy to interface with the code and add the necessary options. The development of the Scoreboard class was relatively straightforward. CircleCi is currently throwing errors on assertions that are accepted locally by gradle.
 * Brice Ashburn: Wht went well is that I was able to learn about game mechanics, JFrames in Java,and the game engine, I also was able to get some running code but not exactly what I need.
-
+* Erik Cortez: Being able to connect the ships and projectiles to rectangles makes it easy to detect collision since the intersect code is already supplied and can detect the object intersection.
+* Eric Figueroa: Being able to have a stable player and enemy to print to a window screen was much improvement as I’m learning more coding in Java. Sprites for player/enemy created along with key movement of the player to move from left to right.
+* Tanner Coker: Once I figured out how to easily switch between two of the JPanels, switching between the other 3 became very easy as it was the same process. Also, I discovered that I could place a .png file on/in a JButton but make the rest of the button invisible which allowed me to get the functionality of the button but also allowed me to decorate the menu and panels.
 
 ### What might be Impeding us (Assignment 16)
 
@@ -334,7 +363,9 @@ The Bullet/Projectile class is uploaded unded the Development branch, although i
 
 * Lucas Anesti: Currently, my limited knowledge of CircleCi and its environments are preventing me from resolving the continuous integration errors generated every time a member commits. A more thorough look into gradle and CircleCi
 * Brice Ashburn: To improve we need to figure how to have code run on all of our systems as we all have diffrent types. Personally I need to learn more Java and more on testing.
-
+* Erik Cortez: I definitely need to learn more Java which will help connect the classes together. It's also important to have the game running soon so that the rest of the work comes more easily.
+* Eric Figueroa: Currently, still learning how to use CircleCi for test cases as it is preventing me to create good test cases. Need to look more into that. Researching more in Java would help me improve.
+* Tanner Coker: I need to spend more time in the beginning of the sprint when it comes to researching methods for accomplishing my tasks for the sprint. Since I am generally busy I may start research a few days after the sprint starts which may push me back some. In sprint 3 I am going to try and start working on my tasks immediately so that I can assit in other areas of the project.
 * Team: To avoid the same time management issues in the next sprint that may be caused by school workload, we need to discuss our schedules and mark any deadlines for each member that may impede progress and delay dependencies.
 
 
