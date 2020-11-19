@@ -1,4 +1,3 @@
-
 import javax.swing.*;
 import java.util.*;
 import java.awt.image.BufferedImage;
@@ -6,14 +5,10 @@ import java.awt.*;
 import javax.imageio.ImageIO;
 
 public class Alien extends Rectangle
+
 {
-<<<<<<< HEAD
   Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
   int width = screenSize.width;
-=======
-  Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();  
-  int width = screenSize.width; 
->>>>>>> 6297f4be926e313420dfa85e31b855048050b504
   int height = screenSize.height;
   ImageIcon picture;
 	boolean alive, shot;
@@ -21,32 +16,23 @@ public class Alien extends Rectangle
   Random dice;
   Projectile bullet;
 
-<<<<<<< HEAD
   public Alien(int x, int y)
+
   {
     locX = x;
     locY = y;
     speedX = 10;
-=======
-  int direction = 1;
-
-  public Alien(int x, int y)
-  {
-    locX = x + 5; // start each ship with a slight offset to the right
-    locY = y;
-    speedX = 3;
->>>>>>> 6297f4be926e313420dfa85e31b855048050b504
     alive = true;
     bullet = new Projectile(1);
     shot = false;
     dice = new Random();
   }
 
+
   public void setPicture(ImageIcon p)
 	{
 		picture = p;
 	}
-
 
   public void kill()
 	{
@@ -55,8 +41,9 @@ public class Alien extends Rectangle
 			alive = false;
 	}
 
-<<<<<<< HEAD
+
   public void update()
+
 	{
 		if(counter%2 != 1)
     {
@@ -96,7 +83,6 @@ public class Alien extends Rectangle
 
 	}
 
-=======
 	// check if the ship has reached end of screen left or right
 	boolean reachedScreenBounds()
 	{
@@ -107,7 +93,8 @@ public class Alien extends Rectangle
 	{
 		direction *= -1;
 	}
- 
+
+
 	public void update()  
 	{
 		/*if(counter%2 != 1)
@@ -151,17 +138,12 @@ public class Alien extends Rectangle
 
 
 
->>>>>>> 6297f4be926e313420dfa85e31b855048050b504
   public void draw(Graphics g, Component c)
 	{
 		if(alive)
 		{
 			if( picture != null )
-<<<<<<< HEAD
 				g.drawImage(picture.getImage(),locX,locY,100,100,c);
-=======
-				g.drawImage(picture.getImage(),locX,locY,50,50,c);
->>>>>>> 6297f4be926e313420dfa85e31b855048050b504
 			else
 			{
 				g.setColor(Color.BLUE);

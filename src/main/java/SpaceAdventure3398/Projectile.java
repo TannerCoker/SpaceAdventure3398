@@ -37,14 +37,12 @@ public class Projectile extends Rectangle
     locy = y;
   }
 
-<<<<<<< HEAD
-=======
+
   public int getYCoord()
   {
  	return locy;
   }
 
->>>>>>> 6297f4be926e313420dfa85e31b855048050b504
 
   public void draw(Graphics g, Component c)
 	{
