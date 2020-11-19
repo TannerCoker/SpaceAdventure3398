@@ -12,6 +12,14 @@ public class Constants
 	public static final int BOARD_WIDTH = 1500;
 	public static final int BOARD_HEIGHT = 790;
 	
+	//Enemy1 related 
+	public static final int ENEMY1_HEIGHT = 20;
+	public static final int ENEMY1_WIDTH = 50;
+	public static final int ENEMY1_INT_X = 400; // starting position
+	public static final int ENEMY1_INT_Y = 100;
+	public static final int ENEMY1_ROW = 4; // number is rows of ship 4*8=32
+	public static final int ENEMY1_COLUMN = 8; // number of columns of enemy ship
+	
 	
 	//speed of application
 	public static final int GAME_SPEED = 10;
