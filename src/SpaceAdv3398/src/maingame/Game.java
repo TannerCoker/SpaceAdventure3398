@@ -4,7 +4,7 @@
  * BufferedImageLoader.java classes. Trying to figure out how to incorporate other files
  * by other memebers.
  */
-package maingame;
+//package maingame;
  
 
 import java.awt.Canvas;
