@@ -34,6 +34,13 @@ public class EnemyManager
     }
   }
 
+  public boolean noAliens()
+  {
+    if(aliens.isEmpty())
+      return true;
+    return false;
+  }
+
   public void update()
   {
     boolean boundReached = false;
