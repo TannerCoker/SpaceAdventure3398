@@ -1,9 +1,11 @@
+
 /*
   The alien class is for the alien objects in the game. Aliens will move left and right
   across the screen until a bound is detected in which it will then reverse. It will
   also randomly shoot a bullet towards the players side of the screen. If it is hit
   then it should die.
 */
+
 import javax.swing.*;
 import java.util.*;
 import java.awt.image.BufferedImage;
@@ -39,6 +41,7 @@ public class Alien extends Rectangle
 	{
 		picture = p;
 	}
+
 
 
   public void kill()

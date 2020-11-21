@@ -62,7 +62,10 @@ public class Player extends Rectangle
     if(alive)
     {
       if(picture != null)
+      {
+        g.drawImage(picture.getImage(),locX,locY,100,100,c);
         g.drawImage(picture.getImage(),locX,locY,50,50,c);
+      }
       else
       {
         g.setColor(Color.blue);
