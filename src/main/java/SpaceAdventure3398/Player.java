@@ -51,7 +51,7 @@ public class Player extends Rectangle
   {
     speed = s;
   }
-	
+
   public void setX(int x)
   {
   	locX = x;
@@ -63,7 +63,6 @@ public class Player extends Rectangle
     {
       if(picture != null)
       {
-        g.drawImage(picture.getImage(),locX,locY,100,100,c);
         g.drawImage(picture.getImage(),locX,locY,50,50,c);
       }
       else
