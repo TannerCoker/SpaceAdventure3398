@@ -36,13 +36,14 @@ public class ScreenManager
     container.add(menu, "1");
     container.add(pRun, "2");
     container.add(sDisp, "3");
-	sDisp.setScoreboard(new Scoreboard() );
+	  sDisp.setScoreboard(new Scoreboard() );
     container.add(setDisp, "4");
     container.add(abDisp, "5");
     cl.show(container, "1");
 
 		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    //frame.setUndecorated(true);
 		frame.pack();
     frame.add(container);
 		frame.setVisible(true);
@@ -77,6 +78,23 @@ public class ScreenManager
   public void showAbout()
   {
     cl.show(container, "5");
+  }
+
+  public void makeFullScreen()
+  {
+    frame.setVisible(false);
+    frame.dispose();
+    frame.setUndecorated(true);
+    //frame.setFullScreenWindow(this);
+    frame.setVisible(true);
+  }
+
+  public void stopFullScreen()
+  {
+    frame.setVisible(false);
+    frame.dispose();
+    frame.setUndecorated(false);
+    frame.setVisible(true);
   }
 
 }
