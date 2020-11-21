@@ -80,6 +80,7 @@ public class ScreenManager
     cl.show(container, "5");
   }
 
+  //makes the game frame full screen
   public void makeFullScreen()
   {
     frame.setVisible(false);
@@ -89,6 +90,7 @@ public class ScreenManager
     frame.setVisible(true);
   }
 
+  //makes the game frame go to a windowed view
   public void stopFullScreen()
   {
     frame.setVisible(false);
@@ -96,5 +98,25 @@ public class ScreenManager
     frame.setUndecorated(false);
     frame.setVisible(true);
   }
+
+  //attempt at merging the two fullscreen methods above.
+  //will go to fullscreen but unable to return to windowed
+  /*public void setFullScreen(boolean set)
+  {
+    if(true)
+    {
+      frame.setVisible(false);
+      frame.dispose();
+      frame.setUndecorated(true);
+      frame.setVisible(true);
+    }
+    else if(false)
+    {
+      frame.setVisible(false);
+      frame.dispose();
+      frame.setUndecorated(false);
+      frame.setVisible(true);
+    }
+  }*/
 
 }

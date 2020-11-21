@@ -131,8 +131,10 @@ public class Settings extends JPanel implements ActionListener, ItemListener
   {
     if(e.getSource() == fullscreen)
       if(e.getStateChange() == 1)
+        //manager.setFullScreen(true);
         manager.makeFullScreen();
       else
+        //manager.setFullScreen(false);
         manager.stopFullScreen();
   }
 
