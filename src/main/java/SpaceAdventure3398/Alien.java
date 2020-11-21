@@ -61,20 +61,6 @@ public class Alien extends Rectangle
 
 	public void update()
 	{
-		/*if(counter%2 != 1)
-		{
-			locX += speedX;
-			if(locX > width-100)
-			counter ++;
-		}
-		else
-		{
-			locX -= speedX;
-			if(locX < 0)
-			counter ++;
-		}*/
-
-
 		locX += ( speedX * direction );
 
 		rand = dice.nextInt(200);
