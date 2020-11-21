@@ -3,41 +3,15 @@
 
   This class will be running the game and it's various moving components such as the background, player, and enemies
 */
-
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.image.BufferedImage;
-import java.awt.event.KeyEvent;
+import java.awt.image.*;
 import javax.swing.*;
 import javax.imageio.ImageIO;
 import java.util.*;
-
-import java.awt.Canvas;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.event.KeyEvent;
-import java.awt.image.BufferStrategy;
-import java.awt.image.BufferedImage;
 import java.io.IOException;
-
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.EventQueue;
-import java.awt.Graphics2D;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.AbstractAction;
-import javax.swing.ActionMap;
-import javax.swing.InputMap;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.KeyStroke;
 import javax.swing.Timer;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 
-import java.util.ArrayList;
 
 
 
@@ -54,8 +28,8 @@ public class PlayRunner extends JPanel implements ActionListener
 
   Player playerShip;
   Alien alienShip;
-  ArrayList<Alien> aliens = new ArrayList<Alien>();
-  
+  EnemyManager aMan = new EnemyManager();
+
 
   Action leftAction;
 
@@ -63,7 +37,7 @@ public class PlayRunner extends JPanel implements ActionListener
   private int xDelta = 0;
   private int keyPressCount = 0;
   private Timer repaintTimer;
-  private int xPos = 0;
+  private int xPos = width/2;
   private int radius = 10;
 
   public PlayRunner(ScreenManager manager)
@@ -71,7 +45,7 @@ public class PlayRunner extends JPanel implements ActionListener
     this.manager = manager;
     backPic = new ImageIcon("./src/main/java/SpaceAdventure3398/images/Back.png");
     playerPic = new ImageIcon("./src/main/java/SpaceAdventure3398/images/PlayerShip.png");
-    alienPic = new ImageIcon("./src/main/java/SpaceAdventure3398/images/EnemyShip.png");
+    //alienPic = new ImageIcon("./src/main/java/SpaceAdventure3398/images/EnemyShip.png");
 
     this.setLayout(null);
 
@@ -116,19 +90,7 @@ public class PlayRunner extends JPanel implements ActionListener
     repaintTimer.setCoalesce(true);
 	/***************************************************************/
 
-	// TODO: Move to EnemyManager
-	// Place 5 enemies on the screen at regular intervals
-	// TODO: placing too many enemies at regular intervals will draw
-	// enemies off screen. Draw them closer to each other if many enemies
-	// are present using screen measurements.
-	for(int i = 0; i < 5; i++)
-	{
-		//segment = (width / numOfEnemies) * 0.5
-		int y = (int)( i*( width * 0.1 ) ); 
-    	alienShip = new Alien( y, 100 );
-    	alienShip.setPicture(alienPic);
-		aliens.add(alienShip);
-	}
+    aMan.makeAliens();
 
     running = false;
     UpdateBG ub = new UpdateBG(this);
@@ -177,47 +139,17 @@ public class PlayRunner extends JPanel implements ActionListener
     running = true;
   }
 
-  //updates all of the gameplay parts   
+  //updates all of the gameplay parts
   public void update()
   {
     if(running)
     {
       background.update();
-
-		// TODO: move next 3 blocks to EnemyManager
-		// check to see if any one of the ships have reached the
-		// end of the screen on the left or right
-		boolean reverse = false;
-		for(Alien alienShip : aliens)
-		{
-			if(alienShip.reachedScreenBounds() ) 
-			{
-				reverse = true;
-				break;
-			}	
-		}
-
-		// if at least one ship has reached the end of the screen, reverse the direction
-		// of all the ships to make them move in synch.
-		if(reverse)
-		{
-			for(Alien alienShip : aliens)
-			{
-				alienShip.reverseDirection();
-			}
-		}
-
-		// Use this check only if the aliens array is resized after enemies die
-		// if(aliens[0].reachedScreenBounds() || aliens[aliens.size()-1].reachedScreenBounds() )
-
-		for(Alien alienShip : aliens)
-		{
-			alienShip.update();
-		}
+      aMan.update();
 
 
 
-      if(playerShip.bullet.intersects(alienShip))
+    /*  if(playerShip.bullet.intersects(alienShip))
 			{
 				alienShip.kill();
         System.out.println("Alien dead");
@@ -231,7 +163,7 @@ public class PlayRunner extends JPanel implements ActionListener
 			{
 				playerShip.kill();
         System.out.println("Ship dead");
-			}
+			}*/
 
       playerShip.update();
       repaint();
@@ -259,25 +191,12 @@ public class PlayRunner extends JPanel implements ActionListener
 		g.setColor(Color.black);
 		g.fillRect(0,0,width,height);
 		background.paintComponent(g);
-
-		// TODO: EnemyManager
-		for(Alien alienShip : aliens)
-		{
-			alienShip.draw(g,this);
-			alienShip.bullet.draw(g,this);
-		}
+    aMan.draw(g,this);
 
 		playerShip.setX(xPos);
 		playerShip.draw(g,this);
 		playerShip.bullet.draw(g,this);
 
-		Graphics2D g2d = (Graphics2D) g.create();
-		//g2d.setColor(Color.BLACK);
-		//g2d.drawOval(xPos, 0, radius, radius);
-		g2d.dispose();
 	}
 
 }
-
-
-

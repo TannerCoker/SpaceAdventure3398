@@ -7,8 +7,8 @@ import javax.imageio.ImageIO;
 
 public class Alien extends Rectangle
 {
-  Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();  
-  int width = screenSize.width; 
+  Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+  int width = screenSize.width;
   int height = screenSize.height;
   ImageIcon picture;
 	boolean alive, shot;
@@ -18,7 +18,7 @@ public class Alien extends Rectangle
 
   int direction = 1;
 
-  public Alien(int x, int y)
+  public Alien(int x, int y,ImageIcon pic)
   {
     locX = x + 5; // start each ship with a slight offset to the right
     locY = y;
@@ -27,6 +27,7 @@ public class Alien extends Rectangle
     bullet = new Projectile(1);
     shot = false;
     dice = new Random();
+    picture = pic;
   }
 
   public void setPicture(ImageIcon p)
@@ -45,18 +46,18 @@ public class Alien extends Rectangle
 	// check if the ship has reached end of screen left or right
 	boolean reachedScreenBounds()
 	{
-		return (locX > width-picture.getIconWidth() || locX < 0 );  //explain 
+		return (locX > width-picture.getIconWidth() || locX < 0 );  //explain
 	}
 
 	void reverseDirection()
 	{
 		direction *= -1;
 	}
- 
-	public void update()  
+
+	public void update()
 	{
 		/*if(counter%2 != 1)
-		{ 
+		{
 			locX += speedX;
 			if(locX > width-100)
 			counter ++;
@@ -68,7 +69,8 @@ public class Alien extends Rectangle
 			counter ++;
 		}*/
 
-		locX += ( speedX * direction ); 
+
+		locX += ( speedX * direction );
 
 		rand = dice.nextInt(50);
 
