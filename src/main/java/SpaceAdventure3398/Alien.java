@@ -82,7 +82,7 @@ public class Alien extends Rectangle
 				bullet.update();
 				if(bullet.getYCoord() >= height-10)
 				{
-					bullet.setLoc(0,-5);
+					bullet.setLoc(0,-15);
 	  				shot = false;
 				}
 			}
@@ -90,6 +90,16 @@ public class Alien extends Rectangle
 		else
 			bullet.setLoc(0,-15);
 	}
+
+  /*public int getX()
+  {
+    return locX;
+  }
+
+  public int getY()
+  {
+    return locY;
+  }*/
 
 
 
@@ -99,6 +109,8 @@ public class Alien extends Rectangle
 		{
 			if( picture != null )
       {
+        g.setColor(new Color(255,0,0,180));
+        g.drawRect(locX,locY,50,50);
         g.drawImage(picture.getImage(),locX,locY,50,50,c);
         bullet.draw(g,c);
       }

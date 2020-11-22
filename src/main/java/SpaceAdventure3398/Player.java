@@ -12,15 +12,21 @@ public class Player extends Rectangle
   ImageIcon picture;
   boolean alive;
   int locX, locY, speed, myWidth, myHeight;
+  ArrayList<Projectile> bullets;
   Projectile bullet;
+  private int health;
+
+  boolean shot = false;
 
   public Player(int x, int y)
   {
     locX = x;
     locY = y;
     speed = 0;
+    bullets = new ArrayList<Projectile>();
     bullet = new Projectile(2);
     alive = true;
+    health = 100;
   }
 
   public void setPicture(ImageIcon p)
@@ -37,14 +43,40 @@ public class Player extends Rectangle
 
   public void shoot()
   {
-    bullet.setLoc(locX+(picture.getIconWidth()/2), locY-5);
+    //bullets.add(new Projectile(2));
+    //bullets.get(bullets.size()-1).setLoc(locX+(picture.getIconWidth()/2), locY-5);
+    if(!shot)
+    {
+      bullet.setLoc(locX+(picture.getIconWidth()/2),locY-5);
+      shot = true;
+    }
+
   }
 
   public void update()
   {
+    int counter = 0;
     locX += speed;
-    //System.out.println(locX + " " + locY);
-    bullet.update();
+    /*while(counter != bullets.size())
+    {
+      if(bullets.get(counter).hitBound())
+        bullets.remove(counter);
+      else
+      {
+        bullets.get(counter).update();
+        counter++;
+      }
+    }*/
+    if(shot)
+    {
+      bullet.update();
+      if(bullet.getYCoord() <= 0)
+      {
+        bullet.setLoc(0,-15);
+        shot = false;
+      }
+    }
+
   }
 
   public void setSpeed(int s)
@@ -57,6 +89,17 @@ public class Player extends Rectangle
   	locX = x;
   }
 
+  public Projectile getBullet()
+  {
+    return bullet;
+  }
+
+  public ArrayList<Projectile> getBullets()
+  {
+    System.out.println("getBullets");
+    return bullets;
+  }
+
   public void draw(Graphics g, Component c)
   {
     if(alive)
@@ -64,6 +107,9 @@ public class Player extends Rectangle
       if(picture != null)
       {
         g.drawImage(picture.getImage(),locX,locY,50,50,c);
+        bullet.draw(g,c);
+        //for(Projectile b : bullets)
+        //  b.draw(g,c);
       }
       else
       {

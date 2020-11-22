@@ -72,17 +72,38 @@ public class EnemyManager
 
   //should be able to check if an alien was hit by a rectangle/bullet.
   //if true then it will kill the alien and remove it from the arraylist.
-  public void checkHit(Rectangle r)
+  /*public void checkHit(ArrayList<Projectile> b)
   {
     for(Alien a : aliens)
     {
-      if(r.intersects(a))
+      System.out.println("check aliens");
+      for(Projectile p : b)
+      {
+        System.out.println("proj loop");
+        if(a.intersects(p))
+        {
+          System.out.println("proj loop true");
+          a.kill();
+          aliens.remove(a);
+        }
+      }
+
+    }
+
+  }*/
+
+  public void checkHit(Projectile b)
+  {
+    for(Alien a : aliens)
+    {
+      //if(b.getYCoord() < a.getY()+50 && b.getYCoord() > a.getY() && b.getXCoord() < a.getX()+50 && b.getXCoord() > a.getX())
+      if(b.intersects(a))
       {
         a.kill();
         aliens.remove(a);
+        b.setLoc(0,-15);
       }
     }
-
   }
 
   public void draw(Graphics g, Component c)

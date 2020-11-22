@@ -28,6 +28,7 @@ public class PlayRunner extends JPanel implements ActionListener
 
   Player playerShip;
   Alien alienShip;
+  ArrayList<Projectile> b;;
   EnemyManager aMan = new EnemyManager();
 
 
@@ -54,6 +55,7 @@ public class PlayRunner extends JPanel implements ActionListener
 
     playerShip = new Player(width/2, (int)(height*0.80) );
     playerShip.setPicture(playerPic);
+    b = playerShip.getBullets();
 
 
 	/*************************************************************************/
@@ -65,11 +67,19 @@ public class PlayRunner extends JPanel implements ActionListener
 	ActionMap am = getActionMap();
     im.put(KeyStroke.getKeyStroke(KeyEvent.VK_LEFT, 0, false), "pressed.left");
     im.put(KeyStroke.getKeyStroke(KeyEvent.VK_RIGHT, 0, false), "pressed.right");
+    im.put(KeyStroke.getKeyStroke(KeyEvent.VK_SPACE, 0, false), "pressed.space");
     im.put(KeyStroke.getKeyStroke(KeyEvent.VK_LEFT, 0, true), "released.left");
     im.put(KeyStroke.getKeyStroke(KeyEvent.VK_RIGHT, 0, true), "released.right");
 
     am.put("pressed.left", new MoveAction(-15, true));
     am.put("pressed.right", new MoveAction(15, true));
+    am.put("pressed.space", new AbstractAction()
+    {
+      public void actionPerformed(ActionEvent e)
+      {
+        playerShip.shoot();
+      }
+    });
     am.put("released.left", new MoveAction(0, false));
     am.put("released.right", new MoveAction(0, false));
 
@@ -164,8 +174,11 @@ public class PlayRunner extends JPanel implements ActionListener
 				playerShip.kill();
         System.out.println("Ship dead");
 			}*/
-
       playerShip.update();
+
+      aMan.checkHit(playerShip.getBullet());
+
+
       repaint();
     }
   }
@@ -195,7 +208,7 @@ public class PlayRunner extends JPanel implements ActionListener
 
 		playerShip.setX(xPos);
 		playerShip.draw(g,this);
-		playerShip.bullet.draw(g,this);
+		//playerShip.bullet.draw(g,this);
 
 	}
 
