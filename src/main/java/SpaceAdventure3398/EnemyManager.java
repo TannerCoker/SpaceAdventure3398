@@ -16,6 +16,9 @@ public class EnemyManager
   ArrayList<Alien> aliens;
   ImageIcon alienPic;
 
+
+  Rectangle b1 = new Rectangle(70, -70, 7,10);
+
   //constructor
   public EnemyManager()
   {
@@ -92,16 +95,23 @@ public class EnemyManager
 
   }*/
 
+
+
   public void checkHit(Projectile b)
   {
     for(Alien a : aliens)
     {
       //if(b.getYCoord() < a.getY()+50 && b.getYCoord() > a.getY() && b.getXCoord() < a.getX()+50 && b.getXCoord() > a.getX())
-      if(b.intersects(a))
+
+      b1.move(b.getXCoord(),b.getYCoord());
+
+      if(a.gotHit(b1))
       {
+        System.out.println("hit");
         a.kill();
         aliens.remove(a);
         b.setLoc(0,-15);
+        break;
       }
     }
   }

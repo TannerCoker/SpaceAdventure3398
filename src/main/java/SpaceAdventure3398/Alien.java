@@ -25,6 +25,8 @@ public class Alien extends Rectangle
 
   int direction = 1;
 
+  private Rectangle al = new Rectangle(-70,-70,50,50);
+
   public Alien(int x, int y,ImageIcon pic)
   {
     locX = x + 5; // start each ship with a slight offset to the right
@@ -65,6 +67,7 @@ public class Alien extends Rectangle
 	public void update()
 	{
 		locX += ( speedX * direction );
+    al.move(locX,locY);
 
 		rand = dice.nextInt(200);
 
@@ -91,15 +94,22 @@ public class Alien extends Rectangle
 			bullet.setLoc(0,-15);
 	}
 
-  /*public int getX()
+  public int getXCoord()
   {
     return locX;
   }
 
-  public int getY()
+  public int getYCoord()
   {
     return locY;
-  }*/
+  }
+
+  public boolean gotHit(Rectangle r)
+  {
+    if(al.intersects(r) || r.intersects(al))
+      return true;
+    return false;
+  }
 
 
 
@@ -109,8 +119,8 @@ public class Alien extends Rectangle
 		{
 			if( picture != null )
       {
-        g.setColor(new Color(255,0,0,180));
-        g.drawRect(locX,locY,50,50);
+        g.setColor(new Color(0,0,255,180));
+        g.drawRect((int)al.getX(),(int)al.getY(),(int)al.getWidth(),(int)al.getHeight());
         g.drawImage(picture.getImage(),locX,locY,50,50,c);
         bullet.draw(g,c);
       }
