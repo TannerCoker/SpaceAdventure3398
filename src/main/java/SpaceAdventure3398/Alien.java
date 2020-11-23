@@ -111,6 +111,11 @@ public class Alien extends Rectangle
     return false;
   }
 
+  public Projectile getBullet()
+  {
+    return bullet;
+  }
+
 
 
   public void draw(Graphics g, Component c)

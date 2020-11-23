@@ -9,12 +9,14 @@ public class Player extends Rectangle
 {
   Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
   int width = screenSize.width;
+  int height = screenSize.height;
   ImageIcon picture;
   boolean alive;
   int locX, locY, speed, myWidth, myHeight;
   ArrayList<Projectile> bullets;
   Projectile bullet;
   private int health;
+  private Rectangle hitbox;
 
   boolean shot = false;
 
@@ -27,6 +29,7 @@ public class Player extends Rectangle
     bullet = new Projectile(2);
     alive = true;
     health = 100;
+    hitbox = new Rectangle(70,-70,50,50);
   }
 
   public void setPicture(ImageIcon p)
@@ -57,6 +60,7 @@ public class Player extends Rectangle
   {
     int counter = 0;
     locX += speed;
+    hitbox.move(locX,locY);
     /*while(counter != bullets.size())
     {
       if(bullets.get(counter).hitBound())
@@ -76,7 +80,23 @@ public class Player extends Rectangle
         shot = false;
       }
     }
+    if(health < 0)
+    {
+      kill();
+    }
 
+  }
+
+  public void checkHit(ArrayList<Projectile> b)
+  {
+    for(Projectile p : b)
+    {
+      if(hitbox.intersects(p.getPBox()))
+      {
+        p.setLoc(0,height+10);
+        health -= p.getDamage();
+      }
+    }
   }
 
   public void setSpeed(int s)
@@ -100,6 +120,11 @@ public class Player extends Rectangle
     return bullets;
   }
 
+  public boolean isAlive()
+  {
+    return alive;
+  }
+
   public void draw(Graphics g, Component c)
   {
     if(alive)
@@ -108,6 +133,8 @@ public class Player extends Rectangle
       {
         g.drawImage(picture.getImage(),locX,locY,50,50,c);
         bullet.draw(g,c);
+        g.setColor(Color.red);
+        g.fillRect(30,height-80,health*2,20);
         //for(Projectile b : bullets)
         //  b.draw(g,c);
       }

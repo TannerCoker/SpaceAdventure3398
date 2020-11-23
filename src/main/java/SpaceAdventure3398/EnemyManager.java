@@ -14,6 +14,7 @@ public class EnemyManager
   int sWidth = screenSize.width;
   int sHeight = screenSize.height;
   ArrayList<Alien> aliens;
+  ArrayList<Projectile> alienBullets;
   ImageIcon alienPic;
 
 
@@ -24,6 +25,7 @@ public class EnemyManager
   {
     alienPic = new ImageIcon("./src/main/java/SpaceAdventure3398/images/EnemyShip.png");
     aliens = new ArrayList<Alien>();
+    alienBullets = new ArrayList<Projectile>();
   }
 
   //fills an arraylist full of abstract aliens and puts them in a row format.
@@ -41,7 +43,14 @@ public class EnemyManager
         aliens.add(new Alien(rowX,rowY,alienPic));
         rowX += 65;
     }
+    gatherAlienBullets();
 
+  }
+
+  private void gatherAlienBullets()
+  {
+    for(Alien a : aliens)
+      alienBullets.add(a.getBullet());
   }
 
   //can be used to determine if there are anymore aliens
@@ -73,48 +82,30 @@ public class EnemyManager
       a.update();
   }
 
-  //should be able to check if an alien was hit by a rectangle/bullet.
-  //if true then it will kill the alien and remove it from the arraylist.
-  /*public void checkHit(ArrayList<Projectile> b)
-  {
-    for(Alien a : aliens)
-    {
-      System.out.println("check aliens");
-      for(Projectile p : b)
-      {
-        System.out.println("proj loop");
-        if(a.intersects(p))
-        {
-          System.out.println("proj loop true");
-          a.kill();
-          aliens.remove(a);
-        }
-      }
-
-    }
-
-  }*/
-
-
-
+  //checks to see if the players projectile hits any of the aliens.
+  //if an alien is hit then it is deleted.
   public void checkHit(Projectile b)
   {
     int cnt = 0;
     for(Alien a : aliens)
     {
-      //if(b.getYCoord() < a.getY()+50 && b.getYCoord() > a.getY() && b.getXCoord() < a.getX()+50 && b.getXCoord() > a.getX())
+      //b1.move(b.getXCoord(),b.getYCoord());
 
-      b1.move(b.getXCoord(),b.getYCoord());
-
-      if(a.gotHit(b1))
+      if(a.gotHit(b.getPBox()))
       {
         a.kill();
+        alienBullets.remove(cnt);
         aliens.remove(cnt);
         b.setLoc(0,-15);
         break;
       }
       cnt++;
     }
+  }
+
+  public ArrayList<Projectile> getAlienBullets()
+  {
+    return alienBullets;
   }
 
   public void draw(Graphics g, Component c)

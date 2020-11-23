@@ -174,10 +174,11 @@ public class PlayRunner extends JPanel implements ActionListener
 				playerShip.kill();
         System.out.println("Ship dead");
 			}*/
-      playerShip.update();
+
 
       aMan.checkHit(playerShip.getBullet());
-
+      playerShip.checkHit(aMan.getAlienBullets());
+      playerShip.update();
 
       repaint();
     }
