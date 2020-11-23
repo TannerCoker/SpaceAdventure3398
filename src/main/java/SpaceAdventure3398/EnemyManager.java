@@ -99,6 +99,7 @@ public class EnemyManager
 
   public void checkHit(Projectile b)
   {
+    int cnt = 0;
     for(Alien a : aliens)
     {
       //if(b.getYCoord() < a.getY()+50 && b.getYCoord() > a.getY() && b.getXCoord() < a.getX()+50 && b.getXCoord() > a.getX())
@@ -107,12 +108,12 @@ public class EnemyManager
 
       if(a.gotHit(b1))
       {
-        System.out.println("hit");
         a.kill();
-        aliens.remove(a);
+        aliens.remove(cnt);
         b.setLoc(0,-15);
         break;
       }
+      cnt++;
     }
   }
 
