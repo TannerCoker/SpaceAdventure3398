@@ -116,7 +116,6 @@ public class Player extends Rectangle
 
   public ArrayList<Projectile> getBullets()
   {
-    System.out.println("getBullets");
     return bullets;
   }
 
