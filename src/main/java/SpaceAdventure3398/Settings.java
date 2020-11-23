@@ -27,10 +27,12 @@ public class Settings extends JPanel implements ActionListener, ItemListener
   JComboBox resolution;
   Checkbox fullscreen;
 
+
   public Settings(ScreenManager manager)
   {
     this.manager = manager;
     backPic = new ImageIcon("src/main/java/SpaceAdventure3398/images/Back.png");
+
 
     //tries to get the buffered images
     try
@@ -131,10 +133,8 @@ public class Settings extends JPanel implements ActionListener, ItemListener
   {
     if(e.getSource() == fullscreen)
       if(e.getStateChange() == 1)
-        //manager.setFullScreen(true);
         manager.makeFullScreen();
       else
-        //manager.setFullScreen(false);
         manager.stopFullScreen();
   }
 

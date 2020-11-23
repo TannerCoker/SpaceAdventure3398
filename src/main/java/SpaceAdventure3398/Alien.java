@@ -124,8 +124,6 @@ public class Alien extends Rectangle
 		{
 			if( picture != null )
       {
-        g.setColor(new Color(0,0,255,180));
-        g.drawRect((int)al.getX(),(int)al.getY(),(int)al.getWidth(),(int)al.getHeight());
         g.drawImage(picture.getImage(),locX,locY,50,50,c);
         bullet.draw(g,c);
       }

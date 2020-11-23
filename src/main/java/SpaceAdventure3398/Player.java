@@ -80,7 +80,7 @@ public class Player extends Rectangle
         shot = false;
       }
     }
-    if(health < 0)
+    if(health <= 0)
     {
       kill();
     }
@@ -134,7 +134,10 @@ public class Player extends Rectangle
         g.drawImage(picture.getImage(),locX,locY,50,50,c);
         bullet.draw(g,c);
         g.setColor(Color.red);
-        g.fillRect(30,height-80,health*2,20);
+        g.fillRect(150,height-80,health*2,20);
+        g.setFont(new Font("Courier",Font.BOLD, 25));
+        g.drawString("Health: ",20,height-60);
+
         //for(Projectile b : bullets)
         //  b.draw(g,c);
       }
@@ -144,6 +147,14 @@ public class Player extends Rectangle
         g.fillRect(x,y,50,50);
       }
     }
+    else
+    {
+      g.setColor(Color.red);
+      g.setFont(new Font("Courier",Font.BOLD, 25));
+      g.drawString("Health: ",20,height-60);
+      g.drawString("Dead", 150,height-60);
+    }
+
 
   }
 

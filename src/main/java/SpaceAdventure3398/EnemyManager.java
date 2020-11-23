@@ -47,6 +47,12 @@ public class EnemyManager
 
   }
 
+  public void killAllAliens()
+  {
+    alienBullets.clear();
+    aliens.clear();
+  }
+
   private void gatherAlienBullets()
   {
     for(Alien a : aliens)

@@ -20,7 +20,7 @@ public class Projectile extends Rectangle
 		locy = -15;
 		myWidth = 7;
 	  myHeight = 10;
-    speed = 10;
+    speed = 12;
     damage = 10;
     this.owner = owner;
     pBox = new Rectangle(15,-30,7,10);
