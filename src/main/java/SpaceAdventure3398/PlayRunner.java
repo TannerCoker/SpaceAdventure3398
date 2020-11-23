@@ -20,15 +20,15 @@ public class PlayRunner extends JPanel implements ActionListener
   Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
   int width = screenSize.width;
   int height = screenSize.height;
-  private JButton back;//back button to return to the menu
-  ImageIcon backPic, playerPic, alienPic;
+  private JButton back,restart;//back button to return to the menu. restart to reset the game once it's over.
+  ImageIcon backPic, playerPic, alienPic,restartPic;
   private volatile boolean running;
   private ScreenManager manager;
   Background background = new Background();
 
   Player playerShip;
   Alien alienShip;
-  ArrayList<Projectile> b;;
+  ArrayList<Projectile> b;
   EnemyManager aMan = new EnemyManager();
 
 
@@ -45,8 +45,8 @@ public class PlayRunner extends JPanel implements ActionListener
   {
     this.manager = manager;
     backPic = new ImageIcon("./src/main/java/SpaceAdventure3398/images/Back.png");
+    restartPic = new ImageIcon("./src/main/java/SpaceAdventure3398/images/Restart.png");
     playerPic = new ImageIcon("./src/main/java/SpaceAdventure3398/images/PlayerShip.png");
-    //alienPic = new ImageIcon("./src/main/java/SpaceAdventure3398/images/EnemyShip.png");
 
     this.setLayout(null);
 
@@ -131,7 +131,7 @@ public class PlayRunner extends JPanel implements ActionListener
 	}
 
 
-  //makes the back button
+  //makes the back button and restart button
   private void setButton()
   {
     back = new JButton(backPic);
@@ -140,7 +140,36 @@ public class PlayRunner extends JPanel implements ActionListener
     back.setContentAreaFilled(false);
     back.setBorder(BorderFactory.createEmptyBorder());
     back.addActionListener(this);
+    /*Action blank = new AbstractAction()
+    {
+      @Override
+      public void actionPerformed(ActionEvent e)
+      {}
+    };
+    ActionMap bm = back.getActionMap();
+    bm.put("pressed", blank);
+    bm.put("released", blank);*/
     this.add(back);
+
+    restart = new JButton(restartPic);
+    restart.setBounds(width/2-restartPic.getIconWidth()/2, height/2, 100,50);
+    restart.setOpaque(false);
+    restart.setContentAreaFilled(false);
+    restart.setBorder(BorderFactory.createEmptyBorder());
+    restart.addActionListener(new ActionListener()
+    {
+      public void actionPerformed(ActionEvent e)
+      {
+        aMan.killAllAliens();
+        aMan.makeAliens();
+        playerShip.revive();
+        xPos = width/2;
+        restart.setVisible(false);
+        manager.showMenu();
+      }
+    });
+    restart.setVisible(false);
+    this.add(restart);
   }
 
   //starts the update thread which should update all gameplay parts
@@ -156,29 +185,18 @@ public class PlayRunner extends JPanel implements ActionListener
     {
       background.update();
       aMan.update();
-
-
-
-    /*  if(playerShip.bullet.intersects(alienShip))
-			{
-				alienShip.kill();
-        System.out.println("Alien dead");
-			}
-			if(alienShip.intersects(playerShip))
-			{
-				playerShip.kill();
-        System.out.println("Ship dead");
-			}
-			if(alienShip.bullet.intersects(playerShip))
-			{
-				playerShip.kill();
-        System.out.println("Ship dead");
-			}*/
-
-
       aMan.checkHit(playerShip.getBullet());
-      playerShip.checkHit(aMan.getAlienBullets());
-      playerShip.update();
+
+
+      if(playerShip.isAlive())
+      {
+        playerShip.checkHit(aMan.getAlienBullets());
+        playerShip.update();
+      }
+      else
+      {
+        restart.setVisible(true);
+      }
 
       repaint();
     }

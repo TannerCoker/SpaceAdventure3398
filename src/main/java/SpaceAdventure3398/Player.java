@@ -44,6 +44,14 @@ public class Player extends Rectangle
     alive = false;
   }
 
+  public void revive()
+  {
+    locX = width/2-(picture.getIconWidth()/2);
+    locY = (int)(height*.8);
+    health = 100;
+    alive = true;
+  }
+
   public void shoot()
   {
     //bullets.add(new Projectile(2));
