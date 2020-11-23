@@ -109,6 +109,11 @@ public class EnemyManager
     }
   }
 
+  public boolean allDead()
+  {
+    return aliens.isEmpty();
+  }
+
   public ArrayList<Projectile> getAlienBullets()
   {
     return alienBullets;

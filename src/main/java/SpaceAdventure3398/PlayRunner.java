@@ -31,6 +31,9 @@ public class PlayRunner extends JPanel implements ActionListener
   ArrayList<Projectile> b;
   EnemyManager aMan = new EnemyManager();
 
+  int stage,stageDelay;
+  boolean newStage;
+
 
   Action leftAction;
 
@@ -100,7 +103,10 @@ public class PlayRunner extends JPanel implements ActionListener
     repaintTimer.setCoalesce(true);
 	/***************************************************************/
 
-    aMan.makeAliens();
+    //aMan.makeAliens();
+    stage = 0;
+    stageDelay = 0;
+    newStage = false;
 
     running = false;
     UpdateBG ub = new UpdateBG(this);
@@ -140,19 +146,10 @@ public class PlayRunner extends JPanel implements ActionListener
     back.setContentAreaFilled(false);
     back.setBorder(BorderFactory.createEmptyBorder());
     back.addActionListener(this);
-    /*Action blank = new AbstractAction()
-    {
-      @Override
-      public void actionPerformed(ActionEvent e)
-      {}
-    };
-    ActionMap bm = back.getActionMap();
-    bm.put("pressed", blank);
-    bm.put("released", blank);*/
     this.add(back);
 
     restart = new JButton(restartPic);
-    restart.setBounds(width/2-restartPic.getIconWidth()/2, height/2, 100,50);
+    restart.setBounds(width/2-restartPic.getIconWidth()/2, height/2, 360,60);
     restart.setOpaque(false);
     restart.setContentAreaFilled(false);
     restart.setBorder(BorderFactory.createEmptyBorder());
@@ -184,9 +181,24 @@ public class PlayRunner extends JPanel implements ActionListener
     if(running)
     {
       background.update();
-      aMan.update();
-      aMan.checkHit(playerShip.getBullet());
-
+      if(aMan.allDead() && !newStage)
+      {
+        stage++;
+        newStage = true;
+      }
+      else if(stageDelay < 100 && newStage)
+      {
+        stageDelay++;
+      }
+      else
+      {
+        if(aMan.allDead())
+          aMan.makeAliens();
+        newStage = false;
+        stageDelay = 0;
+        aMan.update();
+        aMan.checkHit(playerShip.getBullet());
+      }
 
       if(playerShip.isAlive())
       {
@@ -227,7 +239,12 @@ public class PlayRunner extends JPanel implements ActionListener
 
 		playerShip.setX(xPos);
 		playerShip.draw(g,this);
-		//playerShip.bullet.draw(g,this);
+
+    if(newStage)
+    {
+      g.setFont(new Font("courier",Font.BOLD,50));
+      g.drawString("Stage: " + stage,width/2-100,height/2);
+    }
 
 	}
 
