@@ -5,6 +5,6 @@
 170	Jake
 155	Joe
 140	Jenny
-98	Joe
-17	Janis
-17	Jonas
+130	tannertesting
+110	Tanner
+110	fas

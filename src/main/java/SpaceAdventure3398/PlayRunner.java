@@ -20,8 +20,8 @@ public class PlayRunner extends JPanel implements ActionListener
   Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
   int width = screenSize.width;
   int height = screenSize.height;
-  private JButton back;//back button to return to the menu
-  ImageIcon backPic, playerPic, alienPic;
+  private JButton back,restart;//back button to return to the menu. restart to reset the game once it's over.
+  ImageIcon backPic, playerPic, alienPic,restartPic;
   private volatile boolean running;
   private ScreenManager manager;
   Background background = new Background();
@@ -30,6 +30,10 @@ public class PlayRunner extends JPanel implements ActionListener
   Alien alienShip;
   ArrayList<Projectile> b;;
   EnemyManager aMan = new EnemyManager();
+
+  int stage,stageDelay;
+  boolean newStage;
+  boolean nameInputted = false;
 
 
   Action leftAction;
@@ -45,6 +49,7 @@ public class PlayRunner extends JPanel implements ActionListener
   {
     this.manager = manager;
     backPic = new ImageIcon("./src/main/java/SpaceAdventure3398/images/Back.png");
+    restartPic = new ImageIcon("./src/main/java/SpaceAdventure3398/images/Restart.png");
     playerPic = new ImageIcon("./src/main/java/SpaceAdventure3398/images/PlayerShip.png");
     //alienPic = new ImageIcon("./src/main/java/SpaceAdventure3398/images/EnemyShip.png");
 
@@ -100,7 +105,10 @@ public class PlayRunner extends JPanel implements ActionListener
     repaintTimer.setCoalesce(true);
 	/***************************************************************/
 
-    aMan.makeAliens();
+    //aMan.makeAliens();
+    stage = 0;
+    stageDelay = 0;
+    newStage = false;
 
     running = false;
     UpdateBG ub = new UpdateBG(this);
@@ -131,7 +139,7 @@ public class PlayRunner extends JPanel implements ActionListener
 	}
 
 
-  //makes the back button
+  //makes the back button and restart button
   private void setButton()
   {
     back = new JButton(backPic);
@@ -141,6 +149,27 @@ public class PlayRunner extends JPanel implements ActionListener
     back.setBorder(BorderFactory.createEmptyBorder());
     back.addActionListener(this);
     this.add(back);
+
+    restart = new JButton(restartPic);
+    restart.setBounds(width/2-restartPic.getIconWidth()/2, height/2, 360,60);
+    restart.setOpaque(false);
+    restart.setContentAreaFilled(false);
+    restart.setBorder(BorderFactory.createEmptyBorder());
+    restart.addActionListener(new ActionListener()
+    {
+      public void actionPerformed(ActionEvent e)
+      {
+        aMan.killAllAliens();
+        aMan.makeAliens();
+        playerShip.revive();
+        xPos = width/2;
+        restart.setVisible(false);
+        nameInputted = false;
+        manager.showMenu();
+      }
+    });
+    restart.setVisible(false);
+    this.add(restart);
   }
 
   //starts the update thread which should update all gameplay parts
@@ -155,7 +184,24 @@ public class PlayRunner extends JPanel implements ActionListener
     if(running)
     {
       background.update();
-      aMan.update();
+      if(aMan.allDead() && !newStage)
+      {
+        stage++;
+        newStage = true;
+      }
+      else if(stageDelay < 100 && newStage)
+      {
+        stageDelay++;
+      }
+      else
+      {
+        if(aMan.allDead())
+          aMan.makeAliens();
+        newStage = false;
+        stageDelay = 0;
+        aMan.update();
+        aMan.checkHit(playerShip.getBullet());
+      }
 
       if(playerShip.isAlive())
       {
@@ -164,7 +210,12 @@ public class PlayRunner extends JPanel implements ActionListener
       }
       else
       {
-        SaveName.nameInput();
+        if(!nameInputted)
+        {
+          String name = JOptionPane.showInputDialog("Enter Name");
+          aMan.saveScore(name);
+          nameInputted = true;
+        }
         restart.setVisible(true);
       }
 
@@ -177,9 +228,6 @@ public class PlayRunner extends JPanel implements ActionListener
   public void actionPerformed(ActionEvent e)
   {
     running = false;
-    /*SaveName.nameInput();*/
-    String name = JOptionPane.showInputDialog("Enter Name");
-    aMan.saveScore(name);
     manager.showMenu();
   }
 
