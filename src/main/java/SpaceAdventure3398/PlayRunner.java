@@ -189,9 +189,10 @@ public class PlayRunner extends JPanel implements ActionListener
   public void actionPerformed(ActionEvent e)
   {
     running = false;
+    SaveName.nameInput();
     manager.showMenu();
   }
-
+     
 
 	@Override
 	public Dimension getPreferredSize() {
