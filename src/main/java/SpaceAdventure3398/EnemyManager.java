@@ -120,6 +120,9 @@ public class EnemyManager
     }
   }
 
+  public void saveScore(String name) {
+           playerScore.save(name);
+  }  
 
   public long getScore()
   {
