@@ -87,6 +87,7 @@ public class ScoreBoardDisplay extends JPanel implements ActionListener
       g.drawImage(panelTitle,width/2-panelTitle.getWidth()/2,10,this);
 
 	  /* Display the top scores  */
+	  scoreboard.readFile();
 	  String[] lines = scoreboard.getScores().split("\n");
 
 	  // TODO: determine the x and y coordinates dynamically
