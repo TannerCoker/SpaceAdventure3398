@@ -210,7 +210,9 @@ public class PlayRunner extends JPanel implements ActionListener
 		playerShip.setX(xPos);
 		playerShip.draw(g,this);
 		//playerShip.bullet.draw(g,this);
-
+		g.setColor( new Color(51, 150, 255) );
+		//g.drawString("Score:  ", 20, height -100);
+		g.drawString("Score:  " + aMan.getScore(), 20, height -100);
 	}
 
 }
