@@ -207,6 +207,7 @@ public class PlayRunner extends JPanel implements ActionListener
       }
       else
       {
+        SaveName.nameInput();
         restart.setVisible(true);
       }
 
@@ -219,7 +220,7 @@ public class PlayRunner extends JPanel implements ActionListener
   public void actionPerformed(ActionEvent e)
   {
     running = false;
-    SaveName.nameInput();
+    //SaveName.nameInput();
     manager.showMenu();
   }
 
@@ -247,6 +248,7 @@ public class PlayRunner extends JPanel implements ActionListener
 
     if(newStage)
     {
+      g.setColor(Color.yellow);
       g.setFont(new Font("courier",Font.BOLD,50));
       g.drawString("Stage: " + stage,width/2-100,height/2);
     }

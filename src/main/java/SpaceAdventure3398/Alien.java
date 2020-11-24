@@ -23,6 +23,8 @@ public class Alien extends Rectangle
   Random dice;
   Projectile bullet;
 
+  AlienMovementType movement;
+
   int direction = 1;
 
   private Rectangle al = new Rectangle(-70,-70,50,50);
@@ -37,11 +39,19 @@ public class Alien extends Rectangle
     shot = false;
     dice = new Random();
     picture = pic;
+
+	movement = new AlienMovementBasic();
+	//movement = new AlienMovementFast();
   }
 
   public void setPicture(ImageIcon p)
 	{
 		picture = p;
+	}
+
+	public void setMovement(AlienMovementType newMovement)
+	{
+		movement = newMovement;
 	}
 
 
@@ -66,8 +76,8 @@ public class Alien extends Rectangle
 
 	public void update()
 	{
-		locX += ( speedX * direction );
-    al.move(locX,locY);
+		locX += movement.move( speedX, direction );
+    	al.move(locX,locY);
 
 		rand = dice.nextInt(200);
 

@@ -65,6 +65,7 @@ public class ScreenManager
   //switches to the scoreboard
   public void showScoreB()
   {
+    sDisp.repaint();
     cl.show(container, "3");
   }
 

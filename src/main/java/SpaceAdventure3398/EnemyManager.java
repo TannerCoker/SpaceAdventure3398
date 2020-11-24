@@ -17,6 +17,7 @@ public class EnemyManager
   ArrayList<Projectile> alienBullets;
   ImageIcon alienPic;
   Scoreboard playerScore;
+  boolean makeFaster = false;
 
   Rectangle b1 = new Rectangle(70, -70, 7,10);
 
@@ -74,6 +75,14 @@ public class EnemyManager
   public void update()
   {
     boolean boundReached = false;
+    // we use the makeFaster flag to prevent repetitive allocation of
+	// new Movement Type objects for the remaining aliens.
+	if( ! makeFaster && aliens.size() < 5)
+	{
+	  makeFaster = true;
+      for(Alien a : aliens)
+        a.setMovement( new AlienMovementFast() );
+	  }
     for(Alien a : aliens)
     {
       if(a.reachedScreenBounds())
@@ -103,7 +112,7 @@ public class EnemyManager
         a.kill();
         alienBullets.remove(cnt);
         aliens.remove(cnt);
-	playerScore.updateCurrentScore(10);
+	      playerScore.updateCurrentScore(10);
         b.setLoc(0,-15);
         break;
       }
