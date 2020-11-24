@@ -64,7 +64,7 @@ public class Settings extends JPanel implements ActionListener, ItemListener
 
   private void setElements()
   {
-	  diff = new JSlider(JSlider.HORIZONTAL, 0, 20, 1);
+	  diff = new JSlider(JSlider.HORIZONTAL, 0, 20, 10);
 	  diff.setFont(new Font( "Courier", Font.BOLD, 15 ));
     diff.setMajorTickSpacing(5);
     diff.setMinorTickSpacing(1);
@@ -108,7 +108,7 @@ public class Settings extends JPanel implements ActionListener, ItemListener
 	  this.add(diff);
 
 
-    String[] res = { "1000 x 500", "1200 x 800", "1920 x 1080" };
+    /*String[] res = { "1000 x 500", "1200 x 800", "1920 x 1080" };
 	  resolution = new JComboBox(res);
 	  resolution.setFont(new Font( "Courier", Font.BOLD, 20 ));
     resolution.setPreferredSize(new Dimension(200,50));
@@ -118,7 +118,7 @@ public class Settings extends JPanel implements ActionListener, ItemListener
 	  resolution.setForeground( new Color(51, 150, 255) );
     resolution.setBorder( null );
 	  //resolution.addActionListener(this); // TODO add proper listener
-	  this.add(resolution);
+	  this.add(resolution);*/
 
 
     fullscreen = new Checkbox();
@@ -127,6 +127,11 @@ public class Settings extends JPanel implements ActionListener, ItemListener
     fullscreen.addItemListener(this);
 	  this.add(fullscreen);
 
+  }
+
+  public int getDifficulty()
+  {
+    return diff.getValue();
   }
 
   public void itemStateChanged(ItemEvent e)

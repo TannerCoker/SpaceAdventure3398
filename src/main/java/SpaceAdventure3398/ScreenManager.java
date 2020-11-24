@@ -16,9 +16,9 @@ public class ScreenManager
   JFrame frame = new JFrame();
   JPanel container = new JPanel();
   MainMenu menu = new MainMenu(this);
-  PlayRunner pRun = new PlayRunner(this);
   ScoreBoardDisplay sDisp = new ScoreBoardDisplay(this);
   Settings setDisp = new Settings(this);
+  PlayRunner pRun = new PlayRunner(this);
   About abDisp = new About(this);
   CardLayout cl = new CardLayout();
 
@@ -48,6 +48,11 @@ public class ScreenManager
     frame.add(container);
 		frame.setVisible(true);
 	}
+
+  public int accessDifficultySetting()
+  {
+    return setDisp.getDifficulty();
+  }
 
   //switches to the main menu screen
   public void showMenu()

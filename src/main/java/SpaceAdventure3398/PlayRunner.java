@@ -35,6 +35,8 @@ public class PlayRunner extends JPanel implements ActionListener
   boolean newStage;
   boolean nameInputted = false;
 
+  int difficulty;
+
 
   Action leftAction;
 
@@ -105,11 +107,12 @@ public class PlayRunner extends JPanel implements ActionListener
     repaintTimer.setCoalesce(true);
 	/***************************************************************/
 
-    //aMan.makeAliens();
     stage = 0;
     stageDelay = 0;
     newStage = false;
 
+
+    difficulty = manager.accessDifficultySetting();
     running = false;
     UpdateBG ub = new UpdateBG(this);
     ub.start();
@@ -160,11 +163,14 @@ public class PlayRunner extends JPanel implements ActionListener
       public void actionPerformed(ActionEvent e)
       {
         aMan.killAllAliens();
-        aMan.makeAliens();
+        difficulty = manager.accessDifficultySetting();
+        //aMan.makeAliens(difficulty);
         playerShip.revive();
+        stage = 0;
         xPos = width/2;
         restart.setVisible(false);
         nameInputted = false;
+        aMan.resetScore();
         manager.showMenu();
       }
     });
@@ -181,6 +187,7 @@ public class PlayRunner extends JPanel implements ActionListener
   //updates all of the gameplay parts
   public void update()
   {
+    difficulty = manager.accessDifficultySetting();
     if(running)
     {
       background.update();
@@ -196,7 +203,7 @@ public class PlayRunner extends JPanel implements ActionListener
       else
       {
         if(aMan.allDead())
-          aMan.makeAliens();
+          aMan.makeAliens(difficulty);
         newStage = false;
         stageDelay = 0;
         aMan.update();

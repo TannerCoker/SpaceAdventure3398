@@ -31,11 +31,11 @@ public class EnemyManager
   }
 
   //fills an arraylist full of abstract aliens and puts them in a row format.
-  public void makeAliens()
+  public void makeAliens(int difficulty)
   {
     int rowX = sWidth/4;//x value to place the aliens
     int rowY = 15; //height to place the aliens on the same Y-coord on the same row
-    for(int i = 0;i<30;i++)//produces x aliens
+    for(int i = 0;i<30 + difficulty;i++)//produces x aliens
     {
       if(i%10 == 0)//limits x aliens per row
       {
@@ -120,9 +120,14 @@ public class EnemyManager
     }
   }
 
+  public void resetScore()
+  {
+    playerScore.resetScore();
+  }
+
   public void saveScore(String name) {
            playerScore.save(name);
-  }  
+  }
 
   public long getScore()
   {
