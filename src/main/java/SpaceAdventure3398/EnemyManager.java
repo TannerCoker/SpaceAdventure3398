@@ -16,7 +16,7 @@ public class EnemyManager
   ArrayList<Alien> aliens;
   ArrayList<Projectile> alienBullets;
   ImageIcon alienPic;
-
+  Scoreboard playerScore;
 
   Rectangle b1 = new Rectangle(70, -70, 7,10);
 
@@ -26,6 +26,7 @@ public class EnemyManager
     alienPic = new ImageIcon("./src/main/java/SpaceAdventure3398/images/EnemyShip.png");
     aliens = new ArrayList<Alien>();
     alienBullets = new ArrayList<Projectile>();
+    playerScore = new Scoreboard();
   }
 
   //fills an arraylist full of abstract aliens and puts them in a row format.
@@ -102,11 +103,17 @@ public class EnemyManager
         a.kill();
         alienBullets.remove(cnt);
         aliens.remove(cnt);
+	playerScore.updateCurrentScore(10);
         b.setLoc(0,-15);
         break;
       }
       cnt++;
     }
+  }
+
+  public long getScore()
+  {
+	return playerScore.getCurrentScore();
   }
 
   public ArrayList<Projectile> getAlienBullets()
