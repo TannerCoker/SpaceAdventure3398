@@ -111,9 +111,15 @@ public class EnemyManager
     }
   }
 
+
   public long getScore()
   {
-	return playerScore.getCurrentScore();
+	   return playerScore.getCurrentScore();
+  }
+
+  public boolean allDead()
+  {
+    return aliens.isEmpty();
   }
 
   public ArrayList<Projectile> getAlienBullets()

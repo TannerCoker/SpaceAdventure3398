@@ -20,16 +20,19 @@ public class PlayRunner extends JPanel implements ActionListener
   Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
   int width = screenSize.width;
   int height = screenSize.height;
-  private JButton back;//back button to return to the menu
-  ImageIcon backPic, playerPic, alienPic;
+  private JButton back,restart;//back button to return to the menu. restart to reset the game once it's over.
+  ImageIcon backPic, playerPic, alienPic,restartPic;
   private volatile boolean running;
   private ScreenManager manager;
   Background background = new Background();
 
   Player playerShip;
   Alien alienShip;
-  ArrayList<Projectile> b;;
+  ArrayList<Projectile> b;
   EnemyManager aMan = new EnemyManager();
+
+  int stage,stageDelay;
+  boolean newStage;
 
 
   Action leftAction;
@@ -45,8 +48,8 @@ public class PlayRunner extends JPanel implements ActionListener
   {
     this.manager = manager;
     backPic = new ImageIcon("./src/main/java/SpaceAdventure3398/images/Back.png");
+    restartPic = new ImageIcon("./src/main/java/SpaceAdventure3398/images/Restart.png");
     playerPic = new ImageIcon("./src/main/java/SpaceAdventure3398/images/PlayerShip.png");
-    //alienPic = new ImageIcon("./src/main/java/SpaceAdventure3398/images/EnemyShip.png");
 
     this.setLayout(null);
 
@@ -100,7 +103,10 @@ public class PlayRunner extends JPanel implements ActionListener
     repaintTimer.setCoalesce(true);
 	/***************************************************************/
 
-    aMan.makeAliens();
+    //aMan.makeAliens();
+    stage = 0;
+    stageDelay = 0;
+    newStage = false;
 
     running = false;
     UpdateBG ub = new UpdateBG(this);
@@ -131,7 +137,7 @@ public class PlayRunner extends JPanel implements ActionListener
 	}
 
 
-  //makes the back button
+  //makes the back button and restart button
   private void setButton()
   {
     back = new JButton(backPic);
@@ -141,6 +147,26 @@ public class PlayRunner extends JPanel implements ActionListener
     back.setBorder(BorderFactory.createEmptyBorder());
     back.addActionListener(this);
     this.add(back);
+
+    restart = new JButton(restartPic);
+    restart.setBounds(width/2-restartPic.getIconWidth()/2, height/2, 360,60);
+    restart.setOpaque(false);
+    restart.setContentAreaFilled(false);
+    restart.setBorder(BorderFactory.createEmptyBorder());
+    restart.addActionListener(new ActionListener()
+    {
+      public void actionPerformed(ActionEvent e)
+      {
+        aMan.killAllAliens();
+        aMan.makeAliens();
+        playerShip.revive();
+        xPos = width/2;
+        restart.setVisible(false);
+        manager.showMenu();
+      }
+    });
+    restart.setVisible(false);
+    this.add(restart);
   }
 
   //starts the update thread which should update all gameplay parts
@@ -155,30 +181,34 @@ public class PlayRunner extends JPanel implements ActionListener
     if(running)
     {
       background.update();
-      aMan.update();
+      if(aMan.allDead() && !newStage)
+      {
+        stage++;
+        newStage = true;
+      }
+      else if(stageDelay < 100 && newStage)
+      {
+        stageDelay++;
+      }
+      else
+      {
+        if(aMan.allDead())
+          aMan.makeAliens();
+        newStage = false;
+        stageDelay = 0;
+        aMan.update();
+        aMan.checkHit(playerShip.getBullet());
+      }
 
-
-
-    /*  if(playerShip.bullet.intersects(alienShip))
-			{
-				alienShip.kill();
-        System.out.println("Alien dead");
-			}
-			if(alienShip.intersects(playerShip))
-			{
-				playerShip.kill();
-        System.out.println("Ship dead");
-			}
-			if(alienShip.bullet.intersects(playerShip))
-			{
-				playerShip.kill();
-        System.out.println("Ship dead");
-			}*/
-
-
-      aMan.checkHit(playerShip.getBullet());
-      playerShip.checkHit(aMan.getAlienBullets());
-      playerShip.update();
+      if(playerShip.isAlive())
+      {
+        playerShip.checkHit(aMan.getAlienBullets());
+        playerShip.update();
+      }
+      else
+      {
+        restart.setVisible(true);
+      }
 
       repaint();
     }
@@ -192,7 +222,7 @@ public class PlayRunner extends JPanel implements ActionListener
     SaveName.nameInput();
     manager.showMenu();
   }
-     
+
 
 	@Override
 	public Dimension getPreferredSize() {
@@ -210,10 +240,17 @@ public class PlayRunner extends JPanel implements ActionListener
 
 		playerShip.setX(xPos);
 		playerShip.draw(g,this);
-		//playerShip.bullet.draw(g,this);
+
 		g.setColor( new Color(51, 150, 255) );
 		//g.drawString("Score:  ", 20, height -100);
 		g.drawString("Score:  " + aMan.getScore(), 20, height -100);
+
+    if(newStage)
+    {
+      g.setFont(new Font("courier",Font.BOLD,50));
+      g.drawString("Stage: " + stage,width/2-100,height/2);
+    }
+
 	}
 
 }
