@@ -13,7 +13,7 @@ import java.util.*;
 import java.io.*;
 import javax.swing.event.*; // ChangeListener
 
-public class Settings extends JPanel implements ActionListener
+public class Settings extends JPanel implements ActionListener, ItemListener
 {
   Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
   int width = screenSize.width;
@@ -24,13 +24,15 @@ public class Settings extends JPanel implements ActionListener
   ImageIcon backPic;
 
   private JSlider diff; //difficulty setting
-  JComboBox resolution; 
+  JComboBox resolution;
   Checkbox fullscreen;
+
 
   public Settings(ScreenManager manager)
   {
     this.manager = manager;
     backPic = new ImageIcon("src/main/java/SpaceAdventure3398/images/Back.png");
+
 
     //tries to get the buffered images
     try
@@ -62,8 +64,8 @@ public class Settings extends JPanel implements ActionListener
 
   private void setElements()
   {
-	diff = new JSlider(JSlider.HORIZONTAL, 0, 20, 1);
-	diff.setFont(new Font( "Courier", Font.BOLD, 15 ));
+	  diff = new JSlider(JSlider.HORIZONTAL, 0, 20, 10);
+	  diff.setFont(new Font( "Courier", Font.BOLD, 15 ));
     diff.setMajorTickSpacing(5);
     diff.setMinorTickSpacing(1);
     diff.setPaintLabels(true);
@@ -75,55 +77,70 @@ public class Settings extends JPanel implements ActionListener
     diff.setPreferredSize(new Dimension(200,50));
     diff.setBounds(500,165,450,80);
 
-	JLabel label;
-	Hashtable<Integer, JComponent> table = new Hashtable<Integer, JComponent>();
-	label = new JLabel("0");
-	label.setForeground( new Color(51, 150, 255) );
+	  JLabel label;
+	  Hashtable<Integer, JComponent> table = new Hashtable<Integer, JComponent>();
+	  label = new JLabel("0");
+	  label.setForeground( new Color(51, 150, 255) );
     table.put(new Integer(0), label);
-	label = new JLabel("5");
-	label.setForeground( new Color(51, 150, 255) );
+	  label = new JLabel("5");
+	  label.setForeground( new Color(51, 150, 255) );
     table.put(new Integer(5), label);
-	label = new JLabel("10");
-	label.setForeground( new Color(51, 150, 255) );
+	  label = new JLabel("10");
+	  label.setForeground( new Color(51, 150, 255) );
     table.put(new Integer(10), label);
-	label = new JLabel("15");
-	label.setForeground( new Color(51, 150, 255) );
+	  label = new JLabel("15");
+	  label.setForeground( new Color(51, 150, 255) );
     table.put(new Integer(15), label);
-	label = new JLabel("20");
-	label.setForeground( new Color(51, 150, 255) );
+	  label = new JLabel("20");
+	  label.setForeground( new Color(51, 150, 255) );
     table.put(new Integer(20), label);
-	diff.setLabelTable(table);
+	  diff.setLabelTable(table);
 
-	diff.addChangeListener( new ChangeListener()
+	  diff.addChangeListener( new ChangeListener()
 		{
-        	@Override
-        	public void stateChanged(ChangeEvent e) 
-        	{
-            	diff.getValue();
-            	repaint();
-        	}
-        });
-	this.add(diff);	
+      @Override
+      public void stateChanged(ChangeEvent e)
+      {
+        diff.getValue();
+        repaint();
+      }
+    });
+	  this.add(diff);
 
 
-    String[] res = { "1000 x 500", "1200 x 800", "1920 x 1080" };
-	resolution = new JComboBox(res);
-	resolution.setFont(new Font( "Courier", Font.BOLD, 20 ));
+    /*String[] res = { "1000 x 500", "1200 x 800", "1920 x 1080" };
+	  resolution = new JComboBox(res);
+	  resolution.setFont(new Font( "Courier", Font.BOLD, 20 ));
     resolution.setPreferredSize(new Dimension(200,50));
     resolution.setBounds(500,280,200,30);
     resolution.setOpaque(true);
-	resolution.setBackground(Color.BLACK);
-	resolution.setForeground( new Color(51, 150, 255) );
+	  resolution.setBackground(Color.BLACK);
+	  resolution.setForeground( new Color(51, 150, 255) );
     resolution.setBorder( null );
-	//resolution.addActionListener(this); // TODO add proper listener
-	this.add(resolution);	
+	  //resolution.addActionListener(this); // TODO add proper listener
+	  this.add(resolution);*/
 
 
     fullscreen = new Checkbox();
     fullscreen.setBounds(500,380,18,20);
-	fullscreen.setBackground( new Color(51, 150, 255) );
-	this.add(fullscreen);	
+	  fullscreen.setBackground( new Color(51, 150, 255) );
+    fullscreen.addItemListener(this);
+	  this.add(fullscreen);
 
+  }
+
+  public int getDifficulty()
+  {
+    return diff.getValue();
+  }
+
+  public void itemStateChanged(ItemEvent e)
+  {
+    if(e.getSource() == fullscreen)
+      if(e.getStateChange() == 1)
+        manager.makeFullScreen();
+      else
+        manager.stopFullScreen();
   }
 
   //makes the back button return to the menu
@@ -151,10 +168,10 @@ public class Settings extends JPanel implements ActionListener
       g.drawImage(panelTitle,width/2-panelTitle.getWidth()/2,10,this);
 
       g.setFont(new Font( "Courier", Font.BOLD, 30 ));
-	  g.setColor( new Color(51, 150, 255) );
-	  g.drawString("Difficulty  : ", 250, 200);
-	  g.drawString("Resolution  : ", 250, 300);
-	  g.drawString("Full Screen : ", 250, 400);
+	    g.setColor( new Color(51, 150, 255) );
+	    g.drawString("Difficulty  : ", 250, 200);
+	    //g.drawString("Resolution  : ", 250, 300);
+	    g.drawString("Full Screen : ", 250, 400);
     }
     catch(Exception e)
     {

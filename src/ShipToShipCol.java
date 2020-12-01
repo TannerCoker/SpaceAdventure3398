@@ -1,4 +1,4 @@
-
+/*
 import java.awt.Rectangle;
 
 public class shipToShipCol {
@@ -10,4 +10,4 @@ public class shipToShipCol {
 
 		return playerRect.intersects(alienRect);
 	}
-}
+}*/

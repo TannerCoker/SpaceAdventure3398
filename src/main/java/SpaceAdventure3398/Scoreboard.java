@@ -49,6 +49,11 @@ public class Scoreboard
 	public Scoreboard()
 	{
 		currentScore = 0;
+		readFile();
+
+	}
+	
+	public void readFile() {
 		int n = 0;
 		topScores = new ArrayList<ScoreLine>();
 		try
@@ -76,7 +81,6 @@ public class Scoreboard
 		{
 			System.out.println(e);
 		}
-
 	}
 
 	public void updateCurrentScore(long points)
@@ -89,6 +93,10 @@ public class Scoreboard
 	public long getCurrentScore()
 	{
 		return currentScore;
+	}
+
+	public void resetScore() {
+		currentScore = 0;
 	}
 
     public long getScoreAt(int pos)
@@ -117,6 +125,7 @@ public class Scoreboard
 
 	public void save(String name)
 	{
+		readFile();
 		Collections.sort(topScores); // sort the list just in case.
 		if(topScores.size() > 0)
 		{

@@ -29,8 +29,7 @@ public class ScoreBoardDisplay extends JPanel implements ActionListener
   public ScoreBoardDisplay(ScreenManager manager)
   {
     this.manager = manager;
-	this.
-    backPic = new ImageIcon("src/main/java/SpaceAdventure3398/images/Back.png");
+	  this.backPic = new ImageIcon("src/main/java/SpaceAdventure3398/images/Back.png");
 
     //gets static background image
     try
@@ -87,23 +86,24 @@ public class ScoreBoardDisplay extends JPanel implements ActionListener
       g.drawImage(panelTitle,width/2-panelTitle.getWidth()/2,10,this);
 
 	  /* Display the top scores  */
+	  scoreboard.readFile();
 	  String[] lines = scoreboard.getScores().split("\n");
 
 	  // TODO: determine the x and y coordinates dynamically
 	  // Determine the width of a line in order to center the score display
 	  int stringWidth = g.getFontMetrics().stringWidth(lines[0]);
-	  int x = 460; // width/2 - stringWidth/2; 
+	  int x = 460; // width/2 - stringWidth/2;
 	  int y = 200;
 
       g.setFont(new Font( "Courier", Font.BOLD, 30 ));
-	  g.setColor( new Color(51, 150, 255) );	
+	  g.setColor( new Color(51, 150, 255) );
 
 	  // The drawString method does not process \n well, so split it
 	  // into lines and output the lines at 30 pixel intervals
       int lineNum = 0;
 	  int offset = 30;
 	  for(String line : lines)
-	  { 
+	  {
       	g.drawString(line, x, y + lineNum*offset );
 		++lineNum;
 	  }
@@ -116,6 +116,3 @@ public class ScoreBoardDisplay extends JPanel implements ActionListener
   }
 
 }
-
-
-
