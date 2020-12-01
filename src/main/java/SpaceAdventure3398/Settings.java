@@ -170,7 +170,7 @@ public class Settings extends JPanel implements ActionListener, ItemListener
       g.setFont(new Font( "Courier", Font.BOLD, 30 ));
 	    g.setColor( new Color(51, 150, 255) );
 	    g.drawString("Difficulty  : ", 250, 200);
-	    g.drawString("Resolution  : ", 250, 300);
+	    //g.drawString("Resolution  : ", 250, 300);
 	    g.drawString("Full Screen : ", 250, 400);
     }
     catch(Exception e)
