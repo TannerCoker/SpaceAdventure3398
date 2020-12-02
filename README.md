@@ -371,3 +371,17 @@ The code for each class is found under the Development branch and can be found u
 # Sprint 3 (Assignment 22)
 
 * Brice Ashburn: I was able to complete the player and bullet/projectile class successfully and was able to intergrate with my teammates to get it match their code and compile correctly. I was able to learn a lot about Java Swing and how game engines and loops work. The most difficult thing for this project was learning Java from the begninning and finding time to meet with teammates due to work and other classes. Overall, I would say our project turned out really well with some really cool features.
+
+* Lucas Anesti: The Enemy class that was previously developed by Eric Figueroa was implemented separately, It has now been integrated to the game and is correctly displayed in the background. In addition, enemies can now shoot at random times, which generates a projectile in the lower center part of the alien image, which then travels in the direction of tha player. Finally, the enemies can change behavior dynamically mid-game through an implementation of the strategy pattern for enemy movement. The enemies not contain references to AlienMovementType objects (composition), and a setter in the enemy class allows this reference to be replaced with any new movement during gameplay. The AlienMovementType class is an interface and its subclasses implement different movement algorithms. In this example, the strategy pattern is used to make them move faster, but more complicated movement behaviors can be used to make the game more challenging as needed. The changes in movement classes can be found in the Alien class constructor (basic movement) which is then replaced during gameplay in the EnemyManager class.
+
+* Source Code for the movement type interface: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/master/src/main/java/SpaceAdventure3398/AlienMovementType.java
+
+* Source Code for basic subclass: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/master/src/main/java/SpaceAdventure3398/AlienMovementBasic.java
+
+* Source Code for faster movement:  https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/master/src/main/java/SpaceAdventure3398/AlienMovementFast.java
+
++
+
++
+
++
