@@ -370,4 +370,4 @@ The code for each class is found under the Development branch and can be found u
 
 # Sprint 3 (Assignment 22)
 
-* Brice Ashburn: I was able to complete the player and bullet/projectile class successfully and was able to intergrate with my teammates to get it match their code and compile correctly. I was able to learn a lot about Java Swing and how game engine and loops work. The most difficult thing for this project was learning Java from the begninning and finding time to meet with teammates due to work and other classes. Overall, I would say our project turned out really well with some really cool features.
+* Brice Ashburn: I was able to complete the player and bullet/projectile class successfully and was able to intergrate with my teammates to get it match their code and compile correctly. I was able to learn a lot about Java Swing and how game engines and loops work. The most difficult thing for this project was learning Java from the begninning and finding time to meet with teammates due to work and other classes. Overall, I would say our project turned out really well with some really cool features.
