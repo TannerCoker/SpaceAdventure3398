@@ -368,14 +368,6 @@ The code for each class is found under the Development branch and can be found u
 * Tanner Coker: I need to spend more time in the beginning of the sprint when it comes to researching methods for accomplishing my tasks for the sprint. Since I am generally busy I may start research a few days after the sprint starts which may push me back some. In sprint 3 I am going to try and start working on my tasks immediately so that I can assit in other areas of the project.
 * Team: To avoid the same time management issues in the next sprint that may be caused by school workload, we need to discuss our schedules and mark any deadlines for each member that may impede progress and delay dependencies.
 
+# Sprint 3 (Assignment 22)
 
-
-
-
-
-
-
-
-
-
-
+* Brice Ashburn: I was able to complete the player and bullet/projectile class successfully and was able to intergrate with my teammates to get it match their code and compile correctly. I was able to learn a lot about Java Swing and how game engine and loops work. The most difficult thing for this project was learning Java from the begninning and finding time to meet with teammates due to work and other classes. Overall, I would say our project turned out really well with some really cool features.
