@@ -382,5 +382,8 @@ The Enemy class that was previously developed by Eric Figueroa was implemented s
 * Source Code for faster movement:  https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/master/src/main/java/SpaceAdventure3398/AlienMovementFast.java
 
 
+### Eric Figueroa
+The player class has now been fully implemented to the game console screen with correct display bounds and operational player game functions. Player movement is controlled with left and right arrows of keyboard with a postioned place on game console screen. The bounds of the player keeps the player on the screen and halts when reaches too far left or right to let user know that they should make a decison to move either left or right. Player shooting can be done by using the spacebar on the keyboard and shoots one bullet at a time until it hits an enemy or goes off the screen. We also were able to assign the player a health bar based on hits taken from the enemy that is based on percentage. Each hit that the player takes decrements health by 10 and is updated on game console screen to let the user know the health status of the player. This was a great breakthough of the player class for the game and we were very satisfied with the overall results of our Space Adventure Game.
 
 
+ * Source Code for Player class https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/master/src/main/java/SpaceAdventure3398/Player.java 
