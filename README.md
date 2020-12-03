@@ -386,4 +386,5 @@ The player class has now been fully implemented to the game console screen with 
 
 ### Tanner Coker
 The Enemy Manager class is fully implemented to the game play. It will correctly control the movement of the enemies, make new enemies, remove all enemies if needed, speed the enemies up using a strategy pattern (implemented by Lucas). It also collects and passes on all of the projectiles from the aliens and it will update them and assist in their hit detection. It will delete the aliens from memory if they are killed. Overall having the enemy manager class really helps in the project as we could seperate responsibilities from the PlayRunner class as the enemy manager only has to manage the enemies.
+
 * Source code for enemy manager: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/master/src/main/java/SpaceAdventure3398/EnemyManager.java
