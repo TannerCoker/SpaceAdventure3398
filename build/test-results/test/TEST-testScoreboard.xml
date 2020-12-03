@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="testScoreboard" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-11-28T19:55:05" hostname="DESKTOP-K63ACIB" time="0.081">
+  <properties/>
+  <testcase name="Update Score method" classname="testScoreboard" time="0.066"/>
+  <testcase name="get Score and Name at pos." classname="testScoreboard" time="0.007"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
