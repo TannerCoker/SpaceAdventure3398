@@ -389,3 +389,10 @@ The player class has now been fully implemented to the game console screen with 
 The Enemy Manager class is fully implemented to the game play. It will correctly control the movement of the enemies, make new enemies, remove all enemies if needed, speed the enemies up using a strategy pattern (implemented by Lucas). It also collects and passes on all of the projectiles from the aliens and it will update them and assist in their hit detection. It will delete the aliens from memory if they are killed. Overall having the enemy manager class really helps in the project as we could seperate responsibilities from the PlayRunner class as the enemy manager only has to manage the enemies.
 
 * Source code for enemy manager: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/master/src/main/java/SpaceAdventure3398/EnemyManager.java
+
+### Erik Cortez
+Hitboxes work for projectiles, the player, and enemies. Each entity is composed of a rectangle, which is given dimensions, and interacts with other hitboxes by java's intersect method. When projectiles hit the player, the player's health is decremented until game over. If an alien is intersected, it removes it from the field. With help from Tanner's enemy class, hitboxes are complete. The scoreboard also functions correctly after putting together Lucas's methods to save the name with the score.
+
+* Commit for scoreboard source code: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/commits/2bb2acb7f8731c857b31cf7a82d9d122afbdf3a4
+
+* Source for enemy hitboxes: https://bitbucket.org/cs3398f20klingons/space-adventure-3398/src/master/src/main/java/SpaceAdventure3398/Alien.java 
